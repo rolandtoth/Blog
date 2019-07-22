@@ -3,9 +3,12 @@
     "domain": "https://blog.rolandtoth.hu",
     "developerUrl": "https://rolandtoth.hu",
     "themeColor": "#354650",
-    "urls": {
-        "images": "/assets/images/",
-        "files": "/assets/files/"
+    "paths": {
+        "images": "/assets/images/"
+    },
+    "links": {
+        "eleventy": "https://www.11ty.io/",
+        "githubSrc": "https://github.com/rolandtoth/Blog"
     },
     "style": "/assets/styles/style.css",
     "scripts": [

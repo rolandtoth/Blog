@@ -5,3 +5,4 @@ dist
 package-lock.json
 assets/scripts/main.js
 input/includes/style.css
+src/scss/style.css

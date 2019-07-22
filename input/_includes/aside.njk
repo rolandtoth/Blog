@@ -2,7 +2,7 @@
 
 <div class="inner">
     <a href="{{ url }}" class="rolandtoth">
-        <img src="{{ cfg.urls.images }}roland-toth-pal.jpg" alt="">
+        <img src="{{ cfg.paths.images }}roland-toth-pal.jpg" alt="">
     </a>
 
     <h3>
@@ -17,4 +17,6 @@
         {% import "posttags.njk" as pt %}
         {{ pt.posttags(collections.tagList | sort(false, false)) }}
     </div>
+
+    <p class="credits">Made with <a href="{{ cfg.links.eleventy }}" target="_blank">Eleventy</a> | Source @ <a href="{{ cfg.links.githubUrl }}" target="_blank">GitHub</a></p>
 </div>
