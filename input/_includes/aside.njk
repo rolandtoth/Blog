@@ -1,0 +1,20 @@
+{% set url = ("/" | url) %}
+
+<div class="inner">
+    <a href="{{ url }}" class="rolandtoth">
+        <img src="{{ cfg.urls.images }}roland-toth-pal.jpg" alt="">
+    </a>
+
+    <h3>
+        <a href="{{ url }}">{{ cfg.siteName }}</a>
+    </h3>
+
+    <p>
+        Experiments, tips and tricks in web development and design related topics. Learn more about <a href="https://rolandtoth.hu/about/">me</a> or my <a href="https://rolandtoth.hu/">works</a>.
+    </p>
+
+    <div class="sidebar-tags">
+        {% import "posttags.njk" as pt %}
+        {{ pt.posttags(collections.tagList | sort(false, false)) }}
+    </div>
+</div>

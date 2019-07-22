@@ -1,0 +1,34 @@
+{% set url = (p.url | url) %}
+{% set disqusID = p.data.disqusID %}
+{% set legacyURL = p.data.legacyURL or url %}
+<article>
+    <p class="date">
+        {{ p.data.date | dateDisplay | safe }}
+    </p>
+
+    <a href="{{ url }}#comments" class="comment-count">
+        <i class="icono-"></i>
+        {{ p | disqusCommentCount(p.data.legacyURL) | safe}}
+    </a>
+
+    <h2>
+        <a href="{{ url }}">{{ p.data.title }}</a>
+    </h2>
+
+    {% if p.data.img %}
+    <div class="featured-image">
+        <a href="{{ url }}">
+            {% set imgPath = (("/" + p.fileSlug + "/" + p.data.img) | url) -%}
+             {%- set dimensions = ("/input" + imgPath) | imageDimensions("object") %}
+            <img src="{{ cfg.transparentPlaceholder }}" data-src="{{ imgPath }}" class="lazyload" width="{{ dimensions.width }}" height="{{ dimensions.height }}" alt=""/>
+            <noscript><img src="{{ imgPath }}" alt=""/></noscript>
+        </a>
+    </div>
+    {% endif %}
+
+    {{ p.data.excerpt | md | safe }}
+
+    <p>
+        <a href="{{ url }}" class="button readmore">Read more</a>
+    </p>
+</article>

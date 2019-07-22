@@ -1,0 +1,12 @@
+{% macro posttags(_tags) %}
+{% if _tags %}
+<ul class="tags">
+    {% for key in _tags -%}
+    <li>
+        {% set tag = key | getPostTagData -%}
+        <a href="{{ ("/tags/" + key | slug | lower) | url + "/" }}">{{ tag.title }}</a>
+    </li>
+    {%- endfor -%}
+</ul>
+{% endif %}
+{% endmacro %}

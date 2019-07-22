@@ -1,0 +1,31 @@
+{% set $url = page.url | httpUrl(true) %}
+{% set $text = (seo_description or title or excerpt) | callFunction("encodeURIComponent") %}
+{% set $tags = (tags | join(",")) %}
+{% set $excerpt = excerpt %}
+<div class="sharingbuttons">
+    {% if cfg.sharingbuttons.facebook %}
+    <a class="sb_link" href="https://facebook.com/sharer/sharer.php?u={{$url}}" target="_blank" aria-label="" title="Facebook">
+        <span class="icono-facebook"></span>
+    </a>
+    {% endif %}
+    {% if cfg.sharingbuttons.twitter %}
+    <a class="sb_link" href="https://twitter.com/intent/tweet/?text={{$text}}&amp;url={{$url}}" target="_blank" aria-label="" title="Twitter">
+        <span class="icono-twitter"></span>
+    </a>
+    {% endif %}
+    {% if cfg.sharingbuttons.tumblr %}
+    <a class="sb_link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title={{$text}}&amp;caption={{$excerpt}}&amp;tags={{$tags}}&amp;content={{$url}}&amp;canonicalUrl={{$url}}&amp;shareSource=tumblr_share_button" target="_blank" aria-label="" title="Tumblr">
+        <span class="icono-tumblr"></span>
+    </a>
+    {% endif %}
+    {% if cfg.sharingbuttons.email %}
+    <a class="sb_link" href="mailto:?subject={{$text}}&amp;body={{$url}}" target="_self" aria-label="" title="Email">
+        <span class="icono-mail"></span>
+    </a>
+    {% endif %}
+    {% if cfg.sharingbuttons.pinterest %}
+    <a class="sb_link" href="https://pinterest.com/pin/create/button/?url={{$url}}&amp;media={{$url}}&amp;description={{$text}}" target="_blank" aria-label="" title="Pinterest">
+        <span class="icono-pinterest"></span>
+    </a>
+    {% endif %}
+</div>

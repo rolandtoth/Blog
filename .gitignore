@@ -1,0 +1,7 @@
+.vscode
+.idea
+node_modules
+dist
+package-lock.json
+assets/scripts/main.js
+input/includes/style.css

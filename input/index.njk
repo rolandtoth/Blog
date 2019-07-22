@@ -1,0 +1,20 @@
+---
+title: Recent Posts
+date: Last Modified
+pagination:
+    data: collections.posts
+    size: 8
+    alias: posts
+permalink: /{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}
+---
+
+{% extends 'layouts/@default.njk' %}
+
+{% block main %}
+  <section class="posts">
+    {% for p in posts %}
+      {% include "article.njk" %}
+    {% endfor %}
+  </section>
+  {% include "pagination.njk" %}
+{% endblock %}

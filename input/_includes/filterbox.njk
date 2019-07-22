@@ -1,0 +1,17 @@
+<div class="fbx-wrap">
+    <ul class="post-list">
+    {% for p in collections.posts %}
+        {% set year = (p.data.date | dateDisplay("year")) %}
+        <li data-filter="{{ p.data.title | lower | striptags }} {{ p.data.tags | join(" ") | lower }} {{ p.data.excerpt | striptags | lower }}  {{ p.data.date | dateDisplay("year") }}">
+            <a href="{{ p.url | url }}">
+                {# {% if year !== prevyear %} #}
+                    <span class="year">{{ year }}</span>
+                {# {% endif %} #}
+                <h3>{{ p.data.title | safe }}</h3>
+                <p>{{ p.data.excerpt | stripMarkdown }}</p>
+            </a>
+        </li>
+        {# {% set prevyear = year %} #}
+    {% endfor %}
+    </ul>
+</div>

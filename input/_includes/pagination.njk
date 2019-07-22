@@ -1,0 +1,43 @@
+<div class="pagination">
+    <ul>
+        <li class="first{% if pagination.pageNumber === 0 %} disabled{% endif %}">
+            <a href="{{ "/" | url }}">
+                <span class="icon-wrap">
+                    <i class="icono-caretLeft"></i>
+                    <i class="icono-caretLeft"></i>
+                </span>
+                <span class="text">First</span>
+            </a>
+        </li>
+        <li class="prev{% if pagination.pageNumber === 0 %} disabled{% endif %}">
+            <a href="{{ pagination.previousPageLink | url | removeIndexHtml }}">
+                <span class="icon-wrap">
+                    <i class="icono-caretLeft"></i>
+                </span>
+                <span class="text">Prev</span>
+            </a>
+        </li>
+        <li class="current disabled">
+            <a href="{{ page.url | url | removeIndexHtml }}">
+                <span class="text">{{ pagination.pageNumber + 1 }} <span>/</span> {{ pagination.pageLinks.length }}</span>
+            </a>
+        </li>
+        <li class="next{% if pagination.pageNumber === pagination.pageLinks.length - 1 %} disabled{% endif %}">
+            <a href="{{ pagination.nextPageLink | url | removeIndexHtml }}">
+                <span class="icon-wrap">
+                    <i class="icono-caretRight"></i>
+                </span>
+                <span class="text">Next</span>
+            </a>
+        </li>
+        <li class="last{% if pagination.pageNumber === pagination.pageLinks.length - 1 %} disabled{% endif %}">
+            <a href="{{ "/" | url }}{{ pagination.pageLinks.length }}/">
+                <span class="icon-wrap">
+                    <i class="icono-caretRight"></i>
+                    <i class="icono-caretRight"></i>
+                </span>
+                <span class="text">Last</span>
+            </a>
+        </li>
+    </ul>
+</div>

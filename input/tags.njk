@@ -1,0 +1,11 @@
+---
+title: Tags
+---
+{% extends 'layouts/@default.njk' %}
+
+{% block main %}
+
+{% import "posttags.njk" as pt %}
+{{ pt.posttags(collections.tagList | sort(false, false)) }}
+
+{% endblock %}
