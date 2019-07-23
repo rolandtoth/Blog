@@ -9,7 +9,7 @@
     "legacyURL": "https://blog.rolandtoth.hu/post/51885465282/yap-yet-another-portablizer",
     "tags": [
         "portable",
-        "utilities"
+        "utility"
     ],
     "type": "post",
     "layout": "layouts/@post.njk"

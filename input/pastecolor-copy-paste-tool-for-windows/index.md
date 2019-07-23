@@ -9,7 +9,7 @@
     "legacyURL": "https://blog.rolandtoth.hu/post/48947686821/pastecolor-copy-paste-tool-for-windows-color",
     "tags": [
         "portable",
-        "utilities",
+        "utility",
         "windows"
     ],
     "type": "post",
