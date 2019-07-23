@@ -8,7 +8,7 @@
     "date": "2015-07-26",
     "legacyURL": "https://blog.rolandtoth.hu/post/125069358787/batch-optimize-images-for-the-web-locally-win",
     "tags": [
-        "imageoptimization",
+        "optimization",
         "dropit",
         "software"
     ],

@@ -12,31 +12,31 @@
         "title": "Illustrator"
     },
     "software": {
-        "title": "software"
+        "title": "Software"
     },
     "eleventy": {
         "title": "Eleventy"
     },
     "download": {
-        "title": "download"
+        "title": "Download"
     },
     "css": {
         "title": "CSS"
     },
     "design": {
-        "title": "design"
+        "title": "Design"
     },
-    "imageoptimization": {
-        "title": "image optimization"
+    "ptimization": {
+        "title": "Optimization"
     },
     "dropit": {
         "title": "DropIt"
     },
     "tutorial": {
-        "title": "tutorial"
+        "title": "Tutorial"
     },
     "portfolio": {
-        "title": "portfolio"
+        "title": "Portfolio"
     },
     "phpstorm": {
         "title": "PhpStorm"
@@ -63,16 +63,16 @@
         "title": "PHP"
     },
     "portable": {
-        "title": "portable"
+        "title": "Portable"
     },
     "filemanager": {
-        "title": "file manager"
+        "title": "File Manager"
     },
     "projectmanagement": {
-        "title": "project management"
+        "title": "Project Management"
     },
     "utilities": {
-        "title": "utilities"
+        "title": "Utility"
     },
     "chrome": {
         "title": "Chrome"
@@ -81,6 +81,6 @@
         "title": "Windows"
     },
     "server": {
-        "title": "server"
+        "title": "Server"
     }
 }
