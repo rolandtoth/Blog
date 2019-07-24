@@ -2,7 +2,7 @@
     "siteName": "Roland Toth Blog",
     "domain": "https://blog.rolandtoth.hu",
     "developerUrl": "https://rolandtoth.hu",
-    "themeColor": "#354650",
+    "themeColor": "#49616e",
     "paths": {
         "images": "/assets/images/"
     },

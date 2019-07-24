@@ -47,7 +47,7 @@ In May 2013 I finally put together the [website](http://yap.rolandtoth.hu/) for 
 - If you are complaining about browser incompatibilities, try desktop development. (Hint: prepare extra coffee)
 - Even with such a small tool a proper deployment strategy is unavoidable. yaP has over 80 configurations and they can be downloaded as archives containing the latest version of the software. To simplify the process, downloadable archives are created on the server with PHP. Users always get the latest yaP and I only need to upload it to one location.
 - Batch files are lifesavers. I made simple .bat files to copy configuration INIs, icons, latest yaP.exe to different destinations and different names. That means hundreds of copy operations that finishes in a few seconds, all automatic.
-- Writing documentation did not become any easier in 2013 :(
+- Writing documentation has not become any easier in 2013 :(
 
 ## Learn more
 
