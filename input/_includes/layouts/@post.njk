@@ -3,61 +3,69 @@
 {% block title %}{% endblock %}
 
 {% block main %}
-    <div class="article-top"{% if bgImg %} style="background-image:url('{{ bgImg }}')"{% endif %}>
-        <h1>{{ title }}</h1>
-        <ul class="post-details text-sm m-none p-none">
-            <li>
-                <span class="text-faded">
-                    {{ date | dateDisplay | safe }}
-                </span>
-            </li>
-            <li>
-                <a href="#comments" id="scroll-to-comments" class="comment-count text-faded">
-                    {{ page | disqusCommentCount(legacyURL) | safe }}
-                </a>
-            </li>
-        </ul>
+    <div class="parallax">
+        <div class="article-top left-offset"{% if bgImg %} style="background-image:url('{{ bgImg }}')"{% endif %}>
+            <div class="mid">
+                <h1>{{ title }}</h1>
+                <ul class="post-details text-sm m-none p-none">
+                    <li>
+                        <span>
+                            {{ date | dateDisplay | safe }}
+                        </span>
+                    </li>
+                    <li>
+                        <a href="#comments" id="scroll-to-comments" class="comment-count">
+                            {{ page | disqusCommentCount(legacyURL) | safe }}
+                        </a>
+                    </li>
+                </ul>
 
-        <div class="excerpt">
-            {{ excerpt | md | safe }}
+                <div class="excerpt">
+                    {{ excerpt | md | safe }}
+                </div>
+            </div>
+
+            {% if bgImg and bgImgUrl %}
+            <a href="{{ bgImgUrl }}" class="image-credit" target="_blank">Image credit</a>
+            {% endif %}
         </div>
-
-        {% if bgImg and bgImgUrl %}
-        <a href="{{ bgImgUrl }}" class="image-credit" target="_blank">Image credit</a>
-        {% endif %}
     </div>
 
-    <div class="article-body">
-        {{ content | safe }}
-        
-        <div class="post-controls clearfix">
-            <div class="post-tags">
-                <span class="icon-wrap tag">
-                    <i class="icono-tag"></i>
-                </span>
-                {% import "posttags.njk" as pt %}
-                {{ pt.posttags(tags) }}
+    <div class="article-body left-offset">
+        <div class="mid">
+            {{ content | safe }}
+            
+            <div class="post-controls clearfix">
+                <div class="post-tags">
+                    <span class="icon-wrap tag">
+                        <i class="icono-tag"></i>
+                    </span>
+                    {% import "posttags.njk" as pt %}
+                    {{ pt.posttags(tags) }}
+                </div>
+                {% include "sharingbuttons-solid.njk" %}
             </div>
-            {% include "sharingbuttons-solid.njk" %}
-        </div>
 
-        {% set prevPage = page.inputPath | getSiblingPage(collections.posts, "prev") %}
-        {% set nextPage = page.inputPath | getSiblingPage(collections.posts, "next") %}
-        <div class="prev-next">
-            <a href="{{ prevPage.url | url }}" class="prev">
-                <i class="icono-caretLeft"></i>
-                <span>{{ prevPage.data.title }}</span>
-            </a>
-            <a href="{{ nextPage.url | url }}" class="next">
-                <i class="icono-caretRight"></i>
-                <span>{{ nextPage.data.title }}</span>
-            </a>
+            {% set prevPage = page.inputPath | getSiblingPage(collections.posts, "prev") %}
+            {% set nextPage = page.inputPath | getSiblingPage(collections.posts, "next") %}
+            <div class="prev-next">
+                <a href="{{ prevPage.url | url }}" class="prev">
+                    <i class="icono-caretLeft"></i>
+                    <span>{{ prevPage.data.title }}</span>
+                </a>
+                <a href="{{ nextPage.url | url }}" class="next">
+                    <i class="icono-caretRight"></i>
+                    <span>{{ nextPage.data.title }}</span>
+                </a>
+            </div>
         </div>
 
         <script>var disqus_shortname = "{{ cfg.disqusShortName }}"; var disqus_url="{{ legacyURL }}", disqus_identifier="{{ page.fileSlug }}"</script>
+    </div>
 
-        <div id="comments">
-            <h2>Comments</h2>
+     <div id="comments" class="left-offset">
+        <div class="mid">
+            <h2>{{ page | disqusCommentCount(legacyURL) | safe }} Comments</h2>
             <div id="disqus_thread">
                 <button class="button" id="load-comments-btn">Load comments</button>
             </div>

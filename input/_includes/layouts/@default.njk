@@ -28,26 +28,33 @@
         <link rel="stylesheet" href="{{ cfg.style | cacheVersion }}">
         <link rel="shortcut icon" href="{{ cfg.favicon | cacheVersion }}">
     </head>
-    <body class="page-{% if page.fileSlug !== '' %}{{ page.fileSlug }}{% else %}home{% endif %}">
+    {# {%- set isPost = type == "post" -%} #}
+    <body class="page-{% if page.fileSlug !== '' %}{{ page.fileSlug }}{% else %}home{% endif %}{%if type %} type-{{ type }}{% endif %}">
         <div class="main-content">
             <main>
-                {% include "filterbox.njk" %}
-                <div class="page-content">
-                    {% block title %}
-                        {%- block breadcrumb %}
-                            {% if breadcrumb %}
-                            <ul class="breadcrumb">
-                                {% for b in breadcrumb %}
-                                    <li><a href="{{ b.url | url }}">{{ b.text }}</a></li>
-                                {% endfor %}
-                            </ul>
+                <div class="mid left-offset">
+                    {% include "filterbox.njk" %}
+                    <div class="top-wrap">
+                        {% block title %}
+                            {%- block breadcrumb %}
+                                {% if breadcrumb %}
+                                <ul class="breadcrumb">
+                                    {% for b in breadcrumb %}
+                                        <li><a href="{{ b.url | url }}">{{ b.text }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            {% endblock -%}
+                            {% block mainTitle %}
+                                {% if title %}
+                                    <h1>{{ title }}</h1>
+                                {% endif %}
+                            {% endblock %}
+                            {% if title %}
+                                {% block subtitle %}{% endblock %}
                             {% endif %}
-                        {% endblock -%}
-                        {% if title %}
-                            <h1>{{ title }}</h1>
-                            {% block subtitle %}{% endblock %}
-                        {% endif %}
-                    {% endblock %}
+                        {% endblock %}
+                    </div>
                     {% block main %}{% endblock %}
                 </div>
             </main>

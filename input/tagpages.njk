@@ -25,12 +25,13 @@ permalink: /tags/{{ tag | slug | lower }}/
 
 {% block metaTitle %}{{ ("Tag: " + postTags[tag].title) | pageTitle }}{% endblock %}
 
-{% block main %}
+{% block mainTitle %}
   <h1>{{ postTags[tag].title }}</h1>
+{% endblock %}
 
+{% block main %}
   {% set taglist = collections[tag] %}
   {% for p in taglist | reverse %}
     {% include "article.njk" %}
   {% endfor %}
-
 {% endblock %}
