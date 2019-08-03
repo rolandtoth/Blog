@@ -353,7 +353,7 @@ h3 {
     user-select: none;
     position: relative;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     @media($desktop) {
         text-align: center;
@@ -426,7 +426,7 @@ h3 {
 }
 
 .top-wrap {
-    padding: 1.75rem 1.5rem 1.25rem;
+    padding: 1.5rem 1.5rem 1rem;
 
     body:not(.type-post) & {
         padding-left: 0;
@@ -444,7 +444,7 @@ h3 {
 
 .parallax {
     @media($desktop) {
-        transform: translateZ(-1px) scale(1.338);
+        transform: translateZ(-1px) scale(1.34);
         transform-origin: top;
     }
 }
@@ -509,7 +509,7 @@ h3 {
     }
     
     @media($desktop) {
-        padding: 3rem 2rem 2rem 0;
+        padding: 3rem 0 2rem 0;
     }
 }
 
@@ -533,7 +533,10 @@ h3 {
 
 .mid {
     max-width: 60rem;
-    padding-right: 2rem;
+
+    @media($desktop) {
+        padding-right: 2rem;
+    }
 }
 
 h1, .excerpt {
@@ -887,22 +890,25 @@ article {
 
     li {
         background: white;
-        padding-left: 3.75rem;
         a {
             margin-top: -1px;
             border-top: 1px solid rgba($bordercolor, 0.5);
         }
-
+        
         @media($desktop) {
             padding-left: 6rem;
         }
     }
-
+    
     a {
         display: block;
-        padding: 1rem 1rem 1rem 0;
+        padding: 1rem 1rem 1rem 3.75rem;
         color: $base;
         text-decoration: none;
+        
+        @media($desktop) {
+            padding-left: 0;
+        }
 
         &:hover {
             h3 {
@@ -941,9 +947,6 @@ article {
 }
 
 .search-counter {
-    @media($max-tablet) {
-        display: none;
-    }
     color: rgba(white, 0.4);
     font-size: 0.9rem;
     font-style: italic;
@@ -951,9 +954,15 @@ article {
     position: absolute;
     right: 2rem;
     top: 0;
+    margin-top: -0.6rem;
     z-index: 12;
+
     body.page-home & {
         color: rgba($base, 0.4);
+    }
+
+    @media($desktop) {
+        margin-top: 0;
     }
 }
 
@@ -1076,6 +1085,11 @@ blockquote {
 }
 
 pre {
+    @media($max-tablet) {
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+    }
+
     position: relative;
     margin-bottom: 1.5rem;
     font-size: 96%;
@@ -1101,6 +1115,10 @@ pre {
                 opacity: 0.25;
                 user-select: none;
                 font-size: 1rem;
+
+                @media($max-tablet) {
+                    display: none;
+                }
             }
 
             &.language-javascript::before {
@@ -1153,7 +1171,6 @@ code {
 
 .comment-count {
     @extend .text-sm;
-    @extend .text-faded;
 
     &:not(:hover) {
         text-decoration: none;
