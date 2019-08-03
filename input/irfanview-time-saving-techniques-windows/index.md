@@ -6,7 +6,7 @@
     "bgImg": "stanislaw-gregor-4V_3E3jhZQ0-unsplash.webp",
     "bgImgUrl": "https://unsplash.com/photos/4V_3E3jhZQ0",
     "date": "2012-08-26",
-    "legacyURL": "https://blog.rolandtoth.hu/post/125069358787/batch-optimize-images-for-the-web-locally-win",
+    "legacyURL": "http://blog.rolandtoth.hu/post/33155903713/irfanview-time-saving-techniques-windows",
     "tags": [
         "irfanview",
         "software"
