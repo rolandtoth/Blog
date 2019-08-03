@@ -4,8 +4,8 @@
     "excerpt": "TOCsic is a customizable table of contents plugin for jQuery, featuring go to top links, smooth scroll and developer-friendly class names.",
     "date": "2012-08-12",
     "img": "tocsic-a-powerful-jquery-toc-plugin.jpg",
-    "bgImg": "andrew-pons-wbkYwKstquI-unsplash.webp",
-    "bgImgUrl": "https://unsplash.com/photos/wbkYwKstquI",
+    "bgImg": "35mm-IstXvxHGoA4-unsplash.webp",
+    "bgImgUrl": "https://unsplash.com/photos/IstXvxHGoA4",
     "legacyURL": "https://blog.rolandtoth.hu/post/33154951184/introducing-tocsic-a-powerful-jquery-toc-plugin",
     "tags": [
         "javascript",
