@@ -3,8 +3,13 @@
 {% block title %}{% endblock %}
 
 {% block main %}
+
+    <style>
+    .article-top::before{background:url({{ bgImg }});}
+    </style>
+
     <div class="parallax">
-        <div class="article-top left-offset"{% if bgImg %} style="background-image:url('{{ bgImg }}')"{% endif %}>
+        <div class="article-top left-offset">
             <div class="max-content">
                 <h1>{{ title }}</h1>
                 <ul class="post-details text-sm m-none p-none">
@@ -26,7 +31,7 @@
             </div>
 
             {% if bgImg and bgImgUrl %}
-            <a href="{{ bgImgUrl }}" class="image-credit" target="_blank">Image credit</a>
+                <a href="{{ bgImgUrl }}" class="image-credit" target="_blank">Image credit</a>
             {% endif %}
         </div>
     </div>
@@ -67,7 +72,7 @@
 
      <div id="comments" class="left-offset">
         <div class="mid">
-            <div class="max-width">
+            <div class="max-content">
                 <h2>{{ page | disqusCommentCount(legacyURL) | safe }} Comments</h2>
                 <div id="disqus_thread">
                     <button class="button" id="load-comments-btn">Load comments</button>

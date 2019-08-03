@@ -4,7 +4,10 @@
     "developerUrl": "https://rolandtoth.hu",
     "themeColor": "#49616e",
     "paths": {
-        "images": "/assets/images/"
+        "assets": "/assets/",
+        "images": "/assets/images/",
+        "scripts": "/assets/scripts/",
+        "styles": "/assets/styles/"
     },
     "links": {
         "eleventy": "https://www.11ty.io/",
