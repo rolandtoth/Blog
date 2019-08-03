@@ -22,6 +22,10 @@ function initDisqus() {
         });
     }
 
+    document.getElementById("scroll-to-comments").addEventListener("click", function () {
+        return loadComments();
+    });
+
     function loadComments() {
         disqus(window.disqusShortName, window.legacyURL, window.disqusID);
     }

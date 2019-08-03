@@ -1155,11 +1155,12 @@ h3 {
         padding-top: 0.25rem;
         padding-bottom: 0.25rem; } }
 
-.mid {
+@media (min-width: 990px) {
+  .mid {
+    padding-right: 2rem; } }
+
+.max-content {
   max-width: 60rem; }
-  @media (min-width: 990px) {
-    .mid {
-      padding-right: 2rem; } }
 
 h1, .excerpt {
   max-width: 45rem; }
@@ -1170,7 +1171,6 @@ main > .mid {
     main > .mid {
       padding-bottom: 3rem; } }
   body.type-post main > .mid {
-    max-width: 100%;
     padding: 0 !important; }
 
 .featured-image {

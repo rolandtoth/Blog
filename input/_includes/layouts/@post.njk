@@ -5,7 +5,7 @@
 {% block main %}
     <div class="parallax">
         <div class="article-top left-offset"{% if bgImg %} style="background-image:url('{{ bgImg }}')"{% endif %}>
-            <div class="mid">
+            <div class="max-content">
                 <h1>{{ title }}</h1>
                 <ul class="post-details text-sm m-none p-none">
                     <li>
@@ -33,30 +33,32 @@
 
     <div class="article-body left-offset">
         <div class="mid">
-            {{ content | safe }}
-            
-            <div class="post-controls clearfix">
-                <div class="post-tags">
-                    <span class="icon-wrap tag">
-                        <i class="icono-tag"></i>
-                    </span>
-                    {% import "posttags.njk" as pt %}
-                    {{ pt.posttags(tags) }}
+            <div class="max-content">
+                {{ content | safe }}
+                
+                <div class="post-controls clearfix">
+                    <div class="post-tags">
+                        <span class="icon-wrap tag">
+                            <i class="icono-tag"></i>
+                        </span>
+                        {% import "posttags.njk" as pt %}
+                        {{ pt.posttags(tags) }}
+                    </div>
+                    {% include "sharingbuttons-solid.njk" %}
                 </div>
-                {% include "sharingbuttons-solid.njk" %}
-            </div>
 
-            {% set prevPage = page.inputPath | getSiblingPage(collections.posts, "prev") %}
-            {% set nextPage = page.inputPath | getSiblingPage(collections.posts, "next") %}
-            <div class="prev-next">
-                <a href="{{ prevPage.url | url }}" class="prev">
-                    <i class="icono-caretLeft"></i>
-                    <span>{{ prevPage.data.title }}</span>
-                </a>
-                <a href="{{ nextPage.url | url }}" class="next">
-                    <i class="icono-caretRight"></i>
-                    <span>{{ nextPage.data.title }}</span>
-                </a>
+                {% set prevPage = page.inputPath | getSiblingPage(collections.posts, "prev") %}
+                {% set nextPage = page.inputPath | getSiblingPage(collections.posts, "next") %}
+                <div class="prev-next">
+                    <a href="{{ prevPage.url | url }}" class="prev">
+                        <i class="icono-caretLeft"></i>
+                        <span>{{ prevPage.data.title }}</span>
+                    </a>
+                    <a href="{{ nextPage.url | url }}" class="next">
+                        <i class="icono-caretRight"></i>
+                        <span>{{ nextPage.data.title }}</span>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -65,9 +67,11 @@
 
      <div id="comments" class="left-offset">
         <div class="mid">
-            <h2>{{ page | disqusCommentCount(legacyURL) | safe }} Comments</h2>
-            <div id="disqus_thread">
-                <button class="button" id="load-comments-btn">Load comments</button>
+            <div class="max-width">
+                <h2>{{ page | disqusCommentCount(legacyURL) | safe }} Comments</h2>
+                <div id="disqus_thread">
+                    <button class="button" id="load-comments-btn">Load comments</button>
+                </div>
             </div>
         </div>
     </div>

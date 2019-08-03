@@ -532,11 +532,13 @@ h3 {
 }
 
 .mid {
-    max-width: 60rem;
-
     @media($desktop) {
         padding-right: 2rem;
     }
+}
+
+.max-content {
+    max-width: 60rem;
 }
 
 h1, .excerpt {
@@ -551,7 +553,7 @@ main > .mid {
     }
 
     body.type-post & {
-        max-width: 100%;
+        // max-width: 100%;
         padding: 0 !important;
     }
 }
