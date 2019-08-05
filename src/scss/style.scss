@@ -352,12 +352,7 @@ h3 {
 .pagination {
     user-select: none;
     position: relative;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-
-    @media($desktop) {
-        margin-bottom: 0;
-    }
+    margin: 2rem 0 2rem -1rem;
 
     ul {
         display: inline-block;
@@ -368,7 +363,7 @@ h3 {
 
     .icon-wrap {
         display: inline-block;
-        transform: scale(0.5);
+        transform: scale(0.6);
     }
 
     li {
@@ -390,6 +385,7 @@ h3 {
 
         &.current a {
             opacity: 1 !important;
+            margin: 0 1rem;
         }
 
         &.first,
