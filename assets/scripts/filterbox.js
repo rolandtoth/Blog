@@ -1,1 +1,1122 @@
-!function(e,t){"use strict";function r(e){for(var t=0,r=0,n=e.length;n>r;)t=t<<5-t+e.charCodeAt(r++)<<0;return t}function n(n){function i(e){return n.callbacks&&"function"==typeof n.callbacks[e]?n.callbacks[e]:!1}function o(){return M.querySelectorAll(z)}function a(e,t){return e&&e.call(R,t)===!1?!1:void 0}function l(e){for(var r=t.createDocumentFragment();e.firstChild;){var n=e.removeChild(e.firstChild);r.appendChild(n)}e.parentNode.replaceChild(r,e)}function u(e){e&&e.parentNode&&e.parentNode.removeChild(e)}function s(e){return null===e.offsetParent}function c(e,t,r,n){var i,o=e.indexOf(t);if(-1===o)return"";var a=e.indexOf(r);return-1===a?"":i=n?e.substr(o,a-o+1):e.substr(o+1,a-o-1)}function f(e){var r=t.createElement(Oe);return r.classList.add(Ve),r.appendChild(e),r}function d(e){if(qe&&(e||(e=M),e.childNodes))for(var r=0;r<e.childNodes.length;r++){var n=e.childNodes[r];if(n.className===Ve)return void n.parentNode.parentNode.replaceChild(t.createTextNode(n.parentNode.textContent.replace(/<[^>]+>/g,"")),n.parentNode);3!==n.nodeType&&d(n)}}function v(e,r,n){if(qe&&!(e.length<He))for(var i=n?r.querySelectorAll(n):r.childNodes,o=0;o<i.length;o++){var a=i[o];if(3===a.nodeType){var l=a.data,u=l.toLowerCase();if(u.indexOf(e)>=0){for(var s,c=t.createElement(Oe);-1!==(s=u.indexOf(e));)c.appendChild(t.createTextNode(l.substr(0,s))),c.appendChild(f(t.createTextNode(l.substr(s,e.length)))),l=l.substr(s+e.length),u=u.substr(s+e.length);c.appendChild(t.createTextNode(l)),a.parentNode.replaceChild(c,a)}}else v(e,a)}}function g(e,t,r){var n;return function(){var i,o,a;i=this,o=arguments,a=function(){n=null,r||e.apply(i,o)};var l=r&&!n;clearTimeout(n),n=setTimeout(a,t),l&&e.apply(i,o)}}function p(e,t){t.parentNode.insertBefore(e,t)}function h(e,t){t.parentNode.insertBefore(e,t.nextSibling)}function b(e){var r=t.getElementById(be);r||(r=t.createElement("style"),r.type="text/css",r.id=be,r.appendChild(t.createTextNode(Be)),t.querySelector("head").appendChild(r)),r.innerText=e+Be+le+Ke}function m(e,t){if(e&&t&&"object"==typeof t)for(var r in t)t.hasOwnProperty(r)&&e.setAttribute(r,t[r])}function y(e,t){e.parentNode.insertBefore(t,e),t.appendChild(e)}function A(){if(J&&t.querySelector(J)?B=t.querySelector(J):(B=t.createElement("input"),B.type="text",S(B,W,_)),m(B,Q),X&&(H=t.createElement(X.tag||"div"),m(H,Y),y(B,H)),$){var e=B.id||R.hash;j=t.createElement("label"),j.setAttribute("for",e),j.innerHTML=$,B.id||B.setAttribute("id",e),p(j,B)}B.getFilterBox=function(){return R},R.setZebra()}function S(e,t,r){if(!e||!t)return!1;switch(r){case"append":t.appendChild(e);break;case"prepend":t.parentElement.insertBefore(e,t);break;case"after":h(e,t);break;default:p(e,t)}}function E(){if(!ee)return!1;"function"==typeof ee&&(ee=ee(R));for(var e in ee)if(ee.hasOwnProperty(e)){var r=ee[e],n=r.addTo&&r.addTo.selector?t.querySelector(r.addTo.selector):M,i=r.addTo&&r.addTo.position||"before",o=r.tag||"div",a=r.text||"",l=r.showIf,u=t.createElement(o);m(u,r.attrs),S(u,n,i),te.push({el:u,text:a,showIf:l})}R.updateDisplays()}function x(){R.updateDisplays(),R.setZebra()}function I(){B.addEventListener("focus",T),B.addEventListener("blur",F),B.addEventListener("keydown",w),B.addEventListener("input",Ue),B.form&&B.form.addEventListener("reset",R.clear),t.addEventListener("filterboxsearch",x),De&&e.MutationObserver&&(P=new MutationObserver(function(e){for(var t=0;t<e.length;t++){var r=e[t].type;"childList"===r?(R.updateDisplays(),R.setZebra()):"characterData"===r&&(T(null),qe&&v(R.getFilter(),M,U.join(",")),R.setZebra(),R.updateDisplays())}}),P.observe(M,{childList:!0,subtree:!0,characterData:!0}))}function N(e){return e?(e&&(e=k(e,Ze+Ze,Ze)),e?R.getFilterTokens(e.toLowerCase()):!1):!1}function C(e){return e.filter(function(e,t,r){return r.indexOf(e)===t})}function F(){a(Fe)}function T(e,t){return a(Ce)===!1?!1:me?!1:void 0===t&&(H||B).hasAttribute(fe)?!1:(R.updateItemFilters(),void(H||B).setAttribute(fe,"1"))}function w(t){var r;if(t=t||e.event,!t)return!1;if(r=t.keyCode,!oe||r!==ze.UP&&r!==ze.DOWN)r===ze.ESCAPE?Ie?a(Ie,t):(t.preventDefault(),""!==R.getFilter()?R.clearFilterBox():B.blur()):t.keyCode===ze.ENTER&&a(xe,t);else{if(a(Se)===!1)return;var n=!1;t.preventDefault();var i,o,l=r===ze.DOWN,u=R.getVisibleItems(R.getVisibleSelector()),s=u.length,c=R.getFirstVisibleItem(),f=u.item(s-1),d=l?c:f;if(0===s)return;if(1===s)return void R.setKeyNavItem(c);for(var v=0;s>v;v++){var g=u[v];if(g.classList.contains(ae)){i=g,o=v;break}}i&&(d=u.item(o+(l?1:-1)),!d&&n&&(d=l?c:f)),d&&(R.setKeyNavItem(d),a(Ee))}}function L(){var e,r=R.getFilter().toLowerCase().trim(),n=!1;if(d(),R.removeKeyNavClass(),"!"===r||r.length>0&&""===k(r,'"',""))return b(""),!1;if(R.isInvertFilter()&&(n=!0,r=R.getInvertFilter()),a(ye)!==!1){(H||B).setAttribute(de,r?"1":"0"),(H||B).setAttribute(ve,n?"1":"0");var i,o,l=N(r),u=U.join(",");if(l){if(i=n?R.getVisibleSelector(r):R.getHiddenSelector(r),b(i+"{"+je+"}"),e=R.countVisible(),(H||B).setAttribute(ge,e?"0":"1"),e&&ue){if(a(Se)===!1)return;R.setKeyNavItem(R.getFirstVisibleItem()),a(Ee)}!n&&e&&qe&&(o=R.getVisibleItems(r),setTimeout(function(){for(var e=0;e<o.length;e++){qe&&d(o[e]);for(var t=0;t<l.length;t++)v(l[t],o[e],u)}},100))}else R.clearFilterBox();R.updateDisplays(),R.setZebra(),a(Ae),t.dispatchEvent(new CustomEvent("filterboxsearch",{detail:R}))}}function k(e,t,r){return e.split(t).join(r)}function D(e,t){for(var r=[],n=0;n<t.length;n++){var i,o=t[n];if(-1===o.indexOf("["))i=e.getAttribute(o),i&&r.push(i.trim());else{var a=e.querySelectorAll(o),l=c(o,"[","]");if(a.length)for(var u=0;u<a.length;u++)i=a[u].getAttribute(l),i&&r.push(i.trim())}}return r.join(Ze)}function q(e){var t="";if(e)if(e.length)for(var r=0;r<e.length;r++)t+=q(e[r]);else e.textContent&&(t+=Ze+e.textContent),t=O(t.replace(/<[^>]*>/g,"")).toLowerCase();return t+Ze}function O(e){return e=e.replace(/\s{2,}/g,Ze),e=e.replace(/\t/g,Ze),e=e.toString().trim().replace(/(\r\n|\n|\r)/g,"")}if(!(n.target&&n.target.selector&&n.target.items&&t.querySelector(n.target.selector+" "+n.target.items)))throw new Error("FilterBox: no items to filter");if(n.callbacks&&"function"==typeof n.callbacks.onInit&&n.callbacks.onInit()===!1)throw new Error("FilterBox: onInit callback");var V,B,H,j,K,P,R=this,Z=n.target.selector,M=t.querySelector(Z),z=n.target.items,U=n.target.sources||["*"],W=n.addTo&&n.addTo.selector&&t.querySelector(n.addTo.selector)?t.querySelector(n.addTo.selector):M,_=n.addTo&&n.addTo.position?n.addTo.position:"before",G=n.inputDelay>=0?n.inputDelay:300,J=n.input&&n.input.selector&&t.querySelector(n.input.selector)?n.input.selector:!1,Q=n.input&&n.input.attrs?n.input.attrs:!1,X=n.wrapper||!1,Y=n.wrapper&&n.wrapper.attrs?n.wrapper.attrs:!1,$=n.input&&n.input.label?n.input.label:!1,ee=!n.displays||"object"!=typeof n.displays&&"function"!=typeof n.displays?!1:n.displays,te=[],re=n.suffix?n.suffix:"",ne=n.zebra||!1,ie=n.lazy!==!1,oe=n.keyNav||!1,ae=(oe&&oe["class"]?oe["class"]:"fbx-keynav-active")+re,le=oe&&oe.style?"."+ae+"{"+oe.style+"}":"",ue=oe&&oe.autoSelectFirst!==!1,se="data-odd"+re,ce="data-hide"+re,fe="data-init"+re,de="data-has-filter"+re,ve="data-invert-filter"+re,ge="data-no-match"+re,pe=n.filterAttr||"data-filter"+re,he=n.extraFilterAttrs||!1,be="fbx-style"+re,me=n.useDomFilter||!1,ye=i("beforeFilter"),Ae=i("afterFilter"),Se=i("beforeKeyNav"),Ee=i("afterKeyNav"),xe=i("onEnter"),Ie=i("onEscape"),Ne=i("onReady"),Ce=i("onFocus"),Fe=i("onBlur"),Te=i("beforeUpdate"),we=i("afterUpdate"),Le=i("beforeDestroy"),ke=i("afterDestroy"),De=n.enableObserver===!0,qe=n.highlight||!1,Oe=qe&&qe.tag?qe.tag:"fbxhl",Ve="on"+re,Be=qe&&qe.style?Oe+"."+Ve+"{"+qe.style+"}":"",He=qe&&qe.minChar?qe.minChar:2,je=n.hideRule||"display: none !important;",Ke="["+ce+'="1"]{'+je+"}",Pe=!1,Re=!1,Ze=n.SEPARATOR||"|",Me=t.body.scrollIntoViewIfNeeded,ze={UP:38,DOWN:40,ESCAPE:27,ENTER:13};R.countTotal=function(){return o().length},V=o(),R.hash="fbx"+r(Z+z+R.countTotal()+re),R.update=function(){a(Te)!==!1&&(T(null,!0),R.updateDisplays(),R.setZebra(),a(we))},R.getTarget=function(){return M},R.getInput=function(){return B},R.clear=function(e){R.filter(""),e&&R.focus()},R.destroy=function(){if(Pe&&a(Le)!==!1){qe&&d();for(var r=0;r<V.length;r++)me||V[r].removeAttribute(pe),V[r].removeAttribute(se);if((H||B).removeAttribute(de),(H||B).removeAttribute(ge),B.form&&B.form.removeEventListener("reset",R.clear),B.removeEventListener("input",Ue),B.removeEventListener("focus",T),B.removeEventListener("blur",F),B.removeEventListener("keydown",w),t.removeEventListener("filterboxsearch",x),e.removeEventListener("resize",We),Re=!1,"TABLE"===M.tagName)for(var n=M.querySelectorAll("th"),i=0;i<n.length;i++)n[i].removeAttribute("style");P&&P.disconnect();for(var o=0;o<te.length;o++)u(te[o].el);if(u(t.getElementById(be)),X&&l(H),$&&u(j),J&&"object"==typeof Q)for(var s in Q)Q.hasOwnProperty(s)&&B.getAttribute(s)===Q[s]&&B.removeAttribute(s),B.id===R.hash&&B.removeAttribute("id"),(H||B).removeAttribute(fe);B.value="",J||u(B),M.removeAttribute(ce),ke&&ke(),Pe=!1}},R.countHidden=function(){for(var e=0,t=o(),r=0;r<t.length;r++)e+=s(t[r])?1:0;return e},R.countVisible=function(){return R.count(R.getFilter())},R.enableHighlight=function(e){qe=e===!1},R.setZebra=function(){if(!ne)return!1;for(var e=R.getVisibleItems(B.value),t=1,r=0;r<e.length;r++){var n=e[r];n.setAttribute(se,(t%2).toString()),t++}},R.filter=function(e){return B.value=e,T(null,!1),L(),R},R.focus=function(e){if(B.focus(),e&&B.value&&B.setSelectionRange){var t=2*B.value.length;B.setSelectionRange(t,t)}return R},R.getFilter=function(){return(B.value||"").trim()},R.updateDisplays=function(){for(var e=0;e<te.length;e++){var t=te[e],r=te[e].text,n=te[e].showIf;r&&("function"==typeof r?t.el.innerHTML=te[e].text.call(R):t.el.innerHTML=r),n&&"function"==typeof n&&(t.el.style.display=n.call(R)?"":"none")}};var Ue=g(function(){L()},G);R.toggleHide=function(e,t){if(e)if(e.length)for(var r=0;r<e.length;r++)e[r].setAttribute(ce,t?"1":"0");else e.setAttribute(ce,t?"1":"0")},R.isAllItemsHidden=function(){return 0===R.count(R.getFilter())},R.isAllItemsVisible=function(){return""===R.getHiddenSelector()},R.getFilterTokens=function(e){var t,r=e.match(/[^\s]+|"[^"]+"/g);if(!r)return[e];for(t=r.length;t--;)r[t]=r[t].replace(/"/g,"");return r};var We=g(function(){for(var e=R.getTarget().querySelectorAll("th"),t=0;t<e.length;t++)e[t].style.width=e[t].offsetWidth+"px"},500);return R.fixTableColumns=function(t){We(t),Re||(e.addEventListener("resize",We),Re=!0)},R.clearFilterBox=function(){(H||B).removeAttribute(ge),(H||B).removeAttribute(de),B.value="",b(""),K="",qe&&d(M),R.removeKeyNavClass(),R.updateDisplays(),a(Ae)},R.updateItemFilters=function(){for(var e=o(),t=0;t<e.length;t++){var r,n,i=e[t];r=q(i.querySelectorAll(U.join(","))),r+=D(i,he),r&&(r=r.split(Ze),n=i.getAttribute(pe),n&&r.push(n),i.value&&r.push(i.value),r=C(r),r=r.filter(function(e){return""!==e}),i.setAttribute(pe,r.join(Ze).trim()))}},R.visitFirstLink=g(function(t,r){var n,i=R.getFirstVisibleItem();return i?(""===R.getFilter()&&e.localStorage&&localStorage.removeItem(R.hash),"A"===i.tagName?n=i:i.querySelector("a")&&(n=i.querySelector("a")),void(n?(t.preventDefault(),r&&"_blank"!==n.getAttribute("target")?(n.setAttribute("target","_blank"),n.click(),n.removeAttribute("target")):n.click(),e.localStorage&&localStorage.setItem(R.hash,R.getFilter())):e.localStorage&&localStorage.removeItem(R.hash))):!1},G),R.removeKeyNavClass=function(){for(var e=M.querySelectorAll("."+ae),t=0;t<e.length;t++)e[t].classList.remove(ae)},R.setKeyNavItem=function(e){R.removeKeyNavClass(),e&&(e.classList.add(ae),Me&&e.scrollIntoViewIfNeeded())},R.getHiddenSelector=function(e){for(var t=[],r=N(e?e:B.value),n=0;n<r.length;n++)t.push(Z+" "+z+":not(["+pe+'*="'+r[n]+'"])');return t.join(",")},R.getVisibleSelector=function(e){for(var t="",r=N(e?e:B.value),n=0;n<r.length;n++)t+="["+pe+'*="'+r[n]+'"]';return Z+" "+z+t},R.isInvertFilter=function(){var e=this.getFilter();return e&&e.length>1&&(0===e.indexOf("!")||e.indexOf("!")===e.length-1)},R.getInvertFilter=function(){var e=R.getFilter();return e=0===e.indexOf("!")?e.substring(1):e.substring(0,e.length-1),(e||"").trim()},R.count=function(e){var r,n,i=!1;if(R.isInvertFilter()&&(i=!0,e=R.getInvertFilter()),r=N(e),!e||!r)return R.countTotal();n=i?R.getHiddenSelector(e):R.getVisibleSelector(e);try{return t.querySelectorAll(n).length}catch(o){return 0}},R.getFirstVisibleItem=function(){for(var e=o(),t=0;t<e.length;t++)if(!s(e[t]))return e[t]},R.getSelectedItem=function(){return M.querySelector("."+ae)},R.getVisibleItems=function(e){return e?t.querySelectorAll(R.getVisibleSelector()):o()},R.restoreFilter=function(){return e.localStorage?void(localStorage.getItem(R.hash)&&(R.filter(localStorage.getItem(R.hash)),localStorage.removeItem(R.hash))):!1},b(),A(),E(),I(),ie||T(null,!1),Pe=!0,a(Ne),R}!function(){function r(e,r){r=r||{bubbles:!1,cancelable:!1,detail:void 0};var n=t.createEvent("CustomEvent");return n.initCustomEvent(e,r.bubbles,r.cancelable,r.detail),n}return"function"==typeof e.CustomEvent?!1:(r.prototype=e.Event.prototype,void(e.CustomEvent=r))}(),e.addFilterBox=function(e){try{return new n(e)}catch(t){e&&e.debuglevel&&console.log(2===e.debuglevel?t:t.message)}return!1}}(window,document);
+/**
+ * FilterBox v0.4.97
+ * 2019/08/05
+ */
+(function (window, document) {
+    "use strict";
+
+    // CustomEvent polyfill
+    (function () {
+        if (typeof window.CustomEvent === "function") return false;
+
+        function CustomEvent(event, params) {
+            params = params || {
+                bubbles: false,
+                cancelable: false,
+                detail: undefined
+            };
+            var evt = document.createEvent("CustomEvent");
+            evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+            return evt;
+        }
+
+        CustomEvent.prototype = window.Event.prototype;
+        window.CustomEvent = CustomEvent;
+    })();
+
+    function hashCode(str) {
+        var hash = 0,
+            i = 0,
+            len = str.length;
+
+        while (i < len) hash = hash << 5 - hash + str.charCodeAt(i++) << 0;
+
+        return hash;
+    }
+
+    /**
+     * Wrapper allowing return false if instance couldn't be created.
+     *
+     * @param {object} o Settings object
+     * @return {FilterBox} Filterbox instance or false
+     */
+    window.addFilterBox = function (o) {
+        try {
+            return new FilterBox(o);
+        } catch (err) {
+            if (o && o.debuglevel) {
+                console.log(o.debuglevel === 2 ? err : err.message);
+            }
+        }
+        return false;
+    };
+
+    function FilterBox(o) {
+        if (!o.target || !o.target.selector || !o.target.items || !document.querySelector(o.target.selector + " " + o.target.items)) {
+            throw new Error("FilterBox: no items to filter");
+        }
+
+        if (o.callbacks && typeof o.callbacks.onInit === "function" && o.callbacks.onInit() === false) {
+            throw new Error("FilterBox: onInit callback");
+        }
+
+        function setCb(n) {
+            return o.callbacks && typeof o.callbacks[n] === "function" ? o.callbacks[n] : false;
+        }
+
+        var self = this,
+            target = o.target.selector,
+            $target = document.querySelector(target),
+            items = o.target.items,
+            $items,
+            dataSources = o.target.sources || ["*"],
+            $addTo = o.addTo && o.addTo.selector && document.querySelector(o.addTo.selector) ? document.querySelector(o.addTo.selector) : $target,
+            position = o.addTo && o.addTo.position ? o.addTo.position : "before",
+            inputDelay = o.inputDelay >= 0 ? o.inputDelay : 300,
+            input = o.input && o.input.selector && document.querySelector(o.input.selector) ? o.input.selector : false,
+            inputAttrs = o.input && o.input.attrs ? o.input.attrs : false,
+            $input,
+            wrapper = o.wrapper || false,
+            wrapperAttrs = o.wrapper && o.wrapper.attrs ? o.wrapper.attrs : false,
+            $wrapper,
+            label = o.input && o.input.label ? o.input.label : false,
+            $label,
+            displays = o.displays && (typeof o.displays === "object" || typeof o.displays === "function") ? o.displays : false,
+            $displays = [],
+            suffix = o.suffix ? o.suffix : "",
+            zebra = o.zebra || false,
+            lazy = o.lazy !== false,
+            keyNav = o.keyNav || false,
+            keyNavClass = (keyNav && keyNav.class ? keyNav.class : "fbx-keynav-active") + suffix,
+            keyNavStyle = keyNav && keyNav.style ? "." + keyNavClass + "{" + keyNav.style + "}" : "",
+            keyNavAutoSelectFirst = keyNav && keyNav.autoSelectFirst !== false,
+            zebraAttr = "data-odd" + suffix,
+            hideAttr = "data-hide" + suffix,
+            initAttr = "data-init" + suffix,
+            hasFilterAttr = "data-has-filter" + suffix,
+            invertAttr = "data-invert-filter" + suffix,
+            noMatchAttr = "data-no-match" + suffix,
+            filterAttr = o.filterAttr || "data-filter" + suffix,
+            extraFilterAttrs = o.extraFilterAttrs || false,
+            styleId = "fbx-style" + suffix,
+            useDomFilter = o.useDomFilter || false,
+            beforeFilter = setCb("beforeFilter"),
+            afterFilter = setCb("afterFilter"),
+            beforeKeyNav = setCb("beforeKeyNav"),
+            afterKeyNav = setCb("afterKeyNav"),
+            onEnter = setCb("onEnter"),
+            onEscape = setCb("onEscape"),
+            onReady = setCb("onReady"),
+            onFocus = setCb("onFocus"),
+            onBlur = setCb("onBlur"),
+            beforeUpdate = setCb("beforeUpdate"),
+            afterUpdate = setCb("afterUpdate"),
+            beforeDestroy = setCb("beforeDestroy"),
+            afterDestroy = setCb("afterDestroy"),
+            enableObserver = o.enableObserver === true,
+            autoFilter = o.autoFilter !== false,
+            hideSelector,
+            hl = o.highlight || false,
+            hlTag = hl && hl.tag ? hl.tag : "fbxhl",
+            hlClass = "on" + suffix,
+            hlStyle = hl && hl.style ? hlTag + "." + hlClass + "{" + hl.style + "}" : "",
+            hlMinChar = hl && hl.minChar ? hl.minChar : 2,
+            hideRule = o.hideRule || "display: none !important;",
+            hiddenStyle = "[" + hideAttr + '="1"]' + "{" + hideRule + "}",
+            init = false,
+            initTableColumns = false,
+            observer,
+            SEPARATOR = o.SEPARATOR || "|",
+            _scrollIntoViewIfNeeded = document.body.scrollIntoViewIfNeeded,
+            keys = {
+                "UP": 38,
+                "DOWN": 40,
+                "ESCAPE": 27,
+                "ENTER": 13
+            };
+
+        self.getSettings = function () {
+            return {
+                autoFilter: autoFilter,
+                enableObserver: enableObserver,
+                highlight: hl,
+                highlightMinChar: hlMinChar,
+                highlightTag: hlTag,
+                inputDelay: inputDelay,
+                keyNav: keyNav,
+                keyNavAutoSelectFirst: keyNavAutoSelectFirst,
+                lazy: lazy,
+                separator: SEPARATOR,
+                suffix: suffix,
+                zebra: zebra,
+                attributes: {
+                    extraFilterAttrs: extraFilterAttrs,
+                    filterAttr: filterAttr,
+                    hasFilterAttr: hasFilterAttr,
+                    hideAttr: hideAttr,
+                    highlightClass: hlClass,
+                    invertAttr: invertAttr,
+                    keyNavClass: keyNavClass,
+                    keyNavStyle: keyNavStyle,
+                    noMatchAttr: noMatchAttr,
+                    styleId: styleId,
+                    zebraAttr: zebraAttr
+                },
+                elements: {
+                    $target: $target,
+                    $input: $input
+                },
+            };
+        };
+
+        function getItems() {
+            return $target.querySelectorAll(items);
+        }
+
+        self.countTotal = function () {
+            return getItems().length;
+        };
+
+        $items = getItems();
+        self.hash = "fbx" + hashCode(target + items + self.countTotal() + suffix);
+
+        function callCb(cb, e) {
+            if (cb && cb.call(self, e) === false) return false;
+        }
+
+        self.update = function () {
+            if (callCb(beforeUpdate) === false) return;
+            handleFocus(null, true);
+            self.updateDisplays();
+            self.setZebra();
+            callCb(afterUpdate);
+        };
+
+        self.getTarget = function () {
+            return $target;
+        };
+
+        self.getInput = function () {
+            return $input;
+        };
+
+        self.getDisplay = function (name) {
+            for (var i = 0; i < $displays.length; i++) {
+                if ($displays[i].name === name) {
+                    return $displays[i].el;
+                }
+            }
+        };
+
+        function unwrap(wrapper) {
+            var docFrag = document.createDocumentFragment();
+            while (wrapper.firstChild) {
+                var child = wrapper.removeChild(wrapper.firstChild);
+                docFrag.appendChild(child);
+            }
+            wrapper.parentNode.replaceChild(docFrag, wrapper);
+        }
+
+        function removeEl($el) {
+            $el && $el.parentNode && $el.parentNode.removeChild($el);
+        }
+
+        self.clear = function (focus) {
+            self.filter("");
+            focus && self.focus();
+        };
+
+        self.destroy = function () {
+            if (!init) return;
+            if (callCb(beforeDestroy) === false) return;
+
+            if (hl) dehighlight();
+
+            for (var j = 0; j < $items.length; j++) {
+                if (!useDomFilter) $items[j].removeAttribute(filterAttr);
+                $items[j].removeAttribute(zebraAttr);
+            }
+
+            ($wrapper || $input).removeAttribute(hasFilterAttr);
+            ($wrapper || $input).removeAttribute(noMatchAttr);
+
+            if ($input.form) $input.form.removeEventListener("reset", self.clear);
+
+            $input.removeEventListener("input", addHandleInput);
+            $input.removeEventListener("focus", handleFocus);
+            $input.removeEventListener("blur", handleBlur);
+            $input.removeEventListener("keydown", handleKeydown);
+
+            document.removeEventListener("filterboxsearch", addFilterBoxSearch);
+
+            window.removeEventListener("resize", _fixTableColumns);
+            initTableColumns = false;
+
+            if ($target.tagName === "TABLE") {
+                var $headers = $target.querySelectorAll("th");
+
+                for (var i = 0; i < $headers.length; i++) {
+                    $headers[i].removeAttribute("style");
+                }
+            }
+
+            if (observer) observer.disconnect();
+
+            for (var k = 0; k < $displays.length; k++) removeEl($displays[k].el);
+            removeEl(document.getElementById(styleId));
+
+            // only remove $input if it's added by FilterBox
+            // wrapper is always removed
+            if (wrapper) unwrap($wrapper);
+            if (label) removeEl($label);
+
+            // remove added attributes from $input only if added by the plugin
+            if (input && typeof inputAttrs === "object") {
+                for (var key in inputAttrs) {
+                    if (inputAttrs.hasOwnProperty(key) && $input.getAttribute(key) === inputAttrs[key]) {
+                        $input.removeAttribute(key);
+                    }
+                    if ($input.id === self.hash) $input.removeAttribute("id");
+                    ($wrapper || $input).removeAttribute(initAttr);
+                }
+            }
+            $input.value = "";
+            if (!input) removeEl($input);
+
+            $target.removeAttribute(hideAttr);
+
+            afterDestroy && afterDestroy();
+
+            init = false;
+        };
+
+        function isHidden(el) {
+            return el.offsetParent === null;
+        }
+
+        self.countHidden = function () {
+            var hidden = 0,
+                $allItem = getItems();
+
+            for (var i = 0; i < $allItem.length; i++) {
+                hidden += isHidden($allItem[i]) ? 1 : 0;
+            }
+
+            return hidden;
+        };
+
+        self.countVisible = function () {
+            return self.count(self.getFilter());
+        };
+
+        self.enableHighlight = function (enable) {
+            hl = enable;
+        };
+
+        self.setZebra = function () {
+            if (!zebra) return false;
+
+            var $items = self.getVisibleItems($input.value),
+                z = 1;
+
+            for (var i = 0; i < $items.length; i++) {
+                var $item = $items[i];
+                $item.setAttribute(zebraAttr, (z % 2).toString());
+                z++;
+            }
+        };
+
+        self.filter = function (v, force) {
+            $input.value = v;
+            handleFocus(null, false);
+            handleInput(force);
+            return self;
+        };
+
+        self.focus = function (moveToEnd) {
+            $input.focus();
+
+            if (moveToEnd && $input.value && $input.setSelectionRange) {
+                var len = $input.value.length * 2;
+                $input.setSelectionRange(len, len);
+            }
+
+            return self;
+        };
+
+        function getSubStr(str, delim1, delim2, keepDelim) {
+            var a = str.indexOf(delim1),
+                out;
+
+            if (a === -1) return "";
+
+            var b = str.indexOf(delim2);
+
+            if (b === -1) return "";
+
+            if (keepDelim) {
+                out = str.substr(a, b - a + 1);
+            } else {
+                out = str.substr(a + 1, b - a - 1);
+            }
+
+            return out;
+        }
+
+        function createNode(child) {
+            var node = document.createElement(hlTag);
+            node.classList.add(hlClass);
+            node.appendChild(child);
+            return node;
+        }
+
+        function dehighlight(container) {
+            if (!hl) return;
+            if (!container) container = $target;
+            if (!container.childNodes) return;
+
+            for (var i = 0; i < container.childNodes.length; i++) {
+                var node = container.childNodes[i];
+
+                if (node.className === hlClass) {
+                    node.parentNode.parentNode.replaceChild(document.createTextNode(node.parentNode.textContent.replace(/<[^>]+>/g, "")), node.parentNode);
+                    return;
+                } else if (node.nodeType !== 3) {
+                    dehighlight(node);
+                }
+            }
+        }
+
+        function highlight(term, $container, filter) {
+            if (!hl) return;
+            if (term.length < hlMinChar) return;
+
+            var $allItem = filter ? $container.querySelectorAll(filter) : $container.childNodes;
+
+            for (var i = 0; i < $allItem.length; i++) {
+                var node = $allItem[i];
+
+                if (node.nodeType === 3) {
+                    var data = node.data,
+                        data_low = data.toLowerCase();
+
+                    if (data_low.indexOf(term) >= 0) {
+                        var new_node = document.createElement(hlTag),
+                            result;
+
+                        while ((result = data_low.indexOf(term)) !== -1) {
+                            new_node.appendChild(document.createTextNode(data.substr(0, result)));
+                            new_node.appendChild(createNode(document.createTextNode(data.substr(result, term.length))));
+                            data = data.substr(result + term.length);
+                            data_low = data_low.substr(result + term.length);
+                        }
+                        new_node.appendChild(document.createTextNode(data));
+                        node.parentNode.replaceChild(new_node, node);
+                    }
+                } else {
+                    highlight(term, node);
+                }
+            }
+        }
+
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function () {
+                var context, args, later;
+                context = this;
+                args = arguments;
+                later = function () {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        }
+
+        function _insertBefore($el, $referenceNode) {
+            $referenceNode.parentNode.insertBefore($el, $referenceNode);
+        }
+
+        function _insertAfter($el, $referenceNode) {
+            $referenceNode.parentNode.insertBefore($el, $referenceNode.nextSibling);
+        }
+
+        function setStyles(css) {
+            var s = document.getElementById(styleId);
+
+            if (!s) {
+                s = document.createElement("style");
+                s.type = "text/css";
+                s.id = styleId;
+                s.appendChild(document.createTextNode(hlStyle));
+                document.querySelector("head").appendChild(s);
+            }
+
+            s.innerText = css + hlStyle + keyNavStyle + hiddenStyle;
+        }
+
+        function setAttrs(el, attrs) {
+            if (el && attrs && typeof attrs === "object") {
+                for (var key in attrs) {
+                    if (attrs.hasOwnProperty(key)) {
+                        el.setAttribute(key, attrs[key]);
+                    }
+                }
+            }
+        }
+
+        self.getFilter = function () {
+            return ($input.value || "").trim();
+        };
+
+        self.updateDisplays = function () {
+            for (var i = 0; i < $displays.length; i++) {
+                var $display = $displays[i],
+                    text = $displays[i].text,
+                    showIf = $displays[i].showIf;
+
+                if (text) {
+                    if (typeof text === "function") {
+                        $display.el.innerHTML = $displays[i].text.call(self);
+                    } else {
+                        $display.el.innerHTML = text;
+                    }
+                }
+
+                if (showIf && typeof showIf === "function") {
+                    $display.el.style.display = showIf.call(self) ? "" : "none";
+                }
+            }
+        };
+
+        function wrap(el, wrapper) {
+            el.parentNode.insertBefore(wrapper, el);
+            wrapper.appendChild(el);
+        }
+
+        function addMarkup() {
+            if (input && document.querySelector(input)) {
+                $input = document.querySelector(input);
+            } else {
+                $input = document.createElement("input");
+                $input.type = "text";
+                insertDom($input, $addTo, position);
+            }
+
+            setAttrs($input, inputAttrs);
+
+            if (wrapper) {
+                $wrapper = document.createElement(wrapper.tag || "div");
+                setAttrs($wrapper, wrapperAttrs);
+                wrap($input, $wrapper);
+            }
+
+            if (label) {
+                var id = $input.id || self.hash;
+
+                $label = document.createElement("label");
+                $label.setAttribute("for", id);
+                $label.innerHTML = label;
+
+                $input.id || $input.setAttribute("id", id);
+
+                _insertBefore($label, $input);
+            }
+
+            $input.getFilterBox = function () {
+                return self;
+            };
+
+            self.setZebra();
+        }
+
+        function insertDom($el, $to, where) {
+            if (!$el || !$to) return false;
+
+            switch (where) {
+                case "append":
+                    $to.appendChild($el);
+                    break;
+                case "prepend":
+                    $to.parentElement.insertBefore($el, $to);
+                    break;
+                case "after":
+                    _insertAfter($el, $to);
+                    break;
+                default:
+                    _insertBefore($el, $to);
+            }
+        }
+
+        function addDisplays() {
+            if (!displays) return false;
+
+            if (typeof displays === "function") {
+                displays = displays(self);
+            }
+
+            for (var k in displays) {
+                if (!displays.hasOwnProperty(k)) continue;
+
+                var d = displays[k],
+                    $addTo = d.addTo && d.addTo.selector ? document.querySelector(d.addTo.selector) : $target,
+                    position = d.addTo && d.addTo.position || "before",
+                    tag = d.tag || "div",
+                    text = d.text || "",
+                    showIf = d.showIf,
+                    $display = document.createElement(tag);
+
+                setAttrs($display, d.attrs);
+                insertDom($display, $addTo, position);
+
+                $displays.push({
+                    name: k,
+                    el: $display,
+                    text: text,
+                    showIf: showIf
+                });
+            }
+            self.updateDisplays();
+        }
+
+        function addFilterBoxSearch() {
+            self.updateDisplays();
+            self.setZebra();
+        }
+
+        var addHandleInput = debounce(function () {
+            handleInput();
+        }, inputDelay);
+
+        function addEvents() {
+            $input.addEventListener("focus", handleFocus);
+            $input.addEventListener("blur", handleBlur);
+            $input.addEventListener("keydown", handleKeydown);
+            $input.addEventListener("input", addHandleInput);
+
+            if ($input.form) $input.form.addEventListener("reset", self.clear);
+
+            document.addEventListener("filterboxsearch", addFilterBoxSearch);
+
+            if (enableObserver && window.MutationObserver) {
+                observer = new MutationObserver(function (mutationsList) {
+                    for (var i = 0; i < mutationsList.length; i++) {
+                        var t = mutationsList[i].type;
+                        if (t === "childList") {
+                            self.updateDisplays();
+                            self.setZebra();
+                        } else if (t === "characterData") {
+                            handleFocus(null);
+                            hl && highlight(self.getFilter(), $target, dataSources.join(","));
+                            self.setZebra();
+                            self.updateDisplays();
+                        }
+                    }
+                });
+                observer.observe($target, {
+                    childList: true,
+                    subtree: true,
+                    characterData: true
+                });
+            }
+        }
+
+        self.toggleHide = function ($el, hide) {
+            if ($el) {
+                if ($el.length) {
+                    for (var i = 0; i < $el.length; i++) {
+                        $el[i].setAttribute(hideAttr, hide ? "1" : "0");
+                    }
+                } else {
+                    $el.setAttribute(hideAttr, hide ? "1" : "0");
+                }
+            }
+        };
+
+        self.isAllItemsHidden = function () {
+            return self.count(self.getFilter()) === 0;
+        };
+
+        self.isAllItemsVisible = function () {
+            return self.getHiddenSelector() === "";
+        };
+
+        self.getFilterTokens = function (str) {
+            var i, aStr = str.match(/[^\s]+|"[^"]+"/g);
+
+            if (!aStr) return [str];
+
+            i = aStr.length;
+
+            while (i--) {
+                aStr[i] = aStr[i].replace(/"/g, "");
+            }
+
+            return aStr;
+        };
+
+        function getTerms(v) {
+            if (!v) return false;
+            if (v) v = replaceAll(v, SEPARATOR + SEPARATOR, SEPARATOR); // remove double separators
+            if (!v) return false;
+
+            return self.getFilterTokens(v.toLowerCase());
+        }
+
+        function unique(a) {
+            return a.filter(function (item, i, ar) {
+                return ar.indexOf(item) === i;
+            });
+        }
+
+        var _fixTableColumns = debounce(function () {
+            var $headers = self.getTarget().querySelectorAll("th");
+
+            for (var i = 0; i < $headers.length; i++) {
+                $headers[i].style.width = $headers[i].offsetWidth + "px";
+            }
+        }, 500);
+
+        self.fixTableColumns = function ($table) {
+            _fixTableColumns($table);
+            if (!initTableColumns) {
+                window.addEventListener("resize", _fixTableColumns);
+                initTableColumns = true;
+            }
+        };
+
+        self.clearFilterBox = function () {
+            ($wrapper || $input).removeAttribute(noMatchAttr);
+            ($wrapper || $input).removeAttribute(hasFilterAttr);
+            $input.value = "";
+            setStyles("");
+            hideSelector = "";
+            hl && dehighlight($target);
+            self.removeKeyNavClass();
+            self.updateDisplays();
+            callCb(afterFilter);
+        };
+
+        function handleBlur() {
+            callCb(onBlur);
+        }
+
+        function handleFocus(e, force) {
+            if (callCb(onFocus) === false) return false;
+            if (useDomFilter) return false;
+
+            if (force === undefined) {
+                if (($wrapper || $input).hasAttribute(initAttr)) {
+                    return false;
+                }
+            }
+
+            self.updateItemFilters();
+
+            ($wrapper || $input).setAttribute(initAttr, "1");
+        }
+
+        self.updateItemFilters = function () {
+            var $items = getItems();
+
+            for (var i = 0; i < $items.length; i++) {
+                var $item = $items[i],
+                    data,
+                    currentValue;
+
+                data = getTextualContent($item.querySelectorAll(dataSources.join(",")));
+                data += getExtraFilterAttrsContent($item, extraFilterAttrs);
+
+                if (data) {
+                    data = data.split(SEPARATOR);
+
+                    // set or append attribute value
+                    currentValue = $item.getAttribute(filterAttr);
+                    if (currentValue) data.push(currentValue);
+
+                    // also push item value if any (input, option, etc)
+                    if ($item.value) data.push($item.value);
+
+                    data = unique(data); // remove duplicates
+
+                    data = data.filter(function (el) {
+                        return el !== "";
+                    });
+
+                    $item.setAttribute(filterAttr, data.join(SEPARATOR).trim());
+                }
+            }
+        };
+
+        self.visitFirstLink = debounce(function (e, forceNewTab) {
+            var $firstItem = self.getFirstVisibleItem(),
+                $link;
+
+            if (!$firstItem) return false;
+
+            if (self.getFilter() === "") {
+                window.localStorage && localStorage.removeItem(self.hash);
+            }
+
+            if ($firstItem.tagName === "A") {
+                $link = $firstItem;
+            } else if ($firstItem.querySelector("a")) {
+                $link = $firstItem.querySelector("a");
+            }
+
+            if ($link) {
+                e.preventDefault();
+
+                if (forceNewTab && $link.getAttribute("target") !== "_blank") {
+                    $link.setAttribute("target", "_blank");
+                    $link.click();
+                    $link.removeAttribute("target");
+                } else {
+                    $link.click();
+                }
+
+                if (window.localStorage) {
+                    localStorage.setItem(self.hash, self.getFilter());
+                }
+            } else {
+                window.localStorage && localStorage.removeItem(self.hash);
+            }
+        }, inputDelay);
+
+        self.removeKeyNavClass = function () {
+            var $selectedItems = $target.querySelectorAll("." + keyNavClass);
+
+            for (var j = 0; j < $selectedItems.length; j++) {
+                $selectedItems[j].classList.remove(keyNavClass);
+            }
+        }
+
+        function handleKeydown(e) {
+            var key;
+
+            e = e || window.event;
+
+            if (!e) return false;
+
+            key = e.keyCode;
+
+            if (keyNav && (key === keys.UP || key === keys.DOWN)) {
+                if (callCb(beforeKeyNav) === false) return;
+
+                var loop = false,
+                    scrollIntoView = true;
+
+                e.preventDefault();
+
+                var forwards = key === keys.DOWN,
+                    $visibleItems = self.getVisibleItems(self.getVisibleSelector()),
+                    total = $visibleItems.length,
+                    $firstItem = self.getFirstVisibleItem(),
+                    $lastItem = $visibleItems.item(total - 1),
+                    $nextItem = forwards ? $firstItem : $lastItem,
+                    $selectedItem,
+                    selectedIndex;
+
+                if (total === 0) return;
+
+                if (total === 1) {
+                    self.setKeyNavItem($firstItem);
+                    return;
+                }
+
+                for (var k = 0; k < total; k++) {
+                    var $item = $visibleItems[k];
+
+                    if ($item.classList.contains(keyNavClass)) {
+                        $selectedItem = $item;
+                        selectedIndex = k;
+                        break;
+                    }
+                }
+
+                if ($selectedItem) {
+                    $nextItem = $visibleItems.item(selectedIndex + (forwards ? 1 : -1));
+
+                    if (!$nextItem && loop) {
+                        $nextItem = forwards ? $firstItem : $lastItem;
+                    }
+                }
+
+                if ($nextItem) {
+                    self.setKeyNavItem($nextItem);
+                    callCb(afterKeyNav);
+                }
+
+            } else if (key === keys.ESCAPE) {
+                if (onEscape) {
+                    callCb(onEscape, e);
+                } else {
+                    e.preventDefault();
+                    if (self.getFilter() !== "") {
+                        self.clearFilterBox();
+                    } else {
+                        $input.blur();
+                    }
+                }
+
+            } else if (e.keyCode === keys.ENTER) {
+                callCb(onEnter, e);
+            }
+        }
+
+        function handleInput(force) {
+            var v = self.getFilter().toLowerCase().trim(),
+                count,
+                invert = false;
+
+            if (!autoFilter && !force) return false;
+
+            dehighlight();
+            self.removeKeyNavClass();
+
+            if (v === "!" || v.length > 0 && replaceAll(v, '"', "") === "") {
+                setStyles("");
+                return false;
+            }
+
+            if (self.isInvertFilter()) {
+                invert = true;
+                v = self.getInvertFilter();
+            }
+
+            if (callCb(beforeFilter) === false) return;
+
+            ($wrapper || $input).setAttribute(hasFilterAttr, v ? "1" : "0");
+            ($wrapper || $input).setAttribute(invertAttr, invert ? "1" : "0");
+
+            // do the filter
+            var terms = getTerms(v),
+                hideSelector,
+                $dataSources = dataSources.join(","),
+                $visibleItems;
+
+            if (!terms) {
+                self.clearFilterBox();
+            } else {
+                hideSelector = invert ? self.getVisibleSelector(v) : self.getHiddenSelector(v);
+
+                setStyles(hideSelector + "{" + hideRule + "}");
+
+                // need to get non-visible items too, parent may be hidden
+                count = self.countVisible();
+
+                ($wrapper || $input).setAttribute(noMatchAttr, count ? "0" : "1");
+
+                if (count && keyNavAutoSelectFirst) {
+                    if (callCb(beforeKeyNav) === false) return;
+                    self.setKeyNavItem(self.getFirstVisibleItem());
+                    callCb(afterKeyNav);
+                }
+
+                if (!invert && count && hl) {
+                    $visibleItems = self.getVisibleItems(v);
+
+                    setTimeout(function () {
+                        for (var i = 0; i < $visibleItems.length; i++) {
+                            hl && dehighlight($visibleItems[i]);
+
+                            for (var j = 0; j < terms.length; j++) {
+                                highlight(terms[j], $visibleItems[i], $dataSources);
+                            }
+                        }
+                    }, 100);
+                }
+            }
+
+            self.updateDisplays();
+            self.setZebra();
+            callCb(afterFilter);
+
+            document.dispatchEvent(new CustomEvent("filterboxsearch", {
+                detail: self
+            }));
+        }
+
+        self.setKeyNavItem = function ($el) {
+            self.removeKeyNavClass();
+
+            if (!$el) return;
+
+            $el.classList.add(keyNavClass);
+            _scrollIntoViewIfNeeded && $el.scrollIntoViewIfNeeded();
+        };
+
+        self.getHiddenSelector = function (v) {
+            var selector = [],
+                terms = getTerms(v ? v : $input.value);
+
+            for (var j = 0; j < terms.length; j++) {
+                selector.push(target + " " + items + ":not([" + filterAttr + '*="' + terms[j] + '"])');
+            }
+
+            return selector.join(",");
+        };
+
+        self.getVisibleSelector = function (v) {
+            var selector = "",
+                terms = getTerms(v ? v : $input.value);
+
+            for (var j = 0; j < terms.length; j++) {
+                selector += "[" + filterAttr + '*="' + terms[j] + '"]';
+            }
+
+            return target + " " + items + selector;
+        };
+
+        self.isInvertFilter = function () {
+            var v = this.getFilter();
+
+            return v && v.length > 1 && (v.indexOf("!") === 0 || v.indexOf("!") === v.length - 1);
+        };
+
+        self.getInvertFilter = function () {
+            var v = self.getFilter();
+
+            v = v.indexOf("!") === 0 ? v.substring(1) : v.substring(0, v.length - 1);
+
+            return (v || "").trim();
+        };
+
+        function replaceAll(str, search, replacement) {
+            return str.split(search).join(replacement);
+        }
+
+        self.count = function (v) {
+            var terms, selector, invert = false;
+
+            if (self.isInvertFilter()) {
+                invert = true;
+                v = self.getInvertFilter();
+            }
+
+            terms = getTerms(v);
+
+            if (!v || !terms) return self.countTotal();
+
+            selector = invert ? self.getHiddenSelector(v) : self.getVisibleSelector(v);
+
+            try {
+                return document.querySelectorAll(selector).length;
+            } catch (err) {
+                return 0;
+            }
+        };
+
+        self.getFirstVisibleItem = function () {
+            var $items = getItems();
+
+            for (var i = 0; i < $items.length; i++) {
+                if (!isHidden($items[i])) {
+                    return $items[i];
+                }
+            }
+        };
+
+        self.getSelectedItem = function () {
+            return $target.querySelector("." + keyNavClass);
+        };
+
+        self.getVisibleItems = function (v) {
+            if (!v) return getItems();
+
+            return document.querySelectorAll(self.getVisibleSelector());
+        };
+
+        function getExtraFilterAttrsContent($item, extraFilterAttrs) {
+            // todo: process dataSources
+
+            var extraData = [];
+
+            for (var k = 0; k < extraFilterAttrs.length; k++) {
+
+                var selector = extraFilterAttrs[k],
+                    value;
+
+                if (selector.indexOf("[") === -1) {
+                    value = $item.getAttribute(selector);
+                    if (value) extraData.push(value.trim());
+
+                } else {
+                    var $extraFilterItems = $item.querySelectorAll(selector),
+                        attr = getSubStr(selector, "[", "]");
+
+                    if ($extraFilterItems.length) {
+                        for (var j = 0; j < $extraFilterItems.length; j++) {
+                            value = $extraFilterItems[j].getAttribute(attr);
+                            if (value) extraData.push(value.trim());
+                        }
+                    }
+                }
+            }
+
+            return extraData.join(SEPARATOR);
+        }
+
+        /**
+         * Get textContent of one or more elements (recursive)
+         *
+         * @param {NodeList} $el DOM elements to get text content from
+         * @return {string} text content
+         */
+        function getTextualContent($el) {
+            var content = "";
+
+            if ($el) {
+                if ($el.length) {
+                    for (var i = 0; i < $el.length; i++) {
+                        content += getTextualContent($el[i]);
+                    }
+                } else {
+                    if ($el.textContent) {
+                        content += SEPARATOR + $el.textContent;
+                    }
+
+                    content = removeNewLines(content.replace(/<[^>]*>/g, "")).toLowerCase();
+                }
+            }
+
+            return content + SEPARATOR;
+        }
+
+        //remove line breaks from str
+        function removeNewLines(str) {
+            str = str.replace(/\s{2,}/g, SEPARATOR);
+            str = str.replace(/\t/g, SEPARATOR);
+            str = str.toString().trim().replace(/(\r\n|\n|\r)/g, "");
+            return str;
+        }
+
+        self.restoreFilter = function () {
+            if (!window.localStorage) {
+                return false;
+            }
+            if (localStorage.getItem(self.hash)) {
+                self.filter(localStorage.getItem(self.hash));
+                localStorage.removeItem(self.hash);
+            }
+        };
+
+        setStyles();
+        addMarkup();
+        addDisplays();
+        addEvents();
+
+        if (!lazy) {
+            handleFocus(null, false);
+        }
+
+        init = true;
+
+        callCb(onReady);
+
+        return self;
+    }
+})(window, document);

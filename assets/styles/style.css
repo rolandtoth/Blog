@@ -1346,10 +1346,10 @@ article {
       color: rgba(255, 255, 255, 0.5); }
     .fbx-wrap input:focus:-ms-input-placeholder {
       color: rgba(255, 255, 255, 0.5); }
-    .fbx-wrap input[data-has-filter="1"] + .post-list {
+    .fbx-wrap input[data-has-filter="1"] ~ .post-list {
       height: auto;
       overflow: auto; }
-      .fbx-wrap input[data-has-filter="1"] + .post-list::before {
+      .fbx-wrap input[data-has-filter="1"] ~ .post-list::before {
         background: rgba(32, 43, 49, 0.84);
         transform: scaleY(1); }
     .fbx-wrap input[data-no-match="1"] ~ .search-counter {
@@ -1365,7 +1365,7 @@ article {
       font-style: normal;
       font-size: 0.92rem;
       letter-spacing: 1px; }
-    .fbx-wrap input[data-no-match="1"] + .post-list::before {
+    .fbx-wrap input[data-no-match="1"] ~ .post-list::before {
       background: rgba(32, 43, 49, 0.94); }
   @media (min-width: 990px) {
     body.page-home .fbx-wrap label,

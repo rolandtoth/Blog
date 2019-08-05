@@ -791,7 +791,7 @@ article {
         }
 
         &[data-has-filter="1"] {
-            +.post-list {
+            ~.post-list {
                 height: auto;
                 overflow: auto;
 
@@ -816,11 +816,8 @@ article {
                 font-style: normal;
                 font-size: 0.92rem;
                 letter-spacing: 1px;
-                // @media($desktop) {
-                //     padding-left: $sidebarWidth + 4rem;
-                // }
             }
-            +.post-list {
+            ~.post-list {
                 &::before {
                     background: rgba(darken($paleblue, 20%), 0.94);
                 }

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initDisqus();
     initSyntaxHighlight();
     initCopyToClipboard("pre > code", "Copy to clipboard");
-    initSearch();
+    initFilterBox();
 });
 
 function initDisqus() {
@@ -85,7 +85,7 @@ function initSyntaxHighlight() {
     });
 }
 
-function initSearch() {
+function initFilterBox() {
     addFilterBox({
         target: {
             selector: ".post-list",
@@ -103,6 +103,17 @@ function initSearch() {
             position: "before"
         },
         displays: {
+            // submitButton: {
+            //     tag: "button",
+            //     attrs: {
+            //         style: "position: fixed; z-index: 3333; top: 16px; right: 600px;",
+            //         onclick: "var input = this.parentElement.querySelector('input'); input.getFilterBox().filter(input.value, true); input.focus();"
+            //     },
+            //     text: "Filter posts",
+            //     showIf: function () {
+            //         return this.getSettings().autoFilter === false;
+            //     }
+            // },
             counter: {
                 tag: "span",
                 addTo: {
@@ -132,6 +143,10 @@ function initSearch() {
             },
             onBlur: function () {
                 var fbx = this;
+                var settings = fbx.getSettings();
+
+                if (settings.autoFilter === false) return false;
+
                 setTimeout(function () {
                     if (fbx) {
                         fbx.clear();
@@ -139,6 +154,7 @@ function initSearch() {
                 }, 100);
             }
         },
+        // autoFilter: true,
         highlight: true,
         enableObserver: false,
         useDomFilter: true,
