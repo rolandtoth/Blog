@@ -855,6 +855,9 @@ body {
   @media (min-width: 990px) {
     body {
       font-size: 17px; } }
+  @media (min-width: 1240px) {
+    body {
+      font-size: 18px; } }
 
 .main-content {
   background: white;
@@ -967,7 +970,8 @@ aside {
   border: 1px solid #a9b2b7;
   background: transparent;
   line-height: 1.1 !important;
-  padding: 0.64rem 1.4rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2px;
   user-select: none;
   text-decoration: none; }
   .button:hover, .button-solid:hover {
@@ -1002,11 +1006,12 @@ h1 {
 h2 {
   font-size: 2rem;
   line-height: 1.25;
-  margin: 0 0 1rem; }
+  margin: 1.25rem 0 1rem; }
   @media (min-width: 990px) {
     h2 {
       font-size: 2.24rem;
-      word-spacing: 0.2rem; } }
+      word-spacing: 0.2rem;
+      margin-top: 2rem; } }
   h2,
   h2 a {
     color: #49616e;
@@ -1032,12 +1037,7 @@ h3 {
 .pagination {
   user-select: none;
   position: relative;
-  margin-top: 1rem;
-  margin-bottom: 1rem; }
-  @media (min-width: 990px) {
-    .pagination {
-      text-align: center;
-      margin-bottom: 0; } }
+  margin: 2rem 0 2rem -1rem; }
   .pagination ul {
     display: inline-block;
     margin: 0;
@@ -1045,7 +1045,7 @@ h3 {
     list-style: none; }
   .pagination .icon-wrap {
     display: inline-block;
-    transform: scale(0.5); }
+    transform: scale(0.6); }
   .pagination li {
     display: inline-block; }
     .pagination li:not(.current) a .text {
@@ -1057,7 +1057,8 @@ h3 {
       cursor: default;
       opacity: 0.4; }
     .pagination li.current a {
-      opacity: 1 !important; }
+      opacity: 1 !important;
+      margin: 0 1rem; }
     .pagination li.first i:first-child, .pagination li.last i:first-child {
       margin-right: -3px; }
     .pagination li.first i:last-child, .pagination li.last i:last-child {
@@ -1138,12 +1139,12 @@ h3 {
       padding: 3rem 0 2rem 0; } }
 
 .excerpt {
-  margin: 1rem 0 0.5rem; }
+  margin: 1rem 0; }
   .excerpt p:last-child {
     margin-bottom: 0; }
   @media (min-width: 990px) {
     .excerpt {
-      font-size: 1.2rem;
+      font-size: 1.24rem;
       line-height: 1.8;
       margin-left: 0.5rem; }
       .excerpt p {
@@ -1160,7 +1161,9 @@ h3 {
     padding-right: 2rem; } }
 
 .max-content {
-  max-width: 60rem; }
+  max-width: 52rem; }
+  .max-content > h2:first-of-type {
+    margin-top: 0; }
 
 h1, .excerpt {
   max-width: 45rem; }

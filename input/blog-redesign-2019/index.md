@@ -21,7 +21,7 @@ Tumblr is good, but it's not for the kind of blogging I'm doing. Back then I wan
 
 ## Design
 
-I was fine with the existing layout but wanted the design to be more fresh. I would have like to make it look similar to my portfolio site as well, so I made it share common design elements with it. I also added big header images to posts, which took some time to find (mostly at Unsplash) but it feels much better this way.
+I was fine with the existing layout but wanted the design to be more fresh. I would have like to make it look similar to my portfolio site as well, so I made it share common design elements with it. I also added big header images to posts, which took some time to find (mostly at Unsplash/Pixabay) but it feels much better this way.
 
 ## Development
 

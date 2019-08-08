@@ -1,7 +1,7 @@
 ---json
 {
     "title": "What Makes You a Better Web Designer?",
-    "excerpt": "The latest version of Photoshop? More coffee? They might, but here are some other factors you should take into account. ",
+    "excerpt": "The latest version of Photoshop? More coffee? They might, but here are some other factors you should take into account.",
     "date": "2012-08-10",
     "img": "what-makes-you-a-better-web-designer.jpg",
     "bgImg": "palash-jain-HQR_DyuU3WY-unsplash.webp",

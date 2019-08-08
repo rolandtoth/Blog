@@ -118,6 +118,10 @@ body {
     @media ($desktop) {
         font-size: 17px;
     }
+
+    @media ($hd) {
+        font-size: 18px;
+    }
 }
 
 .main-content {
@@ -316,11 +320,12 @@ h1 {
 h2 {
     font-size: 2rem;
     line-height: 1.25;
-    margin: 0 0 1rem;
+    margin: 1.25rem 0 1rem;
 
     @media ($desktop) {
         font-size: 2.24rem;
         word-spacing: 0.2rem;
+        margin-top: 2rem;
     }
 
     &,
@@ -510,12 +515,12 @@ h3 {
 }
 
 .excerpt {
-    margin: 1rem 0 0.5rem;
+    margin: 1rem 0;
     p:last-child {
         margin-bottom: 0;
     }
     @media($desktop) {
-        font-size: 1.2rem;
+        font-size: 1.24rem;
         line-height: 1.8;
         margin-left: 0.5rem;
         p {
@@ -534,7 +539,11 @@ h3 {
 }
 
 .max-content {
-    max-width: 60rem;
+    max-width: 52rem;
+
+    > h2:first-of-type {
+        margin-top: 0;
+    }
 }
 
 h1, .excerpt {
