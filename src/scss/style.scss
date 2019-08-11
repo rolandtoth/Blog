@@ -616,6 +616,7 @@ article {
     }
 
     h2 {
+        margin-top: 0;
         padding-right: 4rem;
     }
 
@@ -624,9 +625,8 @@ article {
         text-decoration: none !important;
         color: $paleblue;
         margin-right: 0.125rem;
-        margin-top: 0.8rem;
         @media($desktop) {
-            margin-top: 1.8rem;
+            margin-top: 0.2rem;
         }
         i {
             transform: scale(0.8);
