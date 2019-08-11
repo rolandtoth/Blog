@@ -1,3 +1,3 @@
-const cfgDynamic = require("../input/_data/cfgDynamic.js");
+const cfgDynamic = require("../input/_data/cfgDynamic");
 
 module.exports = (url) => `${url}?v=${cfgDynamic().version}`;

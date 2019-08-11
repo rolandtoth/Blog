@@ -318,7 +318,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.84rem;
     line-height: 1.25;
     margin: 1.25rem 0 1rem;
 
@@ -352,7 +352,7 @@ h3 {
 }
 
 .content-maxwidth {
-    max-width: 42rem;
+    max-width: 45rem;
 }
 
 .pagination {
@@ -624,8 +624,9 @@ article {
         text-decoration: none !important;
         color: $paleblue;
         margin-right: 0.125rem;
+        margin-top: 0.8rem;
         @media($desktop) {
-            margin-top: 0.2rem;
+            margin-top: 1.8rem;
         }
         i {
             transform: scale(0.8);
