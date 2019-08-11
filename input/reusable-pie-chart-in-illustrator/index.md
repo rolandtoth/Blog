@@ -44,11 +44,11 @@ Click on the **Tick** icon in the top-right corner to Apply. Close the dialog (c
 
 ### Step 05
 
-You will notice that Illustator adds the legend by default. To modify it, right-click on the graph and select **Type…** from the menu. Under the Options section, select **No Legend**.
+You will notice that Illustrator adds the legend by default. To modify it, right-click on the graph and select **Type…** from the menu. Under the Options section, select **No Legend**.
 
 ### Step 06
 
-Now add some 3D look. Select the chart and go to **Effect -> 3D -> Extrude & Bevel**. I used ```-18```, ```-27``` and ```126``` degrees for the custom rotation, with ```58``` degrees of perspectivity and ```72``` pts for the extrude depth. No bevel was used and the default plastic shading was applied.
+Now add some 3D look. Select the chart and go to **Effect -> 3D -> Extrude & Bevel**. I used ```-18```, ```-27``` and ```126``` degrees for the custom rotation, with ```58``` degrees of perspectiv and ```72``` pts for the extrude depth. No bevel was used and the default plastic shading was applied.
 
 ### Step 07
 

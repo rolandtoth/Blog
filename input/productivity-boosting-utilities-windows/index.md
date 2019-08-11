@@ -27,7 +27,7 @@ While in other text expanders you have to add a keyword and the associated text,
 
 AutoText lacks many advanced features that big players have but for me it is just enough what it offers.
 
-[Lintalist](http://lintalist.github.io/) is also promising. As of the features, it is somewhere between AutoText and Breevy, with some useful unique featues (e.g. hotkeys for abbreviations, instant search).
+[Lintalist](http://lintalist.github.io/) is also promising. As of the features, it is somewhere between AutoText and Breevy, with some useful unique features (e.g. hotkeys for abbreviations, instant search).
 
 Recently I found [FastKeys](https://www.fastkeysautomation.com/) (commercial) which also has a text expander module. I almost switched to it but AutoText fits for me better.
 

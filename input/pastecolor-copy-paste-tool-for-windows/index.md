@@ -33,7 +33,7 @@ Unfortunately that was not something that I could easily track down. In fact I w
 
 ## Getting out of Trouble
 
-As I was not able to fix the issue I almost forgot the project. Then the idea came to modify its main behaviour - that is, make it always run in the background instead of launching with a hotkey.
+As I was not able to fix the issue I almost forgot the project. Then the idea came to modify its main behavior - that is, make it always run in the background instead of launching with a hotkey.
 
 That was the turning point. The core issue was eliminated but some others were raised. The most challenging of them was to create a graphical interface.
 

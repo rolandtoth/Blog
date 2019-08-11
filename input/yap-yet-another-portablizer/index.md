@@ -36,7 +36,7 @@ Finally I tried [PureBasic](https://www.purebasic.com/). That contained all the 
 
 ## Winds of Change Blowing Harder
 
-In the beginning of 2013 I added an experimental feature to yaP: portablizing directories, files and registry keys by simply listing them in the ini file. That made possible to move away from batch files which was a big step forward. Also, portablizing logic was built into yaP so updating the software was only a matter of releasing a new version. This new feature made an interesting change: all the example configurations needed only a few lines in the ini files and launching bat/reg files became only a secondary feature for advanced users.
+In the beginning of 2013 I added an experimental feature to yaP: portabilizing directories, files and registry keys by simply listing them in the ini file. That made possible to move away from batch files which was a big step forward. Also, portabilizing logic was built into yaP so updating the software was only a matter of releasing a new version. This new feature made an interesting change: all the example configurations needed only a few lines in the ini files and launching bat/reg files became only a secondary feature for advanced users.
 
 In May 2013 I finally put together the [website](http://yap.rolandtoth.hu/) for yaP, with documentation and downloadable example configurations.
 

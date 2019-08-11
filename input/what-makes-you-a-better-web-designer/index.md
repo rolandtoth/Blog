@@ -16,7 +16,7 @@
 ---
 
 ## Knowledge
-No matter how talented you are you have to know the rules of the game to play. Experience is also a kind of knowledge that you will gain meanwhile. The latter gets important over time because technology evolves constantly plus you collect many useful information (design patterns, user behaviours, your own code snippets, etc).
+No matter how talented you are you have to know the rules of the game to play. Experience is also a kind of knowledge that you will gain meanwhile. The latter gets important over time because technology evolves constantly plus you collect many useful information (design patterns, user behaviors, your own code snippets, etc).
 
 ## Hunger
 

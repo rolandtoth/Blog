@@ -17,7 +17,7 @@
 }
 ---
 
-Webfonts made a huge impact on web design a few years ago. They are easy to use and can be used as icons too. The best of all that you can also use them in your designs and mockups.
+Web fonts made a huge impact on web design a few years ago. They are easy to use and can be used as icons too. The best of all that you can also use them in your designs and mockups.
 
 [FontAwesome](https://fontawesome.com/) is a nice collection of icons and it is free. Having almost 400 icons at hand is probably enough for the majority of your icon needs.
 

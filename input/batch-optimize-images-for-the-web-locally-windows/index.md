@@ -27,7 +27,7 @@ Using an offline tool instead of online service has these benefits:
 - directory structure kept
 - more control on settings
 - in-place optimization (overwrite files)
-- no filesize limits, e.g. Kraken has 1 Mb / 16 Mb limits (free/pro)
+- no file size limits, e.g. Kraken has 1 Mb / 16 Mb limits (free/pro)
 
 Of course there are some disadvantages as well:
 

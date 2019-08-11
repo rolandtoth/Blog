@@ -19,7 +19,7 @@ The problem with the "several text chunks" menu is that you need to align items 
 
 <img src="menu.gif" alt=""/>
 
-This can be a great time (and hassle) saver in the design phase where you don’t know the final width of the menu or items may be added or removed. This trick works in every major design software I tried (Fireworks, Photoshop, Illustrator, InDesign).
+This can be a great time (and hassle) saver in the design phase where you don’t know the final width of the menu or items may be added or removed. This trick works in every major design software I tried (Fireworks, PhotoShop, Illustrator, InDesign).
 
 There’s one catch though: if you need to add spaces inside one menu item (eg. "Contact us") then it will be treated as two separate menu items. One workaround is to use another whitespace character, eg. [figure space](https://en.wikipedia.org/wiki/Figure_space) (" "):
 

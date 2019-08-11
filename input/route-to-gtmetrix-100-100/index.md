@@ -30,7 +30,7 @@ Of course I went through the default optimization steps before even checking the
 
 - **CSS minification**: I use SCSS (just because I'm lazy to modify my stack to use Stylus instead) with cssnano and autoprefixer
 - **JavaScript minification**: I usually need only one main JS file which is minified with UglifyJS. If some subpages require extra JS files, I load them with my home-brew asset loader (which can load CSS as well)
-- **image minification**: most of the time I use local cmdline tools (with DropIt, see here on the blog), or just use an online service (eg. Kraken)
+- **image minification**: most of the time I use local commandline tools (with DropIt, see here on the blog), or just use an online service (eg. Kraken)
 - **HTML minify**: I use the html-minifier npm package
 - **SSL:** without too much ado, this is a must nowadays
 - **.htaccess**: I just mention it here because it has a huge impact on Apache servers (enabling gzip, cache-control, etc). But actually there's no need when the site is hosted by Netlify, I just need to set an Expires and Cache-Control headers
@@ -57,7 +57,7 @@ I use Eleventy with Netlify, so practically these sites are hosted by their serv
 
 ## Issue: render-blocking CSS
 
-I never liked the idea of the extra roundtrips of critical CSS (I'm also kind of lazy-loaded :)) and unfortunately there's no official solution to this problem. I usually have very small CSS (about 30KB minified), so if it's an issue, I just put all of it in the head. I know it's not pretty and causes extra traffic on each pageload, but since it's very tiny (like a size of a smaller image), I won't have sleepless nights because of it.
+I never liked the idea of the extra roundtrip of critical CSS (I'm also kind of lazy-loaded :)) and unfortunately there's no official solution to this problem. I usually have very small CSS (about 30KB minified), so if it's an issue, I just put all of it in the head. I know it's not pretty and causes extra traffic on each page load, but since it's very tiny (like a size of a smaller image), I won't have sleepless nights because of it.
 
 ## Issue: 3rd party assets
 

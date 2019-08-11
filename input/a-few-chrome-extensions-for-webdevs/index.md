@@ -37,7 +37,7 @@ As its description says, it allows copying table cells, among other things. Just
 
 _Converts UNIX timestamps to human-readable dates and vice versa._
 
-This was a real lifesaver for me when I worked on a timesheet application. I could easily check a timestamp's human readable value, which whould have been otherwise very cumbersome. But you can also modify the value, whether the timestamp or the rendered datetime string. Sometimes I needed to adjust timestamps in the database via PhpMyAdmin, and using Utime it was a breeze.
+This was a real lifesaver for me when I worked on a timesheet application. I could easily check a timestamp's human readable value, which would have been otherwise very cumbersome. But you can also modify the value, whether the timestamp or the rendered datetime string. Sometimes I needed to adjust timestamps in the database via PhpMyAdmin, and using Utime it was a breeze.
 
 [Chrome Web Store](https://chrome.google.com/webstore/detail/utime/kpcibgnngaaabebmcabmkocdokepdaki)
 

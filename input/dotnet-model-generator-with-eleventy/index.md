@@ -14,9 +14,9 @@
 }
 ---
 
-Well, it's not just about lazyness but saving time and possible errors. I often have to create .NET models, sometimes with many properties (20-30+), and also a custom DB entity that basically uses the same properties. After a while I realized that the process should be made simpler, where I just need to set the input data.
+Well, it's not just about laziness but saving time and possible errors. I often have to create .NET models, sometimes with many properties (20-30+), and also a custom DB entity that basically uses the same properties. After a while I realized that the process should be made simpler, where I just need to set the input data.
 
-Previously we (including our team) were manually duplicated existing files, and then copy-pasted DB field names and adjusted a few things. I took this step forward as I could copy DB field names (each in one line) then applied a regex search-replace and partly I was done. But I had to do this 4 times each occassion, and then still had to adjust some things and hope everything would be OK.
+Previously we (including our team) were manually duplicated existing files, and then copy-pasted DB field names and adjusted a few things. I took this step forward as I could copy DB field names (each in one line) then applied a regex search-replace and partly I was done. But I had to do this 4 times each occasion, and then still had to adjust some things and hope everything would be OK.
 
 ## Choosing the weapon
 
@@ -26,7 +26,7 @@ The first tool that came to my mind was Eleventy. I could use PHP or a simple Ja
 
 First I created one directory per model, where I added two template files: one for a model, and one for the custom DB entity. I added a .json file as well, containing all the input data (property names, types, namespace, etc). After some fiddling around I got the result I needed: two output files that matched my expectations.
 
-I added a few nice-to-have features as well, like generating "nice" displaynames (eg. "PackageCode" => "Package Code"), automatically setting the right method for getting the value (eg. "GetSafeDateTime" for the "DateTime" type properties), etc). I wouldn't like to overcomplicate things because this is only a boilerplate generator to get started fast.
+I added a few nice-to-have features as well, like generating "nice" display names (eg. "PackageCode" => "Package Code"), automatically setting the right method for getting the value (eg. "GetSafeDateTime" for the "DateTime" type properties), etc). I wouldn't like to overcomplicate things because this is only a boilerplate generator to get started fast.
 
 ## Fine-tuning
 
@@ -63,7 +63,7 @@ Here is a sample Nunjucks template (only contains a front matter part since temp
 ---
 ```
 
-## Nuissances
+## Nuisances
 
 I don't really like that for this tool I need 104 Mb of npm packages, but that's how it works. Plus one needs node.js installed as well. Because of this, perhaps a JavaScript tool would have been a better choice.
 

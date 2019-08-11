@@ -72,7 +72,7 @@ FreeCommander XE almost made it through but I found it a bit slow on listing/scr
 
 ![](xyplorer.png)
 
-XYplorerFree has many nice features that cannot be found elsewhere but the free version does not have all of them. I tested the trial version of the Pro version because I could get a free license with providing a Hungarian translation. However, I haven’t choosed that path because I found the application a little overcomplicated. Perhaps I should have spent more time on it but XYplorer was simply too much for me. The application reminded me of Directory Opus which is also very powerful but too complicated (again, for me).
+XYplorerFree has many nice features that cannot be found elsewhere but the free version does not have all of them. I tested the trial version of the Pro version because I could get a free license with providing a Hungarian translation. However, I haven’t choose that path because I found the application a little overcomplicated. Perhaps I should have spent more time on it but XYplorer was simply too much for me. The application reminded me of Directory Opus which is also very powerful but too complicated (again, for me).
 
 ### Pros
 
@@ -109,7 +109,7 @@ Multi Commander was the first one where I felt that it might fulfill my needs. I
 
 I almost forgot about this one but fortunately I haven’t. I dare to say Double Commander is the best choice for someone coming from Total Commander. It has almost the same feature set as TC which is probably well enough for the average user, including me. As you might guess, that was the winner for me.
 
-This was the only application where I could set a dark theme without sacrifying anything (besides TC). Its internal file associations is at least as good as in TC.
+This was the only application where I could set a dark theme without sacrificing anything (besides TC). Its internal file associations is at least as good as in TC.
 
 ### Pros
 

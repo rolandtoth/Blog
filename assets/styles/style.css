@@ -1213,16 +1213,16 @@ article {
   article:first-of-type {
     padding-top: 0; }
   article h2 {
+    margin-top: 0;
     padding-right: 4rem; }
   article .comment-count {
     float: right;
     text-decoration: none !important;
     color: #49616e;
-    margin-right: 0.125rem;
-    margin-top: 0.8rem; }
+    margin-right: 0.125rem; }
     @media (min-width: 990px) {
       article .comment-count {
-        margin-top: 1.8rem; } }
+        margin-top: 0.2rem; } }
     article .comment-count i {
       transform: scale(0.8); }
     article .comment-count em {

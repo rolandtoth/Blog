@@ -16,7 +16,7 @@
 }
 ---
 
-A legend basically consists of a bordered rectangle and some text on top of it. The rectangle should have a gap where the text appears which is hard to accomplish because neither Fireworks nor Photoshop can do such a thing automatically. A usual workflow is to put a solid rectangle below the text or masking out the bordered rectangle.
+A legend basically consists of a bordered rectangle and some text on top of it. The rectangle should have a gap where the text appears which is hard to accomplish because neither Fireworks nor PhotoShop can do such a thing automatically. A usual workflow is to put a solid rectangle below the text or masking out the bordered rectangle.
 
 Both solutions have the same drawback: you have to adjust the gap if the length of the text changes.
 
