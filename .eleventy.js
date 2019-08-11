@@ -91,7 +91,7 @@ module.exports = function (eleventyConfig) {
       output: "dist",
       includes: "../includes"
     },
-    templateFormats: ["njk", "md"],
+    templateFormats: ["njk", "md", "zip", "png", "jpg", "gif", "webp"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     dataTemplateEngine: false,
