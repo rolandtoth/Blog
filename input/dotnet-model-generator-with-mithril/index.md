@@ -19,9 +19,14 @@ I starred [Mithril](https://mithril.js.org/) on GitHub years ago but didn't have
 
 ## The application
 
+![](model-generator-mithril-large.png)
+
 My other motivation to rebuild the project besides learning Mithril was to provide a UI. I ended up with three columns, off which the first one is where you can input model properties. Each column's header has an input for global variables like namespace, model and custom DB entity classnames. New properties (rows) can be added via a button, or just by hitting Enter. In the top-right corner there are Export and Import buttons.
 
-![](model-generator-mithril-large.png)
+### Demo and source code
+
+- [Demo](https://raw.githack.com/rolandtoth/MithrilModelGenerator/master/index.html)
+- [GitHub repository](https://github.com/rolandtoth/MithrilModelGenerator)
 
 ## Small framework, small learning curve
 
