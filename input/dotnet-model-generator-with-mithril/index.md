@@ -21,7 +21,7 @@ I starred [Mithril](https://mithril.js.org/) on GitHub years ago but didn't have
 
 ![](model-generator-mithril-large.png)
 
-My other motivation to rebuild the project besides learning Mithril was to provide a UI. I ended up with three columns, off which the first one is where you can input model properties. Each column's header has an input for global variables like namespace, model and custom DB entity classnames. New properties (rows) can be added via a button, or just by hitting Enter. In the top-right corner there are Export and Import buttons.
+As I already mentioned this is a rewrite of the [Eleventy version]({{ "/dotnet-model-generator-with-eleventy/" | url }}) of the model generator to provide a UI (and to learn Mithril). I ended up with three columns, off which the first one is where you can input model properties. Each column's header has an input for global variables like namespace, model and custom DB entity classnames. New properties (rows) can be added via a button, or just by hitting Enter. In the top-right corner there are Export and Import buttons. You can also remove, reorder and even undelete properties.
 
 ### Demo and source code
 
@@ -64,9 +64,25 @@ CSS variables always appealed to me becaus they allow writing more consistent CS
 
 ## Extra features
 
+### Syntax highlight
+
+The need of this feature emerged when I first got the rendered output and it was just pure text, which wasn't too readable and pretty. I added [Prism](https://prismjs.com/) which does the job very well.
+
 ### Export and import
 
 I didn't plan to add import and export features but I soon realized that it's a must if I was to create a usable tool. The core of these features were easy to implement (just save data as JSON to a file, and replace the application's main data object with the new one). But I had trouble re-populating the input fields. Finally I managed to achieve this by modifying things a bit. By the time I implemented this I had a better knowledge of how Mithril works so it was easy to refactor. That's one beauty of Mithril: by being small and having just one way to do things you can easily add new features easily.
+
+### Drag-and-drop reorder
+
+I was not sure whether to add this feature, but after I did it turned out that it was a must. I used the library [Dragula](https://bevacqua.github.io/dragula/) and after some fiddling around I could tweak it to my needs. First the outputs were reacting only when the user dropped a property at the end of the drag. Later I changed this to be "real-time", so as you drag a property to a new position, the outputs react immediately. Pure magic! :)
+
+### Animation
+
+I added this out of curiousity, which was easy by following the documentation. I like that Mithril doesn't try to reinvent the wheel, they suggest using CSS animation which is definitely the way to go.
+
+### Undelete
+
+Another convenience feature that was easy to add. When deleting a property and it had a non-empty property name, the application puts it to an array. When clicking on the undelete button the last item is re-added to the list of properties.
 
 ### Input transformations
 
