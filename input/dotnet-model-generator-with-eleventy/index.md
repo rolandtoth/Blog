@@ -18,6 +18,8 @@ Well, it's not just about laziness but saving time and possible errors. I often 
 
 Previously we (including our team) were manually duplicated existing files, and then copy-pasted DB field names and adjusted a few things. I took this step forward as I could copy DB field names (each in one line) then applied a regex search-replace and partly I was done. But I had to do this 4 times each occasion, and then still had to adjust some things and hope everything would be OK.
 
+**Update:** check out the [follow-up post]({{ "/dotnet-model-generator-with-mithril/" | url }}) about rewriting the application with Mithril JavaScript framework (with a demo).
+
 ## Choosing the weapon
 
 The first tool that came to my mind was Eleventy. I could use PHP or a simple JavaScript application as well, but Eleventy seemed the best for this purpose. It's a static site generator that usually spits out .html files, but that's not hardcoded. I wanted .cs files, and that's only a matter of setting permalinks that ends with this extension.
