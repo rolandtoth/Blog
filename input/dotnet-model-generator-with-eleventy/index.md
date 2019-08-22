@@ -18,7 +18,7 @@ Well, it's not just about laziness but saving time and possible errors. I often 
 
 Previously we (including our team) were manually duplicated existing files, and then copy-pasted DB field names and adjusted a few things. I took this step forward as I could copy DB field names (each in one line) then applied a regex search-replace and partly I was done. But I had to do this 4 times each occasion, and then still had to adjust some things and hope everything would be OK.
 
-**Update:** check out the [follow-up post]({{ "/dotnet-model-generator-with-mithril/" | url }}) about rewriting the application with Mithril JavaScript framework (sports a demo as well).
+**Update:** check out the [follow-up post]({{ "/dotnet-model-generator-with-mithril/" | url }}) about rewriting the application with Mithril.js (includes a demo as well).
 
 ## Choosing the weapon
 
