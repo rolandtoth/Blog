@@ -36,7 +36,7 @@ I started off with this tutorial:
 
 [https://gilbert.ghost.io/mithril-js-tutorial-1/](https://gilbert.ghost.io/mithril-js-tutorial-1/)
 
-It was really helpful, but I needed to combine it with the official tutorial as well from here:
+It was really helpful, but I needed to combine it with the official tutorial from here as well:
 
 [https://mithril.js.org/simple-application.html](https://mithril.js.org/simple-application.html)
 
@@ -54,7 +54,7 @@ I forced myself in this project to use arrow functions, map(), forEach(), etc. I
 
 CSS grid was completely unknown to me, I just read some headlines about it but since I was always had to support older browser, there was no need to learn it. Here I didn't have t worry about it, so I could use grids, and even CSS variables as well.
 
-I started off with this online tool, which is really amazing:
+I used this online tool, which is really amazing:
 
 [https://css-grid-layout-generator.pw/](https://css-grid-layout-generator.pw/)
 
@@ -87,6 +87,10 @@ Another convenience feature that was easy to add. When deleting a property and i
 ### Input transformations
 
 For consistency reasons I added input transformations like not allowing spaces in certain fields, or making values uppercase first or full uppercase. That was partly available in the Eleventy version as well but here I moved it to a next level.
+
+### Compact view mode
+
+When there are many properties, it's useful having a toggle button that collapses them to a single row, showing the property name only. I made this feature the Mithril way, though I could use a simple CSS checkbox-hack to achieve the same.
 
 ### Checking for duplicate properties
 
