@@ -19,7 +19,7 @@ I starred [Mithril](https://mithril.js.org/) on GitHub years ago but didn't have
 
 ## The application
 
-![](model-generator-mithril-large.png)
+<a href="{{ "model-generator-mithril-large.png" | url }}">![](model-generator-mithril.png)</a>
 
 As I already mentioned this is a rewrite of the [Eleventy version]({{ "/dotnet-model-generator-with-eleventy/" | url }}) of the model generator to provide a UI (and to learn Mithril). I ended up with three columns, off which the first one is where you can input model properties. Each column's header has an input for global variables like namespace, model and custom DB entity classnames. New properties (rows) can be added via a button, or just by hitting Enter. In the top-right corner there are Export and Import buttons. You can also remove, reorder and even undelete properties.
 
