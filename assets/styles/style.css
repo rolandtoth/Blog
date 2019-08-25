@@ -1160,9 +1160,9 @@ h3 {
   .mid {
     padding-right: 2rem; } }
 
-.max-content {
+.max-content, body:not(.type-post) main .left-offset > *:not(.fbx-wrap) {
   max-width: 52rem; }
-  .max-content > h2:first-of-type {
+  .max-content > h2:first-of-type, body:not(.type-post) main .left-offset > *:not(.fbx-wrap) > h2:first-of-type {
     margin-top: 0; }
 
 h1, .excerpt {

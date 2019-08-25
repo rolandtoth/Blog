@@ -80,7 +80,7 @@ When there are many properties, it's useful having a toggle button that collapse
 
 ### Drag-and-drop reorder
 
-I was not sure whether to add this feature, but after I did it turned out that it was a must. I used the library [Dragula](https://bevacqua.github.io/dragula/) and after some fiddling around I could tweak it to my needs. First the outputs were reacting only when the user dropped a property at the end of the drag. Later I changed this to be "real-time", so as you drag a property to a new position, the outputs react immediately. Pure magic! :)
+I was not sure whether to add this feature, but after I did it turned out that it was a must. I used the library [Dragula](https://bevacqua.github.io/dragula/) and after some fiddling around I could tweak it to my needs. First the outputs were reacting only when the user dropped a property at the end of the drag. Later I changed this to be "real-time", so as you drag a property to a new position, the outputs react immediately. Pure magic.
 
 ### Export and import
 

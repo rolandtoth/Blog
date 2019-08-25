@@ -858,6 +858,10 @@ article {
     }
 }
 
+body:not(.type-post) main .left-offset > *:not(.fbx-wrap) {
+    @extend .max-content;
+}
+
 .post-list .fbx-keynav-active {
     background: lighten($hlcolor, 27%) !important;
 }

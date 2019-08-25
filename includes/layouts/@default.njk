@@ -27,7 +27,6 @@
         <script>document.querySelector('html').classList.remove('no-js');</script>
         <link rel="stylesheet" href="{{ cfg.style | cacheVersion }}">
         <link rel="shortcut icon" href="{{ cfg.favicon | cacheVersion }}">
-        {# <script>(function(){var WebP=new Image();WebP.onload=WebP.onerror=function(){if(WebP.height!=2){var sc=document.createElement('script');sc.type='text/javascript';sc.async=true;var s=document.getElementsByTagName('script')[0];sc.src='{{ cfg.paths.scripts | url }}webpjs-0.0.2.min.js';s.parentNode.insertBefore(sc,s);}};WebP.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';})();</script> #}
     </head>
     <body class="page-{% if page.fileSlug !== '' %}{{ page.fileSlug }}{% else %}home{% endif %}{%if type %} type-{{ type }}{% endif %}">
         <div class="main-content">
