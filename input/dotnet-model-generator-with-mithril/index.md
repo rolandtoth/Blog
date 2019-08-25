@@ -64,37 +64,51 @@ CSS variables always appealed to me becaus they allow writing more consistent CS
 
 ## Extra features
 
-### Syntax highlight
-
-The need of this feature emerged when I first got the rendered output and it was just pure text, which wasn't too readable and pretty. I added [Prism](https://prismjs.com/) which does the job very well.
-
-### Export and import
-
-I didn't plan to add import and export features but I soon realized that it's a must if I was to create a usable tool. The core of these features were easy to implement (just save data as JSON to a file, and replace the application's main data object with the new one). But I had trouble re-populating the input fields. Finally I managed to achieve this by modifying things a bit. By the time I implemented this I had a better knowledge of how Mithril works so it was easy to refactor. That's one beauty of Mithril: by being small and having just one way to do things you can easily add new features easily.
-
-### Drag-and-drop reorder
-
-I was not sure whether to add this feature, but after I did it turned out that it was a must. I used the library [Dragula](https://bevacqua.github.io/dragula/) and after some fiddling around I could tweak it to my needs. First the outputs were reacting only when the user dropped a property at the end of the drag. Later I changed this to be "real-time", so as you drag a property to a new position, the outputs react immediately. Pure magic! :)
+After having the application up and running more or less the way I wanted, I started to add some extra features. That was the fun part; I did this out of curiousity and I learned a lot of new stuff. In some cases I had to rewrite parts of the application as the implementation were less than optimal.
 
 ### Animation
 
-I added this out of curiousity, which was easy by following the documentation. I like that Mithril doesn't try to reinvent the wheel, they suggest using CSS animation which is definitely the way to go.
+When adding or removing a property there's a quick animation. I added this out of curiousity, which was easy by following the documentation. I like that Mithril doesn't try to reinvent the wheel, they suggest using CSS animation which is definitely the way to go.
 
-### Undelete
+### Checking for duplicate properties
 
-Another convenience feature that was easy to add. When deleting a property and it had a non-empty property name, the application puts it to an array. When clicking on the undelete button the last item is re-added to the list of properties.
-
-### Input transformations
-
-For consistency reasons I added input transformations like not allowing spaces in certain fields, or making values uppercase first or full uppercase. That was partly available in the Eleventy version as well but here I moved it to a next level.
+In the Eleventy version you can add properties with the same name but here I wanted to eliminate this. If you try to type a name that already exists, the application warns you. I had to rewrite the implementation two times because at first I only checked the current input, but since each row's name could be modified anytime, all inputs should be checked all the time. That gave me a headache at first, but actually it was really easy to implement. They say Mithril is "less magic", so you have better knowledge of what's going on, and it's kinda true. But in other POV Mithril is "more magic" as it allows you to do things with a few lines of code.
 
 ### Compact view mode
 
 When there are many properties, it's useful having a toggle button that collapses them to a single row, showing the property name only. I made this feature the Mithril way, though I could use a simple CSS checkbox-hack to achieve the same.
 
-### Checking for duplicate properties
+### Drag-and-drop reorder
 
-In the Eleventy version you can add properties with the same name but here I wanted to eliminate this. If you try to type a name that already exists, the application warns you. I had to rewrite the implementation two times because at first I only checked the current input, but since each row's name could be modified anytime, all inputs should be checked all the time. That gave me a headache at first, but actually it was really easy to implement. They say Mithril is "less magic", so you have better knowledge of what's going on, and it's kinda true. But in other POV Mithril is "more magic" as it allows you to do things with a few lines of code.
+I was not sure whether to add this feature, but after I did it turned out that it was a must. I used the library [Dragula](https://bevacqua.github.io/dragula/) and after some fiddling around I could tweak it to my needs. First the outputs were reacting only when the user dropped a property at the end of the drag. Later I changed this to be "real-time", so as you drag a property to a new position, the outputs react immediately. Pure magic! :)
+
+### Export and import
+
+I didn't plan to add import and export features but I soon realized that it's a must if I was to create a usable tool. The core of these features were easy to implement (just save data as JSON to a file, and replace the application's main data object with the new one). But I had trouble re-populating the input fields. Finally I managed to achieve this by modifying things a bit. By the time I implemented this I had a better knowledge of how Mithril works so it was easy to refactor. That's one beauty of Mithril: by being small and having just one way to do things you can easily add new features easily.
+
+### Icons
+
+Lastly I replaced the unicode icon characters with real SVG icons, using the [Feather](https://feathericons.com/) open source icons. Character icons looked less professional since I couldn't always find the right one, and they may look different in different browsers or operating systems. I created a JavaScript object for the icons I needed (values being the SVG files' contents) so I could add them to Mithril components like ```m.trust(Icons["plus-circle])```. This way I got inlined SVGs that I could easily style with CSS.
+
+### Input transformations
+
+For consistency reasons I added input transformations like not allowing spaces in certain fields, or making values uppercase first or full uppercase. That was partly available in the Eleventy version as well but here I moved it to a next level.
+
+### Save current working set to localStorage
+
+This was one of the last things I added, and it was ridiculously easy because I had all the methods already at hand (actually it's exactly the same as the "Import" feature). When you reload the page, either intentionally or by mistake, your data won't be lost but re-set from localStorage. I also added a "Remove All" button so you can clear everything if you feel so. In fact I should have added this feature earlier so I could develop more easily.
+
+### Sort by name
+
+Another tiny but useful feature that was easy to add. It just sorts properties by name ascending, since I can't think of other kind of sorting is every needed here.
+
+### Syntax highlight
+
+The need of this feature emerged when I first got the rendered output and it was just pure text, which wasn't too readable and pretty. I added [Prism](https://prismjs.com/) which does the job very well.
+
+### Undelete
+
+Another convenience feature that was easy to add. When deleting a property and it had a non-empty property name, the application puts it to an array. When clicking on the undelete button the last item is re-added to the list of properties.
 
 ## Drawbacks
 
