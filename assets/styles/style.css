@@ -817,7 +817,8 @@ img {
   max-width: 100%;
   height: auto; }
 
-ul, ol {
+ul,
+ol {
   margin-top: 0;
   margin-bottom: 1.75rem; }
 
@@ -885,14 +886,18 @@ main {
 aside {
   padding: 0.5rem 1.5rem;
   position: relative;
-  background: #28363d; }
+  background: #35464f; }
   @media (min-width: 990px) {
     aside {
       padding: 0 2rem;
       flex-basis: 22rem;
       flex-shrink: 0;
       order: 1;
-      text-align: center; } }
+      text-align: center;
+      background-size: auto 100vh;
+      background-image: url("/assets/images/photo-1462556791646-c201b8241a94.webp");
+      background-attachment: fixed;
+      background-blend-mode: luminosity; } }
   @media (min-width: 1240px) {
     aside {
       flex-basis: 24rem; } }
@@ -1165,7 +1170,8 @@ h3 {
   .max-content > h2:first-of-type, body:not(.type-post) main .left-offset > *:not(.fbx-wrap) > h2:first-of-type {
     margin-top: 0; }
 
-h1, .excerpt {
+h1,
+.excerpt {
   max-width: 45rem; }
 
 main > .mid {
@@ -1765,7 +1771,7 @@ code {
       .sidebar-tags .tags li::after {
         display: none; }
     .sidebar-tags .tags a {
-      opacity: 0.33;
+      opacity: 0.64;
       padding: 0.2rem 0.36rem;
       text-decoration: none;
       user-select: none;

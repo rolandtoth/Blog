@@ -44,10 +44,10 @@ $max-hd: "max-width: #{$_xhd - 1}px";
 @import "icono/icons/caret";
 
 // override defaults
-*
-// *::before,
+* // *::before,
+
 // *::after
-{
+    {
     box-sizing: border-box;
 }
 
@@ -68,7 +68,8 @@ img {
     height: auto;
 }
 
-ul, ol {
+ul,
+ol {
     margin-top: 0;
     margin-bottom: 1.75rem;
 }
@@ -145,7 +146,7 @@ main {
 
     body.type-post & {
         @media($desktop) {
-            > .mid {
+            >.mid {
                 perspective-origin: top;
                 perspective: 3px;
                 height: 100vh;
@@ -158,7 +159,7 @@ main {
 aside {
     padding: 0.5rem 1.5rem;
     position: relative;
-    background: darken($paleblue, 16%);
+    background: darken($paleblue, 10%);
 
     @media($desktop) {
         padding: 0 2rem;
@@ -166,6 +167,10 @@ aside {
         flex-shrink: 0;
         order: 1;
         text-align: center;
+        background-size: auto 100vh;
+        background-image: url("#{$images}/photo-1462556791646-c201b8241a94.webp");
+        background-attachment: fixed;
+        background-blend-mode: luminosity;
     }
 
     @media($hd) {
@@ -174,6 +179,7 @@ aside {
 
     .inner {
         z-index: 1;
+
         @media($desktop) {
             top: 2rem;
             padding: 1rem;
@@ -198,6 +204,7 @@ aside {
         @media($desktop) {
             top: 0;
             margin: 0 0 1rem 0;
+
             img {
                 display: block;
                 width: 5.4rem;
@@ -214,11 +221,11 @@ aside {
         font-size: 0.96rem;
         margin: 0.125rem;
         max-width: 30rem;
-        
+
         body:not(.page-home) & {
             display: none;
         }
-        
+
         @media($desktop) {
             display: block !important;
             margin: 0.125rem auto;
@@ -421,6 +428,7 @@ h3 {
 
 .left-offset {
     padding: 0 1.5rem;
+
     @media($desktop) {
         padding-left: 6rem !important;
     }
@@ -491,6 +499,7 @@ h3 {
     * {
         position: relative;
         z-index: 1;
+
         @media($desktop) {
             color: white !important;
         }
@@ -501,14 +510,14 @@ h3 {
     background: white;
     position: relative;
     padding: 1.5rem;
-    
-    > img,
-    > .cp_embed_wrapper,
-    > iframe {
+
+    >img,
+    >.cp_embed_wrapper,
+    >iframe {
         display: block;
         margin-bottom: 1.25rem;
     }
-    
+
     @media($desktop) {
         padding: 3rem 0 2rem 0;
     }
@@ -516,13 +525,16 @@ h3 {
 
 .excerpt {
     margin: 1rem 0;
+
     p:last-child {
         margin-bottom: 0;
     }
+
     @media($desktop) {
         font-size: 1.24rem;
         line-height: 1.8;
         margin-left: 0.5rem;
+
         p {
             display: inline-block;
             @include highlightLines(0.5rem, rgba(darken($paleblue, 25%), 0.75));
@@ -541,16 +553,17 @@ h3 {
 .max-content {
     max-width: 52rem;
 
-    > h2:first-of-type {
+    >h2:first-of-type {
         margin-top: 0;
     }
 }
 
-h1, .excerpt {
+h1,
+.excerpt {
     max-width: 45rem;
 }
 
-main > .mid {
+main>.mid {
     padding-bottom: 1rem;
 
     @media($desktop) {
@@ -565,9 +578,11 @@ main > .mid {
 
 .featured-image {
     margin-bottom: 1.25rem;
+
     a {
         display: inline-block;
     }
+
     @media($desktop) {
         img {
             max-width: 500px;
@@ -579,6 +594,7 @@ main > .mid {
     @media($max-tablet) {
         display: none;
     }
+
     position: absolute;
     right: 2rem;
     bottom: 1rem;
@@ -589,6 +605,7 @@ main > .mid {
     opacity: 0.2;
     font-weight: 600;
     user-select: none;
+
     &:hover {
         opacity: 0.4;
         // text-decoration: underline;
@@ -598,10 +615,11 @@ main > .mid {
 .disqus-comment-count {
     em {
         font-style: normal;
+
         #comments & {
             &:last-child {
                 display: none;
-            }       
+            }
         }
     }
 }
@@ -625,20 +643,25 @@ article {
         text-decoration: none !important;
         color: $paleblue;
         margin-right: 0.125rem;
+
         @media($desktop) {
             margin-top: 0.2rem;
         }
+
         i {
             transform: scale(0.8);
         }
+
         &:not(:hover) i {
             @extend .icono-commentEmpty;
         }
+
         &:hover {
             i {
                 @extend .icono-comment;
             }
         }
+
         em {
             font-size: 1.7rem;
             top: 0.1rem;
@@ -733,7 +756,7 @@ article {
     body.type-post & {
         margin: 0;
     }
-    
+
     @media($desktop) {
         position: absolute;
         right: 0;
@@ -774,7 +797,7 @@ article {
         background: darken($paleblue, 10%);
         color: white;
         margin-bottom: -1px;
-        
+
         @media($desktop) {
             background: transparent;
             line-height: 4rem;
@@ -791,6 +814,7 @@ article {
             @media($desktop) {
                 border-color: rgba(white, 0.16);
             }
+
             @include placeholder {
                 color: rgba(white, 0.5);
             }
@@ -809,7 +833,7 @@ article {
         }
 
         &[data-no-match="1"] {
-            ~ .search-counter {
+            ~.search-counter {
                 position: absolute;
                 top: 10rem;
                 right: auto;
@@ -823,6 +847,7 @@ article {
                 font-size: 0.92rem;
                 letter-spacing: 1px;
             }
+
             ~.post-list {
                 &::before {
                     background: rgba(darken($paleblue, 20%), 0.94);
@@ -849,6 +874,7 @@ article {
                 &:focus {
                     border-color: $bordercolor;
                     background: white;
+
                     @include placeholder {
                         color: rgba($base, 0.5);
                     }
@@ -858,7 +884,7 @@ article {
     }
 }
 
-body:not(.type-post) main .left-offset > *:not(.fbx-wrap) {
+body:not(.type-post) main .left-offset>*:not(.fbx-wrap) {
     @extend .max-content;
 }
 
@@ -899,22 +925,23 @@ body:not(.type-post) main .left-offset > *:not(.fbx-wrap) {
 
     li {
         background: white;
+
         a {
             margin-top: -1px;
             border-top: 1px solid rgba($bordercolor, 0.5);
         }
-        
+
         @media($desktop) {
             padding-left: 6rem;
         }
     }
-    
+
     a {
         display: block;
         padding: 1rem 1rem 1rem 3.75rem;
         color: $base;
         text-decoration: none;
-        
+
         @media($desktop) {
             padding-left: 0;
         }
@@ -931,6 +958,7 @@ body:not(.type-post) main .left-offset > *:not(.fbx-wrap) {
         font-size: 0.97rem;
         padding-right: 2rem;
         display: none;
+
         @media($desktop) {
             display: block;
         }
@@ -940,6 +968,7 @@ body:not(.type-post) main .left-offset > *:not(.fbx-wrap) {
         margin: 0 0 -0.25rem;
         color: $paleblue;
         line-height: 1.25;
+
         @media($desktop) {
             margin: 0;
         }
@@ -949,6 +978,7 @@ body:not(.type-post) main .left-offset > *:not(.fbx-wrap) {
         position: absolute;
         left: 2rem;
         opacity: 0.5;
+
         @media($max-tablet) {
             display: none;
         }
@@ -1017,7 +1047,7 @@ blockquote {
     color: $base;
     font-size: 0.96rem;
     filter: saturate(0) sepia(75%) hue-rotate(170deg) brightness(84%);
-    
+
     &::before {
         content: "\1F4CB";
         position: absolute;
@@ -1027,7 +1057,7 @@ blockquote {
         line-height: $size;
         backface-visibility: hidden;
     }
-    
+
     &:not(:hover) {
         opacity: 0.5;
         filter: saturate(0);
@@ -1040,6 +1070,7 @@ blockquote {
         color: $paleblue;
         animation: fade-in-out 1s ease-in-out;
         filter: none;
+
         &::before {
             content: "\2713";
             margin: 1px 0 0 -1px;
@@ -1051,21 +1082,34 @@ blockquote {
         display: none;
     }
 }
- 
+
 @keyframes fade-in-out {
-    0% { opacity: 0; }
-    30% { opacity: 1; }
-    70% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 blockquote {
     border-left: 0.3rem solid $bordercolor;
     padding-left: 1.5rem;
     margin: 1.25rem 0 2rem;
+
     cite {
         @extend .text-sm;
         @extend .text-faded;
+
         &::before {
             content: "-- ";
         }
@@ -1194,6 +1238,7 @@ code {
     @include listWithSeparator($spacing: 0.33rem, $separator: "\2022", $color: rgba(white, 0.5));
     position: relative;
     top: -0.5rem;
+
     @media($desktop) {
         top: -1.5rem;
     }
@@ -1222,6 +1267,7 @@ code {
 
 .sharingbuttons {
     margin-top: 1rem;
+
     @media($desktop) {
         float: right;
         line-height: 0;
@@ -1249,21 +1295,26 @@ code {
             outline: 3px solid white;
             margin-left: -0.75rem;
             outline-offset: -3px;
+
             li {
                 border: 1px solid $bordercolor;
                 border-width: 1px;
                 margin: -1px -1px 0 0;
+
                 &::after {
                     display: none;
                 }
+
                 &:hover {
                     background: $paleblue;
                     border-color: $paleblue;
+
                     a {
                         color: white;
                     }
                 }
             }
+
             a {
                 display: block;
                 padding: 0.5rem 1rem;
@@ -1271,9 +1322,11 @@ code {
                 transition: none;
             }
         }
+
         @media ($desktop) {
             margin-left: -1rem;
         }
+
         @media ($hd) {
             @include _fg(3, 0, 0);
         }
@@ -1285,18 +1338,22 @@ code {
 
     .tags {
         font-size: 0.88rem;
+
         li {
             position: relative;
+
             &::after {
                 display: none;
             }
         }
+
         a {
-            opacity: 0.33;
+            opacity: 0.64;
             padding: 0.2rem 0.36rem;
             text-decoration: none;
             user-select: none;
             display: inline-block;
+
             &:hover {
                 opacity: 1;
                 color: white;
@@ -1326,7 +1383,7 @@ code {
     padding: 1.5rem 1.5rem 3rem;
     margin-bottom: -1rem;
     background: $codeBgColor;
-    
+
     @media($desktop) {
         padding: 2rem 0 4rem;
         margin-bottom: -3rem;
