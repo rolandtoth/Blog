@@ -172,6 +172,12 @@ aside {
         background-attachment: fixed;
     }
 
+    p {
+        a:hover {
+            color: white;
+        }
+    }
+
     @media($hd) {
         flex-basis: $sidebarWidth;
     }
@@ -1351,6 +1357,7 @@ code {
             text-decoration: none;
             user-select: none;
             display: inline-block;
+            transition: none;
 
             &:hover {
                 color: white;
