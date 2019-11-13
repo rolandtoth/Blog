@@ -1,4 +1,7 @@
 {
+    "angular": {
+        "title": "Angular"
+    },
     "irfanview": {
         "title": "IrfanView"
     },
@@ -88,5 +91,11 @@
     },
     "webdev": {
         "title": "Webdev"
+    },
+    "seo": {
+        "title": "SEO"
+    },
+    "opengraph": {
+        "title": "Open Graph"
     }
 }
