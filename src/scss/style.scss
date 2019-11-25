@@ -167,10 +167,20 @@ aside {
         flex-shrink: 0;
         order: 1;
         text-align: center;
-        // background-size: $sidebarWidth auto;
         background-size: $sidebarWidth auto;
         background-image: url("#{$images}/digital-art-963368.webp");
         background-attachment: fixed;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0.25;
+            background-color: $paleblue;
+        }
     }
 
     p {
