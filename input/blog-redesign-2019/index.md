@@ -1,7 +1,7 @@
 ---json
 {
     "title": "Blog Redesign 2019",
-    "excerpt": "There are some sites that I plan to rewrite to static, and this time my blog was the next in the queue. Here are some details on the process.",
+    "excerpt": "There were some sites that I planned to rewrite as static, and this time my blog was the next in the queue. Here are some details on the process.",
     "img": "blog-redesign-2019.png",
     "bgImg": "jo-lanta-68KjM0kfsVo-unsplash.webp",
     "bgImgUrl": "https://unsplash.com/photos/68KjM0kfsVo",
