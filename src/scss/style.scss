@@ -167,9 +167,9 @@ aside {
         flex-shrink: 0;
         order: 1;
         text-align: center;
-        background-size: cover;
+        background-size: $sidebarWidth 100vh;
         background-position: left top;
-        background-image: url("#{$images}/bg.svg");
+        background-image: url("#{$images}/bg.jpg");
         background-attachment: fixed;
 
         &::after {
