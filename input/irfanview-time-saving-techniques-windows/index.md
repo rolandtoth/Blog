@@ -96,7 +96,7 @@ IrfanView has an option **JPG Lossless Rotation**, available from the Options me
 
 IrfanView is not designed to be the next Photoshop but you can perform simple color corrections. Hit shift+G for Color Corrections or shift+U to auto adjust colors. Though this feature is no way professional I use them frequently to see if the design looks better with some extra contrast or gamma correction, etc.
 
-![](irfanview-time-saving-techniques-windows-color-adjustments.png)
+![](irfanview-time-saving-techniques-windows-color-adjustments.jpg)
 
 Adjustments work on selections too, so you can make a quick before & after preview by selecting half the image and applying some color adjustment for example.
 
