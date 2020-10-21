@@ -159,7 +159,7 @@ main {
 aside {
     padding: 0.5rem 1.5rem;
     position: relative;
-    background: darken($paleblue, 16%);
+    background: darken($paleblue, 20%);
 
     @media($desktop) {
         padding: 0 2rem;
@@ -501,6 +501,7 @@ h3 {
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-image: url("https://picsum.photos/1280/540?blur=2.webp")
         }
 
         &::after {
