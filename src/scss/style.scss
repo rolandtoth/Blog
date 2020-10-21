@@ -159,7 +159,7 @@ main {
 aside {
     padding: 0.5rem 1.5rem;
     position: relative;
-    background: darken($paleblue, 10%);
+    background: darken($paleblue, 16%);
 
     @media($desktop) {
         padding: 0 2rem;
@@ -167,10 +167,6 @@ aside {
         flex-shrink: 0;
         order: 1;
         text-align: center;
-        background-size: $sidebarWidth 100vh;
-        background-position: left top;
-        background-image: url("#{$images}/bg.jpg");
-        background-attachment: fixed;
 
         &::after {
             content: "";
@@ -283,7 +279,7 @@ aside {
     left: 0;
     right: 0;
     text-align: center;
-    color: rgba(white, 0.399);
+    color: rgba(white, 0.3);
 
     a:not(:hover) {
         text-decoration: none;
