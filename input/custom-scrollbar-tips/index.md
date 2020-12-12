@@ -45,8 +45,8 @@ The nice thing about this is that you will actually get a transparent padding so
 
 The scrollbar is above everything, including sticky headers. If you happen to have such a header and you have set `overflow-y: overlay`, then the scrollbar will go on top of the header. But using the technique described above with the thin scrollbar feature you can set a higher border-top width value to make the scrollbar start (and stop) below the sticky header.
 
-This puts a nice final touch on the design, it looks like that the scrollbar belongs to the main page content, excluding the header. Note that this technique makes the scrollbar track appear smaller, which you can fix with setting a higher `min-height` value.
+This puts a nice final touch on the design, it looks like that the scrollbar belongs to the main page content, excluding the header. Note that this technique makes the scrollbar track appear shorter, which you can fix by setting a higher `min-height` value.
 
 ## Conclusion
 
-With these tips and tricks you can polish the scrollbar design to make it more part of the page and not part of the browser. Even though it's only available in Chromium-based browsers, according to the market share most visitors will see the styled scrollbar.
+With these tips and tricks you can polish the scrollbar design to make it more part of the page and not part of the browser. Even though it's only available in Chromium-based browsers, according to its market share most visitors will see the styled scrollbar.
