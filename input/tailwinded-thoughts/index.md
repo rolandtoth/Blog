@@ -12,7 +12,7 @@
 }
 ---
 
-I learned out about TailwindCSS in a ProcessWire forum post years ago. I was writing custom CSS at that time (with a CSS framework sometimes) and seriously I was not convinced that utility classes all over the HTML file was a better option. I was happy with my setup that involved only Gulp, I didn't need another layer of complexity to my workflow.
+I first learned about TailwindCSS in a ProcessWire forum post years ago. I was writing custom CSS at that time (with a CSS framework sometimes) and seriously I was not convinced that utility classes all over the HTML file was a better option. I was happy with my setup that involved only Gulp, I didn't need another layer of complexity to my workflow.
 
 Even so, I was curious about TailwindCSS, and I knew I can only see whether it worked or not if I try. Unfortunately there was no project in sight where I could gave it a go. Another motivation was that I realized I was creating more and more utility classes on my own. So why not try something that is (probably) more sophisticated and mature?
 
