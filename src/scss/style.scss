@@ -150,7 +150,7 @@ main {
                 perspective-origin: top;
                 perspective: 3px;
                 height: 100vh;
-                // overflow-x: hidden;
+                overflow-x: hidden;
             }
         }
     }
@@ -1032,8 +1032,8 @@ blockquote {
 
 @media ($tablet) {
     ::-webkit-scrollbar {
-        width: 21px;
-        height: 21px;
+        width: 17px;
+        height: 17px;
 
         &-track {
             background: transparent;
@@ -1041,13 +1041,9 @@ blockquote {
 
         &-thumb {
             background: $paleblue;
-            border: 8px solid transparent;
-            background-clip: content-box;
 
             &:hover {
                 background: lighten($paleblue, 10%);
-                border: 8px solid transparent;
-                background-clip: content-box;
             }
         }
     }
