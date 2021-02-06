@@ -1,4 +1,4 @@
-íro---json
+---json
 {
     "title": "Angular PrimeNG Closable BlockUI",
     "excerpt": "The BlockUI component of PrimeNG is great, but could be even greater if there were an option to manually close after a specified amount of time.",
