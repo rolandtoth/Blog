@@ -22,14 +22,18 @@ I almost gave it up because I thought that the only way is to subscribe each com
 What I needed was to somehow notify the parent component about the changes in the new AppBlocker component. To solve this I made an @Output variable and finally it worked, resulting in a really succinct one-liner:
 
 ```javascript
-<app-blocker [blocked]="blockedDocument" (onClose)="blockedDocument = false"></app-blocker>
+<app-blocker
+    [blocked]="blockedDocument"
+    (onClose)="blockedDocument = false"
+    [displayMessageAfter]="5000">
+</app-blocker>
 ```
 
 ## Demo
 
 ![](angular-primeng-closable-blockui.png)]
 
-[https://stackblitz.com/edit/primeng-blockui-demo-vtvbxb](https://stackblitz.com/edit/primeng-blockui-demo-vtvbxb)
+[https://stackblitz.com/edit/primeng-blockui-demo-b3uzwy](https://stackblitz.com/edit/primeng-blockui-demo-b3uzwy)
 
 ## Breaking it down
 
