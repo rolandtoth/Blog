@@ -38,7 +38,7 @@ What I needed was to somehow notify the parent component about the changes in th
 ## Breaking it down
 
 - the parent component's "blockedDocument" variable gets passed to the new AppBlocker component, so that it can forward it to its child BlockUI component
-- the AppBlocker component has a button that triggers an event emitter, that emits its new value to the parent component. This value isn't really used because it's always "false", but when it happens, the "blockedDocument" variable is immediately set to "false". This way both components's blocked flags are in sync, and what's more important, Angular's OnChange can detect changes
+- the AppBlocker component has a button that triggers an event emitter, that emits its new value to the parent component. This value isn't really used because it's always "false", but when it happens, the "blockedDocument" variable is immediately set to "false". This way both components' blocked flags are in sync, and what's more important, Angular's OnChange can detect changes
 - the AppBlocker component reacts the changes of its "blocked" variable via the OnChanges lifecycle hook, and then starts its inner countdown
 - when the countdown completes, the message is shown with a button to dismiss the overlay
 
