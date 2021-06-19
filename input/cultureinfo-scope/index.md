@@ -18,7 +18,7 @@ Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("fr-FR");
 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("fr-FR");
 ```
 
-The issue with this is that you would probably need restore the original CultureInfo after that, which you can do by saving the original CultureInfo beforehands and restore at the end. This works fine, but that's too much repeated code, for which I created a small helper class called CultureInfoScope.
+The issue with this is that you would probably need to restore the original CultureInfo afterwards, which you can do by saving the original CultureInfo beforehands and restore at the end. This works fine, but that's too much repeated code, for which I created a small helper class called CultureInfoScope.
 
 ## CultureInfoScope.cs
 
