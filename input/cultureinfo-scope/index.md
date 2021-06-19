@@ -4,7 +4,7 @@
     "excerpt": "C# snippet to temporarily switch the thread's culture",
     "date": "2021-06-19",
     "tags": [
-        "c#"
+        "csharp"
     ],
     "type": "post",
     "layout": "layouts/@post.njk"
