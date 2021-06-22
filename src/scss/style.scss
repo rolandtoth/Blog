@@ -135,6 +135,7 @@ body {
     @media($desktop) {
         flex-direction: row;
         flex-wrap: nowrap;
+        background-image: url("https://picsum.photos/1280/720.webp");
     }
 }
 
@@ -167,6 +168,7 @@ aside {
         flex-shrink: 0;
         order: 1;
         text-align: center;
+        background: transparent;
 
         &::after {
             content: "";
@@ -176,7 +178,7 @@ aside {
             bottom: 0;
             right: 0;
             opacity: 0.12;
-            background-color: $paleblue;
+            background-color: rgba($paleblue, 0.5);
         }
     }
 
@@ -495,13 +497,6 @@ h3 {
             top: 0;
             display: block;
             pointer-events: none;
-        }
-
-        &::before {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-image: url("https://picsum.photos/1280/540.webp")
         }
 
         &::after {
