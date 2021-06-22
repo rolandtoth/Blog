@@ -136,6 +136,7 @@ body {
         flex-direction: row;
         flex-wrap: nowrap;
         background-image: url("https://picsum.photos/1280/720.webp");
+        background-size: cover;
     }
 }
 
@@ -144,6 +145,7 @@ main {
     order: 2;
     max-width: 100%;
     position: relative;
+    background: white;
 
     body.type-post & {
         @media($desktop) {
@@ -178,7 +180,7 @@ aside {
             bottom: 0;
             right: 0;
             opacity: 0.12;
-            background-color: rgba($paleblue, 0.5);
+            background-color: $paleblue;
         }
     }
 
