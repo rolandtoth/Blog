@@ -150,6 +150,7 @@ main {
 
     body.type-post & {
         @media($desktop) {
+            background: transparent;
             >.mid {
                 perspective-origin: top;
                 perspective: 3px;
