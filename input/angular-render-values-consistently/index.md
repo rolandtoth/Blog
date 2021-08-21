@@ -23,16 +23,18 @@ Pipes are great, and they can pretty much abstract the issue away. However, unle
 
 In Angular view files you can use `ng-container` with `ngTemplateOutlet`, which can help if the same data type needs the same formatting:
 
+{% raw %}
 ```html
 <ng-container *ngTemplateOutlet="myTemplate; context: { $implicit: data1 }"></ng-container>
 <ng-container *ngTemplateOutlet="myTemplate; context: { $implicit: data2 }"></ng-container>
 
 <ng-template #myTemplate let-data>
   <span class="my-class">
-    {{ data }}
+    {{ data | myPipe }}
   </span>
 </ng-template>
 ```
+{% endraw %}
 
 I used this very often but there's a problem: the reusable template can be reused only in the same view file. So eg. if you have multiple components, you'll need to add the same `ng-template` to each of their views.
 
@@ -75,28 +77,29 @@ I intentionally tried to keep it as dumb as possible to make it lightweight - no
 
 The corresponding view file looks like this (abbreviated here for demonstration purposes):
 
+{% raw %}
 ```html
 <ng-container [ngSwitch]="template">
 
   <div class="{{ classes }}">
     <ng-container *ngSwitchCase="'date'">
-        <span title="{{ data }}">
-          {{ data }}
+        <span title="{{ data | date: 'yyyy-LL-dd HH:mm:ss' }}">
+          {{ data | date: 'yyyy-LL-dd' }}
         </span>
     </ng-container>
 
     <ng-container *ngSwitchCase="'status'">
-      <span attr.data-status="{{ data }}">
-        {{ data }}
+      <span attr.data-status="{{ data | status }}">
+        {{ data | status }}
       </span>
     </ng-container>
 
     <ng-container *ngSwitchCase="'category'">
-      {{ data }}
+      {{ data | category }}
     </ng-container>
 
     <ng-container *ngSwitchCase="'decimal'">
-      {{ data }}
+      {{ data | number: '1.2-6' }}
     </ng-container>
 
     <ng-container *ngSwitchCase="'person'">
@@ -112,6 +115,7 @@ The corresponding view file looks like this (abbreviated here for demonstration 
   
 </ng-container>
 ```
+{% endraw %}
 
 As you can see it contains an `ngSwitch` to decide what template to use for the given data type. If no template is matched, the data is rendered as-is, using the `ngSwitchDefault` container in the bottom.
 
@@ -119,6 +123,7 @@ Most templates use a simple data but the `person` uses an array:
 
 ### Usage
 
+{% raw %}
 ```html
 <!-- default (implicitly "string" data type) -->
 <render-value data="{{ data.name }}"></render-value>
@@ -132,6 +137,7 @@ Most templates use a simple data but the `person` uses an array:
 <!-- multiple values - data needs to be in brackets -->
 <render-value [data]="[data.firstName, data.lastName]" template="person"></render-value>
 ```
+{% endraw %}
 
 ## Conclusion
 
