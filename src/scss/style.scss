@@ -7,7 +7,7 @@ $paleblue: #49616e;
 $blueishgrey: rgba(144, 164, 174, 0.18);
 $bordercolor: #dadada;
 $hlcolor: #ffeb3b;
-$codeBgColor: #f2f2f2;
+$codeBgColor: #eaeaea;
 $sidebarWidth: 24rem;
 $images: "/assets/images";
 
@@ -1136,6 +1136,10 @@ blockquote {
     }
 }
 
+.hljs {
+    background: $codeBgColor;
+}
+
 .hljs-ln-numbers {
     user-select: none;
     position: relative;
@@ -1175,7 +1179,7 @@ pre {
             &::before {
                 position: absolute;
                 top: 1.25rem;
-                right: 3.125rem;
+                right:  2.75rem;
                 display: inline-block;
                 opacity: 0.25;
                 user-select: none;
