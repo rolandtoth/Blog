@@ -181,7 +181,7 @@ aside {
             top: 0;
             bottom: 0;
             right: 0;
-            background-color: rgba(darken($paleblue, 25%), 0.599);
+            background-color: rgba(darken($paleblue, 25%), 0.56);
         }
     }
 
@@ -1187,7 +1187,7 @@ pre {
             }
 
             &.language-javascript::before {
-                content: "JavaScript";
+                content: "JS";
             }
 
             &.language-html::before {
