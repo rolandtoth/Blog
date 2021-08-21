@@ -25,8 +25,11 @@ In Angular view files you can use `ng-container` with `ngTemplateOutlet`, which 
 
 {% raw %}
 ```html
-<ng-container *ngTemplateOutlet="myTemplate; context: { $implicit: data1 }"></ng-container>
-<ng-container *ngTemplateOutlet="myTemplate; context: { $implicit: data2 }"></ng-container>
+<ng-container *ngTemplateOutlet="myTemplate; context: { $implicit: data1 }">
+</ng-container>
+
+<ng-container *ngTemplateOutlet="myTemplate; context: { $implicit: data2 }">
+</ng-container>
 
 <ng-template #myTemplate let-data>
   <span class="my-class">
@@ -51,7 +54,11 @@ So I created a new component to handle all types of data. Its first name was "Ce
 In its simplest form it looks like this:
 
 ```javascript
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    Input
+} from '@angular/core';
 
 @Component({
   selector: 'render-value',
