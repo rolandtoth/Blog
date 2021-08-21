@@ -1393,7 +1393,11 @@ code {
     position: relative;
     padding: 1.5rem 1.5rem 3rem;
     margin-bottom: -1rem;
-    background: $codeBgColor;
+    background: darken($paleblue, 20%);
+    
+    h2, button {
+        color: white;
+    }
 
     @media($desktop) {
         padding: 2rem 0 4rem;
