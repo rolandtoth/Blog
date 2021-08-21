@@ -29,7 +29,7 @@ In Angular view files you can use `ng-container` with `ngTemplateOutlet`, which 
 
 <ng-template #myTemplate let-data>
   <span class="my-class">
-    {{ data | myPipe }}
+    {{ data || myPipe }}
   </span>
 </ng-template>
 ```
@@ -80,23 +80,23 @@ The corresponding view file looks like this (abbreviated here for demonstration 
 
   <div class="{{ classes }}">
     <ng-container *ngSwitchCase="'date'">
-        <span title="{{ data | date: 'yyyy-LL-dd HH:mm:ss' }}">
-          {{ data | date: 'yyyy-LL-dd' }}
+        <span title="{{ data || date: 'yyyy-LL-dd HH:mm:ss' }}">
+          {{ data || date: 'yyyy-LL-dd' }}
         </span>
     </ng-container>
 
     <ng-container *ngSwitchCase="'status'">
-      <span attr.data-status="{{ data | status }}">
-        {{ data | status }}
+      <span attr.data-status="{{ data || status }}">
+        {{ data || status }}
       </span>
     </ng-container>
 
     <ng-container *ngSwitchCase="'category'">
-      {{ data | category }}
+      {{ data || category }}
     </ng-container>
 
     <ng-container *ngSwitchCase="'decimal'">
-      {{ data | number: '1.2-6' }}
+      {{ data || number: '1.2-6' }}
     </ng-container>
 
     <ng-container *ngSwitchCase="'person'">
