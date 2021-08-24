@@ -1030,8 +1030,8 @@ blockquote {
 
 @media ($tablet) {
     ::-webkit-scrollbar {
-        width: 7px;
-        height: 7px;
+        width: 721px;
+        height: 21px;
 
         &-track {
             background: transparent;
@@ -1039,6 +1039,8 @@ blockquote {
 
         &-thumb {
             background: $paleblue;
+            border: 13px solid transparent;
+            background-clip: content-box !important;
 
             &:hover {
                 background: lighten($paleblue, 10%);
