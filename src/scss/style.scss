@@ -493,7 +493,7 @@ h3 {
         &::after {
             content: "";
             position: absolute;
-            height: 100vh;
+            bottom: 0;
             left: 0;
             right: 0;
             top: 0;
@@ -521,9 +521,6 @@ h3 {
     background: white;
     position: relative;
     padding: 1.5rem;
-    
-    border-right: 21px solid transparent;
-    background-clip: padding-box;
 
     >img,
     >.cp_embed_wrapper,
