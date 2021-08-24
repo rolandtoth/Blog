@@ -101,8 +101,6 @@ a {
 
 // styles
 html {
-    overflow-x: hidden;
-    overflow-y: overlay;
     scroll-behavior: smooth;
 }
 
@@ -157,6 +155,7 @@ main {
                 perspective: 3px;
                 height: 100vh;
                 overflow-x: hidden;
+                overflow-y: overlay;
             }
         }
     }
