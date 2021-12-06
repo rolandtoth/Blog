@@ -46,7 +46,7 @@ If you click and hold on a pixel in IrfanView title bar of the application shows
 
 I use it very often when converting a psd to html, together with the screenshot feature described above. You can zoom in by making a selection and clicking in the middle. I tried several color grabber applications but none of them allowed such a convenient workflow.
 
-![](irfanview-time-saving-techniques-windows-panorama.png)
+![](irfanview-time-saving-techniques-windows-grab-screen-color.png)
 
 _Tip: disable resample feature in IrfanView to avoid blurring when zooming. To do this, uncheck **View -> Display options (window mode) -> Use "Resample"**._
 
