@@ -27,6 +27,7 @@
         <script>document.querySelector('html').classList.remove('no-js');</script>
         <link rel="stylesheet" href="{{ cfg.style | cacheVersion }}">
         <link rel="shortcut icon" href="{{ cfg.favicon | cacheVersion }}">
+        <link rel="canonical" href="{{ page.url | httpUrl }}">
     </head>
     <body class="page-{% if page.fileSlug !== '' %}{{ page.fileSlug }}{% else %}home{% endif %}{%if type %} type-{{ type }}{% endif %}">
         <div class="main-content">
