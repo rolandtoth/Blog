@@ -100,5 +100,8 @@
     },
     "csharp": {
         "title": "C#"
+    },
+    "primeng": {
+        "title": "PrimeNG"
     }
 }
