@@ -958,7 +958,7 @@ body:not(.type-post) main .left-offset>*:not(.fbx-wrap) {
         }
 
         &:hover {
-            h3 {
+            p.title {
                 text-decoration: underline;
             }
         }
@@ -975,7 +975,8 @@ body:not(.type-post) main .left-offset>*:not(.fbx-wrap) {
         }
     }
 
-    h3 {
+    p.title {
+        @extend h3;
         margin: 0 0 -0.25rem;
         color: $paleblue;
         line-height: 1.25;
