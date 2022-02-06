@@ -15,7 +15,7 @@
 
 I needed a confirm dialog in my latest project and sadly realized that there is no such feature in PrimeVue's Dropdown component. Before starting to redesign that part of the application I gave it a go to fix this first, in hope of skipping an unwanted refactor.
 
-I googled for a possible solution a bit but found nothing. Then I remembered from the past that in such situations overriding the given method and then re-setting is one way to go. Ultimately this worked here too.
+I googled for a possible solution a bit but found nothing. Then I remembered from the past that in such situations overriding the given method and then re-setting it is one way to go. Ultimately this worked here too.
 
 ## Demo
 
@@ -31,7 +31,7 @@ Of course this wouldn't stop the dropdown to set the clicked item as the selecte
 
 Then the confirm dialog opens which has two outcomes: "accept" or "reject". In the "accept" part the `selectedOption` is set to `event.value`, which is the actually selected option from the user. Additionally the `hide()` method needs to be restored on the dropdown in both parts, which is as easy as assigning the previously saved method to the dropdown.
 
-# Summary
+## Summary
 
 This is an easy and painless fix for this issue. However, I think such feature should be baked into PrimeVue (and PrimeNG, PrimeReact, etc), as this would come really handy in many situations.
 
