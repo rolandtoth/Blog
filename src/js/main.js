@@ -141,9 +141,14 @@ function initFilterBox() {
                     $item.querySelector("a").click();
                 }
             },
-            onBlur: function () {
+            onBlur: function (e) {
                 var fbx = this;
                 var settings = fbx.getSettings();
+
+                if (e.relatedTarget && e.relatedTarget.href) {
+                    window.location.href = e.relatedTarget.href;
+                    return;
+                }
 
                 if (settings.autoFilter === false) return false;
 
@@ -159,7 +164,7 @@ function initFilterBox() {
         enableObserver: false,
         useDomFilter: true,
         keyNav: true,
-        inputDelay: 100
+        inputDelay: 300
     });
 }
 
@@ -188,7 +193,7 @@ function copyContentToClipboard(el) {
 
 /**
  * Disqus loader.
- * 
+ *
  * Note: global variables are set in @post.njk:
  * disqus_shortname, disqus_url, disqus_identifier
  * DOM needs to have a div with id "disqus_thread"

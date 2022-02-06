@@ -968,7 +968,6 @@ body:not(.type-post) main .left-offset>*:not(.fbx-wrap) {
         margin: 0;
         font-size: 0.97rem;
         padding-right: 2rem;
-        display: none;
 
         @media($desktop) {
             display: block;
@@ -1396,7 +1395,7 @@ code {
     padding: 1.5rem 1.5rem 3rem;
     margin-bottom: -1rem;
     background-color: rgba(darken($paleblue, 25%), 0.84);
-    
+
     h2, button {
         color: white;
     }
