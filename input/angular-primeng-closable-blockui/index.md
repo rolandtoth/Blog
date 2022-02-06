@@ -31,7 +31,7 @@ What I needed was to somehow notify the parent component about the changes in th
 
 ## Demo
 
-![](angular-primeng-closable-blockui.png)]
+![](angular-primeng-closable-blockui.png)
 
 [https://stackblitz.com/edit/primeng-blockui-demo-b3uzwy](https://stackblitz.com/edit/primeng-blockui-demo-b3uzwy)
 
