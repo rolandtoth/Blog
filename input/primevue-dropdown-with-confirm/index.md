@@ -13,7 +13,7 @@
 }
 ---
 
-I needed a confirm dialog in my latest project and sadly realized that there is no such feature in PrimeVue's Dropdown component. Before starting to redesign that part of the application I gave it a go to fix this first, possibly skipping a larger refactor.
+I needed a confirm dialog in my latest project and sadly realized that there is no such feature in PrimeVue's Dropdown component. Before starting to redesign that part of the application I gave it a go to fix this first, in hope of skipping an unwanted refactor.
 
 I googled for a possible solution a bit but found nothing. Then I remembered from the past that in such situations overriding the given method and then re-setting is one way to go. Ultimately this worked here too.
 
