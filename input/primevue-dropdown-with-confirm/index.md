@@ -1,47 +1,38 @@
 ---json
 {
-    "title": "Angular PrimeNG Closable BlockUI",
-    "excerpt": "The BlockUI component of PrimeNG is great, but could be even greater if there were an option to manually close after a specified amount of time.",
-    "img": "angular-primeng-closable-blockui.png",
-    "date": "2021-02-06",
+    "title": "Vue PrimeVue dropdown with confirm",
+    "excerpt": "There is no confirm feature on PrimeVue dropdown when selecting an item, but with the following workaround it's easy to add.",
+    "img": "primevue-dropdown-with-confirm.png",
+    "date": "2022-02-06",
     "tags": [
-        "angular",
-        "primeng"
+        "vue",
+        "primevue"
     ],
     "type": "post",
     "layout": "layouts/@post.njk"
 }
 ---
 
-Despite all my best efforts to create an application that could properly handle the closing of PrimeNG's BlockUI overlays I always ended up with some overlays not closing. Probably it's only my weak code but I wanted to make sure to eliminate this, and a good candidate was to create a new wrapper component around the stock BlockUI.
+I needed a confirm dialog in my latest project and sadly realized that there is no such feature in PrimeVue's Dropdown component. Before starting to redesign that part of the application I gave it a go to fix this.
 
-The idea was that this new component will have a view with a button to close. At first everything went smooth, the new component got the boolean "blocked" variable via an @Input() variable. However, I oversaw that changes to the new component's variable won't update the original one. That is, when the overlay was closed, the original component's variable remained intact ("true"). I learned that I would need to use the Angular OnChanges lifecycle hook, but even doing so, nothing happenned.
-
-I almost gave it up because I thought that the only way is to subscribe each component to the changes of the "blocked" variable, which would be too messy and wouldn't worth the trouble. The underlying problem was that Angular doesn't detect changes to a variable that wasn't changed, which kinda makes sense. In this case, the parent's flag to show the blocking overlay was changed from "true" to "true", triggering nothing.
-
-What I needed was to somehow notify the parent component about the changes in the new AppBlocker component. To solve this I made an @Output variable and finally it worked, resulting in a really succinct one-liner:
-
-```javascript
-<app-blocker
-    [blocked]="blockedDocument"
-    (onClose)="blockedDocument = false"
-    [displayMessageAfter]="5000">
-</app-blocker>
-```
+I googled for a possible solution a bit but found nothing. Then I remembered from the past that in such situations overriding the given method and then re-setting is one way to deal with such issues. Ultimately this worked here too.
 
 ## Demo
 
-![](angular-primeng-closable-blockui.png)]
+![](primevue-dropdown-with-confirm.png)
 
-[https://stackblitz.com/edit/primeng-blockui-demo-b3uzwy](https://stackblitz.com/edit/primeng-blockui-demo-b3uzwy)
+[https://stackblitz.com/edit/vue-primevue-dropdown-with-confirm](https://stackblitz.com/edit/vue-primevue-dropdown-with-confirm)
 
 ## Breaking it down
 
-- the parent component's "blockedDocument" variable gets passed to the new AppBlocker component, so that it can forward it to its child BlockUI component
-- the AppBlocker component has a button that triggers an event emitter, that emits its new value to the parent component. This value isn't really used because it's always "false", but when it happens, the "blockedDocument" variable is immediately set to "false". This way both components' blocked flags are in sync, and what's more important, Angular's OnChange can detect changes
-- the AppBlocker component reacts the changes of its "blocked" variable via the OnChanges lifecycle hook, and then starts its inner countdown
-- when the countdown completes, the message is shown with a button to dismiss the overlay
+What's happening here is that when the user clicks on a dropdown item, dropdown's `hide()` method is saved to a temporary variable and then it's set to `undefined` (that, is, nulled). This stops PrimeVue to close the dropdown, so it stays open while the confirm dialog is opened.
 
-## TL;DR
+Of course this wouldn't stop the dropdown to set the clicked item as the selected option. To overcome this, I manually set the `selectedOption` to the dropdown's `modelValue` property, which is still containing the old value. So at this point the dropdown is opened and its value is latest selected option, not the new one the user cicked on.
 
-It was a nice journey that fortunately came to a happy ending. Looking back it's a very simple one, but only because I now know more about Angular's inner workings.
+Then the confirm dialog opens which has two outcomes: "accept" or "reject". In the "accept" part the `selectedOption` is set to `event.value`, which is the actually selected option from the user. Additionally the `hide()` method needs to be restored on the dropdown in both parts, which is as easy as assigning the previously saved method to the dropdown.
+
+# Summary
+
+This is an easy and painless fix for this issue. However, I think such feature should be baked into PrimeVue (and PrimeNG, PrimeReact, etc), as this would come really handy in many situations.
+
+
