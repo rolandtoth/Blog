@@ -1485,9 +1485,11 @@ article {
     margin: 0;
     font-size: 0.97rem;
     padding-right: 2rem; }
-    @media (min-width: 990px) {
-      .post-list p {
-        display: block; } }
+    .post-list p.description {
+      display: none; }
+      @media (min-width: 990px) {
+        .post-list p.description {
+          display: block; } }
   .post-list p.title {
     margin: 0 0 -0.25rem;
     color: #49616e;

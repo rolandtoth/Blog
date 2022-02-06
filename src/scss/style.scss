@@ -1,7 +1,7 @@
 // note: if the minified CSS has "}#id" then nunjucks include fails
 
 // variables
-$version: "?v=20210824";
+$version: "?v=20220206";
 $base: #2c3235;
 $paleblue: #49616e;
 $blueishgrey: rgba(144, 164, 174, 0.18);
@@ -969,8 +969,12 @@ body:not(.type-post) main .left-offset>*:not(.fbx-wrap) {
         font-size: 0.97rem;
         padding-right: 2rem;
 
-        @media($desktop) {
-            display: block;
+        &.description {
+            display: none;
+
+            @media($desktop) {
+                display: block;
+            }
         }
     }
 
