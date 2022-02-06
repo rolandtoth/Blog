@@ -103,5 +103,11 @@
     },
     "primeng": {
         "title": "PrimeNG"
+    },
+    "primevue": {
+        "title": "PrimeVue"
+    },
+    "vue": {
+        "title": "Vue"
     }
 }
