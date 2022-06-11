@@ -15,7 +15,7 @@ The stack we are usually using is a .NET backend with Angular frontend. For tran
 
 However, adding a new language required changing both backend/frontend. It was not a big deal but last time I was about to do that, a light bulb went on in my head:
 
-## Why not using the list of languages also from the backend?
+## Why not use the list of languages also from the backend?
 
 Which, in theory, would allow removing all hardcoded languages from the frontend, leaving this logic entirely on the backend.
 
