@@ -1,7 +1,7 @@
 ---json
 {
     "title": "Removing Hardcoded Languages from Frontend",
-    "excerpt": "I always had the list of available languages on the frontend and translations came from the backend. After all it seemed to be an unnecessary complication, the list of languages could also come from backend.",
+    "excerpt": "I always had the list of available languages on the frontend which was an unnecessary complication, they can also come from backend.",
     "date": "2022-06-11",
     "tags": [
         "angular"
