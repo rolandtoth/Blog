@@ -94,9 +94,9 @@ a {
         color: lighten($paleblue, 10%);
     }
 
-    @media ($desktop) {
-        transition: all 0.1s;
-    }
+    // @media ($desktop) {
+        // transition: all 0.1s;
+    // }
 }
 
 // styles
