@@ -57,6 +57,19 @@
                     </div>
                     {% block main %}{% endblock %}
                 </div>
+		<script id="dsq-count-scr" src="//{{ cfg.disqusShortName }}.disqus.com/count.js" async></script>
+		<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+		<script>
+			var pjax = new Pjax({
+			  selectors: [
+			    "title",
+			    "meta[name=description]",
+			    "main",
+			  ]
+			});
+
+			document.addEventListener('pjax:complete', init);
+		</script>
             </main>
             <aside>
                 {% include "aside.njk" %}
@@ -65,18 +78,5 @@
         {% for script in cfg.scripts %}
             <script src="{{ script | url | cacheVersion }}"></script>
         {% endfor %}
-        <script id="dsq-count-scr" src="//{{ cfg.disqusShortName }}.disqus.com/count.js" async></script>
-	<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
-        <script>
-		var pjax = new Pjax({
-		  selectors: [
-		    "title",
-		    "meta[name=description]",
-		    "main",
-		  ]
-		});
-		
-		document.addEventListener('pjax:complete', init);
-        </script>
     </body>
 </html>
