@@ -66,6 +66,7 @@
             <script src="{{ script | url | cacheVersion }}" defer></script>
         {% endfor %}
         <script id="dsq-count-scr" src="//{{ cfg.disqusShortName }}.disqus.com/count.js" async></script>
+        <script src="https://unpkg.com/udomdiff"></script>
         <script>
             window.onload = function () {
   console.log("page loaded!");
