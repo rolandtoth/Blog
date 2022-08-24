@@ -88,6 +88,10 @@ function initSyntaxHighlight() {
 }
 
 function initFilterBox() {
+    if (document.querySelector("#fbx0")) {
+        return;
+    }
+
     addFilterBox({
         target: {
             selector: ".post-list",
