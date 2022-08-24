@@ -240,7 +240,7 @@ aside {
         margin: 0.125rem;
         max-width: 30rem;
 
-        body:not(.page-home) & {
+        main:not(.page-home) & {
             display: none;
         }
 
@@ -455,7 +455,7 @@ h3 {
 .top-wrap {
     padding: 1.5rem 1.5rem 1rem;
 
-    body:not(.type-post) & {
+    main:not(.type-post) & {
         padding-left: 0;
         padding-right: 0;
     }
@@ -898,7 +898,7 @@ article {
     }
 }
 
-body:not(.type-post) main .left-offset>*:not(.fbx-wrap) {
+main:not(.type-post) .left-offset>*:not(.fbx-wrap) {
     @extend .max-content;
 }
 
