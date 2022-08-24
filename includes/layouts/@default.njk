@@ -29,9 +29,9 @@
         <link rel="shortcut icon" href="{{ cfg.favicon | cacheVersion }}">
         <link rel="canonical" href="{{ page.url | httpUrl }}">
     </head>
-    <body class="page-{% if page.fileSlug !== '' %}{{ page.fileSlug }}{% else %}home{% endif %}{%if type %} type-{{ type }}{% endif %}">
+    <body>
         <div class="main-content">
-            <main>
+            <main class="page-{% if page.fileSlug !== '' %}{{ page.fileSlug }}{% else %}home{% endif %}{%if type %} type-{{ type }}{% endif %}">
                 <div class="mid left-offset">
                     {% include "filterbox.njk" %}
                     <div class="top-wrap">
