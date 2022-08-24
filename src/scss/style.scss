@@ -1,7 +1,7 @@
 // note: if the minified CSS has "}#id" then nunjucks include fails
 
 // variables
-$version: "?v=20220206";
+$version: "?v=20220824";
 $base: #2c3235;
 $paleblue: #49616e;
 $blueishgrey: rgba(144, 164, 174, 0.18);
@@ -147,7 +147,7 @@ main {
     position: relative;
     background: white;
 
-    body.type-post & {
+    &.type-post {
         @media($desktop) {
             background: transparent;
             >.mid {
@@ -574,17 +574,20 @@ h1,
     max-width: 45rem;
 }
 
-main>.mid {
-    padding-bottom: 1rem;
+main {
+	>.mid {
+		padding-bottom: 1rem;
 
-    @media($desktop) {
-        padding-bottom: 3rem;
-    }
-
-    body.type-post & {
-        // max-width: 100%;
-        padding: 0 !important;
-    }
+		@media($desktop) {
+			padding-bottom: 3rem;
+		}
+	}
+	
+	&.type-post {
+		>.mid {
+			padding: 0 !important;
+		}
+	}
 }
 
 .featured-image {
@@ -764,7 +767,7 @@ article {
     backface-visibility: hidden;
     z-index: 30;
 
-    body.type-post & {
+    main.type-post & {
         margin: 0;
     }
 
@@ -867,9 +870,9 @@ article {
         }
     }
 
-    body.page-home &,
-    body.page-tags &,
-    body.page-tagpages & {
+    main.page-home &,
+    main.page-tags &,
+    main.page-tagpages & {
         @media($desktop) {
             label {
                 color: rgba($base, 0.5);
@@ -1011,7 +1014,7 @@ body:not(.type-post) main .left-offset>*:not(.fbx-wrap) {
     margin-top: -0.6rem;
     z-index: 12;
 
-    body.page-home & {
+    main.page-home & {
         color: rgba($base, 0.4);
     }
 
@@ -1304,7 +1307,7 @@ code {
         padding-left: 2rem;
     }
 
-    body.page-tags main & {
+    main.page-tags & {
         @media ($tablet) {
             @include _fg(2, 0, 0);
             justify-content: center;
