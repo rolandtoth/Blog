@@ -2,12 +2,14 @@
 var scriptsDir = "/assets/scripts/",
     disqus_loaded = false;
 
-document.addEventListener("DOMContentLoaded", function () {
+var init = function () {
     initDisqus();
     initSyntaxHighlight();
     initCopyToClipboard("pre > code", "Copy to clipboard");
     initFilterBox();
-});
+};
+
+document.addEventListener("DOMContentLoaded", init);
 
 function initDisqus() {
     var $loadCommentsBtn = document.getElementById("load-comments-btn");
