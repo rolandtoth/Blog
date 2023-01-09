@@ -21,7 +21,7 @@
     "watch:js": "onchange \"src/js/*.js\" -- npm run build:js"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy": "^1.0.2",
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "autoprefixer": "^9.5.0",
