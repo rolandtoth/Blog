@@ -34,45 +34,35 @@
             <main class="page-{% if page.fileSlug !== '' %}{{ page.fileSlug }}{% else %}home{% endif %}{%if type %} type-{{ type }}{% endif %}">
                 <div class="mid left-offset">
                     {% include "filterbox.njk" %}
-                    <div class="top-wrap">
-                        {% block title %}
-                            {%- block breadcrumb %}
-                                {% if breadcrumb %}
-                                <ul class="breadcrumb">
-                                    {% for b in breadcrumb %}
-                                        <li><a href="{{ b.url | url }}">{{ b.text }}</a></li>
-                                    {% endfor %}
-                                </ul>
-                                {% endif %}
-                            {% endblock -%}
-                            {% block mainTitle %}
-                                {% if title %}
-                                    <h1>{{ title }}</h1>
+                    {% if layout != "layouts/@post.njk" %}
+                        <div class="top-wrap">
+                            {% block title %}
+                                {%- block breadcrumb %}
+                                    {% if breadcrumb %}
+                                    <ul class="breadcrumb">
+                                        {% for b in breadcrumb %}
+                                            <li><a href="{{ b.url | url }}">{{ b.text }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                {% endblock -%}
+                                {% block mainTitle %}
+                                    {% if title %}
+                                        <h1>{{ title }}</h1>
+                                    {% endif %}
+                                {% endblock %}
+                                {% if subtitle %}
+                                    {% block subtitle %}{% endblock %}
                                 {% endif %}
                             {% endblock %}
-                            {% if title %}
-                                {% block subtitle %}{% endblock %}
-                            {% endif %}
-                        {% endblock %}
-                    </div>
+                        </div>
+                    {% endif %}
                     {% block main %}{% endblock %}
                 </div>
-		{% for script in cfg.scripts %}
-		    <script src="{{ script | url | cacheVersion }}"></script>
-		{% endfor %}
-		<script id="dsq-count-scr" src="//{{ cfg.disqusShortName }}.disqus.com/count.js" async></script>
-		<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
-		<script>
-			var pjax = new Pjax({
-			  selectors: [
-			    "title",
-			    "meta[name=description]",
-			    "main",
-			  ]
-			});
-
-			document.addEventListener('pjax:complete', init);
-		</script>
+                {% for script in cfg.scripts %}
+                    <script src="{{ script | url | cacheVersion }}"></script>
+                {% endfor %}
+		        <script id="dsq-count-scr" src="//{{ cfg.disqusShortName }}.disqus.com/count.js" async></script>
             </main>
             <aside>
                 {% include "aside.njk" %}

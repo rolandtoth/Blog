@@ -25,13 +25,17 @@
                 </div>
             </div>
         </div>
+
+        {% if bgImg and bgImgUrl %}
+            <a href="{{ bgImgUrl }}" class="image-credit" target="_blank">Image credit</a>
+        {% endif %}
     </div>
 
     <div class="article-body left-offset">
         <div class="mid">
             <div class="max-content">
                 {{ content | safe }}
-                
+
                 <div class="post-controls clearfix">
                     <div class="post-tags">
                         <span class="icon-wrap tag">
