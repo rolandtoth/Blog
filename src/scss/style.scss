@@ -1,7 +1,7 @@
 // note: if the minified CSS has "}#id" then nunjucks include fails
 
 // variables
-$version: "?v=20220824";
+$version: '?v=20241223';
 $base: #2c3235;
 $paleblue: #49616e;
 $blueishgrey: rgba(144, 164, 174, 0.18);
@@ -9,7 +9,7 @@ $bordercolor: #dadada;
 $hlcolor: #ffeb3b;
 $codeBgColor: #eaeaea;
 $sidebarWidth: 24rem;
-$images: "/assets/images";
+$images: '/assets/images';
 
 // breakpoints
 $_mobile: 480;
@@ -17,42 +17,43 @@ $_tablet: 640;
 $_desktop: 990;
 $_hd: 1240;
 $_xhd: 1600;
-$tablet: "min-width: #{$_tablet}px";
-$desktop: "min-width: #{$_desktop}px";
-$hd: "min-width: #{$_hd}px";
-$xhd: "min-width: #{$_xhd}px";
-$max-mobile: "max-width: #{$_tablet - 1}px";
-$max-tablet: "max-width: #{$_desktop - 1}px";
-$max-desktop: "max-width: #{$_hd - 1}px";
-$max-hd: "max-width: #{$_xhd - 1}px";
+$tablet: 'min-width: #{$_tablet}px';
+$desktop: 'min-width: #{$_desktop}px';
+$hd: 'min-width: #{$_hd}px';
+$xhd: 'min-width: #{$_xhd}px';
+$max-mobile: 'max-width: #{$_tablet - 1}px';
+$max-tablet: 'max-width: #{$_desktop - 1}px';
+$max-desktop: 'max-width: #{$_hd - 1}px';
+$max-hd: 'max-width: #{$_xhd - 1}px';
 
 // imports
-@import "normalize";
-@import "mixins";
-@import "fonts/raleway";
-@import "fonts/benchnine";
-@import "fg_grid/fg_grid";
-@import "sharingbuttons-solid";
+@import 'normalize';
+@import 'mixins';
+@import 'fonts/raleway';
+@import 'fonts/benchnine';
+@import 'fg_grid/fg_grid';
+@import 'sharingbuttons-solid';
 
 // icons
-@import "icono/icono";
-@import "icono/icons/search";
-@import "icono/icons/mail";
-@import "icono/icons/comment";
-@import "icono/icons/socials";
-@import "icono/icons/tag";
-@import "icono/icons/caret";
+@import 'icono/icono';
+@import 'icono/icons/search';
+@import 'icono/icons/mail';
+@import 'icono/icons/comment';
+@import 'icono/icons/socials';
+@import 'icono/icons/tag';
+@import 'icono/icons/caret';
 
 // override defaults
 * // *::before,
 
 // *::after
-    {
+{
     box-sizing: border-box;
 }
 
 * {
     outline: none;
+    scrollbar-width: thin;
 }
 
 strong {
@@ -95,7 +96,7 @@ a {
     }
 
     // @media ($desktop) {
-        // transition: all 0.1s;
+    // transition: all 0.1s;
     // }
 }
 
@@ -105,7 +106,7 @@ html {
 }
 
 body {
-    font-family: "Raleway", sans-serif;
+    font-family: 'Raleway', sans-serif;
     line-height: 1.75;
     color: $base;
     font-size: 15px;
@@ -130,10 +131,10 @@ body {
     min-height: 100vh;
     flex-wrap: wrap;
 
-    @media($desktop) {
+    @media ($desktop) {
         flex-direction: row;
         flex-wrap: nowrap;
-        background-image: url("https://picsum.photos/1280/720.webp");
+        background-image: url('https://picsum.photos/1280/720.webp');
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
@@ -148,9 +149,9 @@ main {
     background: white;
 
     &.type-post {
-        @media($desktop) {
+        @media ($desktop) {
             background: transparent;
-            >.mid {
+            > .mid {
                 perspective-origin: top;
                 perspective: 3px;
                 height: 100vh;
@@ -166,7 +167,7 @@ aside {
     position: relative;
     background: darken($paleblue, 20%);
 
-    @media($desktop) {
+    @media ($desktop) {
         padding: 0 2rem;
         flex-basis: $sidebarWidth - 2rem;
         flex-shrink: 0;
@@ -175,7 +176,7 @@ aside {
         background: transparent;
 
         &::after {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             top: 0;
@@ -191,14 +192,14 @@ aside {
         }
     }
 
-    @media($hd) {
+    @media ($hd) {
         flex-basis: $sidebarWidth;
     }
 
     .inner {
         z-index: 1;
 
-        @media($desktop) {
+        @media ($desktop) {
             top: 2rem;
             padding: 1rem;
             position: sticky;
@@ -219,7 +220,7 @@ aside {
             width: 2.4rem;
         }
 
-        @media($desktop) {
+        @media ($desktop) {
             top: 0;
             margin: 0 0 1rem 0;
 
@@ -244,7 +245,7 @@ aside {
             display: none;
         }
 
-        @media($desktop) {
+        @media ($desktop) {
             display: block !important;
             margin: 0.125rem auto;
         }
@@ -255,7 +256,7 @@ aside {
         text-transform: uppercase;
         margin-bottom: 0.5rem !important;
 
-        @media($desktop) {
+        @media ($desktop) {
             display: block;
         }
 
@@ -265,11 +266,11 @@ aside {
         }
     }
 
-    [class*="icono"] {
+    [class*='icono'] {
         color: white;
     }
 
-    @media($max-tablet) {
+    @media ($max-tablet) {
         .sidebar-tags {
             display: none;
         }
@@ -290,7 +291,7 @@ aside {
         text-decoration: none;
     }
 
-    @media($desktop) {
+    @media ($desktop) {
         display: block;
     }
 }
@@ -328,7 +329,7 @@ aside {
 h1 {
     margin-top: 0;
     margin-bottom: 1.5rem;
-    font-family: "BenchNine", sans-serif;
+    font-family: 'BenchNine', sans-serif;
     font-size: 2.5rem;
     line-height: 1.125;
     text-transform: uppercase;
@@ -356,7 +357,7 @@ h2 {
     &,
     a {
         color: $paleblue;
-        font-family: "BenchNine", sans-serif;
+        font-family: 'BenchNine', sans-serif;
         font-weight: 500;
         text-transform: uppercase;
         text-decoration: none;
@@ -369,7 +370,7 @@ h3 {
     margin: 0 0 1rem;
     color: $paleblue;
     letter-spacing: 0.33px;
-    font-family: "BenchNine", sans-serif;
+    font-family: 'BenchNine', sans-serif;
 
     @media ($desktop) {
         font-size: 1.7rem;
@@ -447,7 +448,7 @@ h3 {
 .left-offset {
     padding: 0 1.5rem;
 
-    @media($desktop) {
+    @media ($desktop) {
         padding-left: 6rem !important;
     }
 }
@@ -460,7 +461,7 @@ h3 {
         padding-right: 0;
     }
 
-    @media($desktop) {
+    @media ($desktop) {
         padding: 6rem 2rem 2rem 0;
     }
 
@@ -470,7 +471,7 @@ h3 {
 }
 
 .parallax {
-    @media($desktop) {
+    @media ($desktop) {
         transform: translateZ(-1px) scale(1.34);
         transform-origin: top;
         transform-style: preserve-3d;
@@ -481,17 +482,17 @@ h3 {
     @extend .top-wrap;
     position: relative;
 
-    @media($max-tablet) {
+    @media ($max-tablet) {
         background-image: none !important;
         background: #f2f2f2;
     }
 
-    @media($desktop) {
+    @media ($desktop) {
         padding-bottom: 4rem;
 
         &::before,
         &::after {
-            content: "";
+            content: '';
             position: absolute;
             bottom: 0;
             left: 0;
@@ -511,7 +512,7 @@ h3 {
         position: relative;
         z-index: 1;
 
-        @media($desktop) {
+        @media ($desktop) {
             color: white !important;
         }
     }
@@ -522,14 +523,14 @@ h3 {
     position: relative;
     padding: 1.5rem;
 
-    >img,
-    >.cp_embed_wrapper,
-    >iframe {
+    > img,
+    > .cp_embed_wrapper,
+    > iframe {
         display: block;
         margin-bottom: 1.25rem;
     }
 
-    @media($desktop) {
+    @media ($desktop) {
         padding: 3rem 0 2rem 0;
     }
 }
@@ -541,7 +542,7 @@ h3 {
         margin-bottom: 0;
     }
 
-    @media($desktop) {
+    @media ($desktop) {
         font-size: 1.24rem;
         line-height: 1.8;
         margin-left: 0.5rem;
@@ -556,7 +557,7 @@ h3 {
 }
 
 .mid {
-    @media($desktop) {
+    @media ($desktop) {
         padding-right: 2rem;
     }
 }
@@ -564,7 +565,7 @@ h3 {
 .max-content {
     max-width: 52rem;
 
-    >h2:first-of-type {
+    > h2:first-of-type {
         margin-top: 0;
     }
 }
@@ -575,19 +576,19 @@ h1,
 }
 
 main {
-	>.mid {
-		padding-bottom: 1rem;
+    > .mid {
+        padding-bottom: 1rem;
 
-		@media($desktop) {
-			padding-bottom: 3rem;
-		}
-	}
-	
-	&.type-post {
-		>.mid {
-			padding: 0 !important;
-		}
-	}
+        @media ($desktop) {
+            padding-bottom: 3rem;
+        }
+    }
+
+    &.type-post {
+        > .mid {
+            padding: 0 !important;
+        }
+    }
 }
 
 .featured-image {
@@ -597,7 +598,7 @@ main {
         display: inline-block;
     }
 
-    @media($desktop) {
+    @media ($desktop) {
         img {
             max-width: 500px;
         }
@@ -605,7 +606,7 @@ main {
 }
 
 .image-credit {
-    @media($max-tablet) {
+    @media ($max-tablet) {
         display: none;
     }
 
@@ -658,7 +659,7 @@ article {
         color: $paleblue;
         margin-right: 0.125rem;
 
-        @media($desktop) {
+        @media ($desktop) {
             margin-top: 0.2rem;
         }
 
@@ -771,7 +772,7 @@ article {
         margin: 0;
     }
 
-    @media($desktop) {
+    @media ($desktop) {
         position: absolute;
         right: 0;
         left: 0;
@@ -789,7 +790,7 @@ article {
         color: rgba(white, 0.5);
         margin-top: 0.33rem;
 
-        @media($desktop) {
+        @media ($desktop) {
             top: 0.88rem;
             left: 2.5rem;
             margin: 0;
@@ -812,7 +813,7 @@ article {
         color: white;
         margin-bottom: -1px;
 
-        @media($desktop) {
+        @media ($desktop) {
             background: transparent;
             line-height: 4rem;
             height: 4rem;
@@ -825,7 +826,7 @@ article {
         }
 
         &:focus {
-            @media($desktop) {
+            @media ($desktop) {
                 border-color: rgba(white, 0.16);
             }
 
@@ -834,8 +835,8 @@ article {
             }
         }
 
-        &[data-has-filter="1"] {
-            ~.post-list {
+        &[data-has-filter='1'] {
+            ~ .post-list {
                 height: auto;
                 overflow: auto;
 
@@ -846,8 +847,8 @@ article {
             }
         }
 
-        &[data-no-match="1"] {
-            ~.search-counter {
+        &[data-no-match='1'] {
+            ~ .search-counter {
                 position: absolute;
                 top: 10rem;
                 right: auto;
@@ -862,7 +863,7 @@ article {
                 letter-spacing: 1px;
             }
 
-            ~.post-list {
+            ~ .post-list {
                 &::before {
                     background: rgba(darken($paleblue, 20%), 0.94);
                 }
@@ -873,7 +874,7 @@ article {
     main.page-home &,
     main.page-tags &,
     main.page-tagpages & {
-        @media($desktop) {
+        @media ($desktop) {
             label {
                 color: rgba($base, 0.5);
             }
@@ -898,7 +899,7 @@ article {
     }
 }
 
-main:not(.type-post) .left-offset>*:not(.fbx-wrap) {
+main:not(.type-post) .left-offset > *:not(.fbx-wrap) {
     @extend .max-content;
 }
 
@@ -917,12 +918,12 @@ main:not(.type-post) .left-offset>*:not(.fbx-wrap) {
     max-height: calc(100vh - 4rem);
     z-index: 8;
 
-    @media($desktop) {
+    @media ($desktop) {
         position: absolute;
     }
 
     &::before {
-        content: "";
+        content: '';
         position: fixed;
         display: block;
         transform-origin: top;
@@ -945,7 +946,7 @@ main:not(.type-post) .left-offset>*:not(.fbx-wrap) {
             border-top: 1px solid rgba($bordercolor, 0.5);
         }
 
-        @media($desktop) {
+        @media ($desktop) {
             padding-left: 6rem;
         }
     }
@@ -956,7 +957,7 @@ main:not(.type-post) .left-offset>*:not(.fbx-wrap) {
         color: $base;
         text-decoration: none;
 
-        @media($desktop) {
+        @media ($desktop) {
             padding-left: 0;
         }
 
@@ -975,7 +976,7 @@ main:not(.type-post) .left-offset>*:not(.fbx-wrap) {
         &.description {
             display: none;
 
-            @media($desktop) {
+            @media ($desktop) {
                 display: block;
             }
         }
@@ -987,7 +988,7 @@ main:not(.type-post) .left-offset>*:not(.fbx-wrap) {
         color: $paleblue;
         line-height: 1.25;
 
-        @media($desktop) {
+        @media ($desktop) {
             margin: 0;
         }
     }
@@ -997,7 +998,7 @@ main:not(.type-post) .left-offset>*:not(.fbx-wrap) {
         left: 2rem;
         opacity: 0.5;
 
-        @media($max-tablet) {
+        @media ($max-tablet) {
             display: none;
         }
     }
@@ -1018,7 +1019,7 @@ main:not(.type-post) .left-offset>*:not(.fbx-wrap) {
         color: rgba($base, 0.4);
     }
 
-    @media($desktop) {
+    @media ($desktop) {
         margin-top: 0;
     }
 }
@@ -1032,27 +1033,6 @@ blockquote {
     border-left: 0.3rem solid $bordercolor;
     padding-left: 1.5rem;
     margin: 1.25rem 0 2rem;
-}
-
-@media ($tablet) {
-    ::-webkit-scrollbar {
-        width: 21px;
-        height: 21px;
-
-        &-track {
-            background: transparent;
-        }
-
-        &-thumb {
-            background: $paleblue;
-            border: 9px solid transparent;
-            background-clip: content-box !important;
-
-            &:hover {
-                background: lighten($paleblue, 10%);
-            }
-        }
-    }
 }
 
 .copy-to-clipboard {
@@ -1069,7 +1049,7 @@ blockquote {
     filter: saturate(0) sepia(75%) hue-rotate(170deg) brightness(84%);
 
     &::before {
-        content: "\1F4CB";
+        content: '\1F4CB';
         position: absolute;
         top: 1px;
         left: 50%;
@@ -1092,7 +1072,7 @@ blockquote {
         filter: none;
 
         &::before {
-            content: "\2713";
+            content: '\2713';
             margin: 1px 0 0 -1px;
             font-weight: bold;
         }
@@ -1131,7 +1111,7 @@ blockquote {
         @extend .text-faded;
 
         &::before {
-            content: "-- ";
+            content: '-- ';
         }
     }
 }
@@ -1158,7 +1138,7 @@ blockquote {
 }
 
 pre {
-    @media($max-tablet) {
+    @media ($max-tablet) {
         margin-left: -1.5rem;
         margin-right: -1.5rem;
     }
@@ -1183,39 +1163,39 @@ pre {
             &::before {
                 position: absolute;
                 top: 1.25rem;
-                right:  2.75rem;
+                right: 2.75rem;
                 display: inline-block;
                 opacity: 0.25;
                 user-select: none;
                 font-size: 1rem;
 
-                @media($max-tablet) {
+                @media ($max-tablet) {
                     display: none;
                 }
             }
 
             &.language-javascript::before {
-                content: "JS";
+                content: 'JS';
             }
 
             &.language-html::before {
-                content: "HTML";
+                content: 'HTML';
             }
 
             &.language-css::before {
-                content: "CSS";
+                content: 'CSS';
             }
 
             &.language-php::before {
-                content: "PHP";
+                content: 'PHP';
             }
 
             &.language-ini::before {
-                content: "INI";
+                content: 'INI';
             }
 
             &.language-sql::before {
-                content: "SQL";
+                content: 'SQL';
             }
         }
     }
@@ -1255,11 +1235,15 @@ code {
 }
 
 .post-details {
-    @include listWithSeparator($spacing: 0.33rem, $separator: "\2022", $color: rgba(white, 0.5));
+    @include listWithSeparator(
+        $spacing: 0.33rem,
+        $separator: '\2022',
+        $color: rgba(white, 0.5)
+    );
     position: relative;
     top: -0.5rem;
 
-    @media($desktop) {
+    @media ($desktop) {
         top: -1.5rem;
     }
 }
@@ -1270,7 +1254,7 @@ code {
     padding: 0.75rem 0;
     border-top: 1px solid $bordercolor;
 
-    @media($desktop) {
+    @media ($desktop) {
         margin: 3.6rem 0 2rem;
     }
 }
@@ -1279,7 +1263,7 @@ code {
     @extend .text-xs;
     @extend .text-faded;
 
-    @media($desktop) {
+    @media ($desktop) {
         display: inline-block;
         width: calc(100% - 10rem);
     }
@@ -1288,7 +1272,7 @@ code {
 .sharingbuttons {
     margin-top: 1rem;
 
-    @media($desktop) {
+    @media ($desktop) {
         float: right;
         line-height: 0;
         display: inline-block;
@@ -1301,7 +1285,11 @@ code {
 
     margin: 0;
     padding-left: 0;
-    @include listWithSeparator($spacing: 0.33rem, $separator: "\2022", $color: rgba($base, 0.5));
+    @include listWithSeparator(
+        $spacing: 0.33rem,
+        $separator: '\2022',
+        $color: rgba($base, 0.5)
+    );
 
     .post-tags & {
         padding-left: 2rem;
@@ -1385,7 +1373,12 @@ code {
 .breadcrumb {
     padding: 0;
     margin: -0.5rem 0 0.75rem 0;
-    @include listWithSeparator($spacing: 0.33rem, $separator: "/", $addLast: true, $color: rgba($base, 0.5));
+    @include listWithSeparator(
+        $spacing: 0.33rem,
+        $separator: '/',
+        $addLast: true,
+        $color: rgba($base, 0.5)
+    );
 }
 
 .icon-wrap {
@@ -1403,18 +1396,19 @@ code {
     margin-bottom: -1rem;
     background-color: rgba(darken($paleblue, 25%), 0.84);
 
-    h2, button {
+    h2,
+    button {
         color: white;
     }
 
-    @media($desktop) {
+    @media ($desktop) {
         padding: 4rem 0 8rem;
         margin-bottom: -3rem;
     }
 }
 
 .clearfix::after {
-    content: "";
+    content: '';
     clear: both;
     display: table;
 }
