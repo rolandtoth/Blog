@@ -1,7 +1,7 @@
 /*
   A timestamp for Nunjucks
 */
-module.exports = function(date) {
+export default function(date) {
   var month = [
     "January",
     "February",

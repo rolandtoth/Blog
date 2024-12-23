@@ -8,7 +8,7 @@
  * If remainder is passed as an argument, we return the rest of the post
  *
  */
-module.exports = function (str, section) {
+export default function (str, section) {
   var content = new String(str);
   var delimit = "\n<!--more-->\n";
   var parts = content.split(delimit);

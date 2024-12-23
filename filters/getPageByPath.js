@@ -1,4 +1,4 @@
-module.exports = function (path, collection) {
+export default function (path, collection) {
   var resultPage;
 
   for (var i = 0; i < collection.length; i++) {

@@ -1,12 +1,14 @@
-const md = require('markdown-it')({
-  html: true,
-  linkify: true,
-  typographer: true
-});
+import md from "markdown-it";
 
 /*
 Render markdown
  */
-module.exports = function (string) {
-  return string ? md.render(string) : "";
-};
+export default function (string) {
+    return string
+        ? md({
+              html: true,
+              linkify: true,
+              typographer: true,
+          }).render(string)
+        : '';
+}

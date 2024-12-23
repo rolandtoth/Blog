@@ -1,5 +1,5 @@
-const striptags = require("striptags");
+import striptags from "striptags";
 
-module.exports = function (html, allowedTags, tagReplacement) {
+export default function (html, allowedTags, tagReplacement) {
     return striptags(html, allowedTags, tagReplacement);
 };

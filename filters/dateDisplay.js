@@ -1,9 +1,8 @@
 /*
 A date formatter filter for Nunjucks
 */
-module.exports = function (date, part) {
-
-  var d = (date === "now") ? new Date() : new Date(date),
+export default function (date, part) {
+  const d = (date === "now") ? new Date() : new Date(date),
     months = [
       "January",
       "February",

@@ -1,5 +1,5 @@
-const removeMd = require("remove-markdown");
+import removeMd from "remove-markdown";
 
-module.exports = function (str) {
+export default function (str) {
     return removeMd(str);
 };

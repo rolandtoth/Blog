@@ -1,6 +1,6 @@
-const slugify = require("slugify");
+import slugify from "slugify";
 
-module.exports = function (input) {
+export default function (input) {
     const options = {
         replacement: "-",
         remove: /[&,+()$~%.'":*?<>{}]/g,

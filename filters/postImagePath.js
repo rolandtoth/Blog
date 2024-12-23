@@ -1,4 +1,4 @@
-module.exports = function (name, directory) {
+export default function (name, directory) {
     let path = `${directory}/${name}`;
 
     return path;

@@ -1,4 +1,4 @@
-module.exports = function (page, legacyURL) {
+export default function (page, legacyURL) {
     var attr,
         value;
 

@@ -1,3 +1,3 @@
-const cfgDynamic = require("../input/_data/cfgDynamic");
+import cfgDynamic from "../input/_data/cfgDynamic.js";
 
-module.exports = (url) => `${url}?v=${cfgDynamic().version}`;
+export default (url) => `${url}?v=${cfgDynamic().version}`;

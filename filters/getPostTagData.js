@@ -1,5 +1,5 @@
-const postTags = require("../input/_data/postTags.json");
+import postTags from "../input/_data/postTags.json" with { type: "json" };
 
-module.exports = function (key) {
+export default function (key) {
     return postTags[key];
 };

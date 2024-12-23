@@ -1,9 +1,9 @@
-const sizeOf = require("image-size");
+import sizeOf from "image-size";
 
 /*
 Return width and height for images.
 */
-module.exports = function (path, type = "markup") {
+export default function (path, type = "markup") {
   let dim = "";
   if (!path) {
     return false;

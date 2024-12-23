@@ -1,9 +1,9 @@
-const getVideoId = require('get-video-id');
-const videoThumbnailUrl = require('video-thumbnail-url');
-const download = require('image-downloader');
-const fs = require('fs');
+import getVideoId from 'get-video-id';
+import videoThumbnailUrl from 'video-thumbnail-url';
+import { image as _image } from 'image-downloader';
+import { existsSync } from 'fs';
 
-module.exports = function (url) {
+export default function (url) {
     var id, service, imgFile, thumb = "",
         videoData = {};
 
@@ -27,7 +27,7 @@ module.exports = function (url) {
 
     imgFile = imgFile.toLowerCase();
 
-    if (!fs.existsSync(imgFile)) {
+    if (!existsSync(imgFile)) {
         videoThumbnailUrl(url).then(thumb_url => { // thumb_url is  url or null
 
             if (thumb_url) {
@@ -36,7 +36,7 @@ module.exports = function (url) {
                     dest: imgFile // Save to /path/to/dest/photo.jpg
                 }
 
-                download.image(options)
+                _image(options)
                     .then(({
                         filename,
                         image

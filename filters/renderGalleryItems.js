@@ -1,14 +1,15 @@
-const cfg = require("../input/_data/cfg.json");
-const glob = require("glob");
+import cfg from "../input/_data/cfg.json" with { type: "json" };
+import { sync } from "glob";
 
-module.exports = function (dirname) {
-    var thumbs = glob.sync(`assets/images/gallery/${dirname}/*-thumb.*`),
+export default function (dirname) {
+    const { gallery } = cfg;
+    const thumbs = sync(`assets/images/gallery/${dirname}/*-thumb.*`),
         markup = "";
 
     if (thumbs) {
         thumbs.forEach(thumb => {
             let largeImage = thumb.replace('-thumb.', '.');
-            markup += `<a href="/${largeImage}" target="_blank"><img src="/${thumb}" width="${cfg.gallery.thumb.width}" height="${cfg.gallery.thumb.height}" alt=""/></a>`;
+            markup += `<a href="/${largeImage}" target="_blank"><img src="/${thumb}" width="${gallery.thumb.width}" height="${gallery.thumb.height}" alt=""/></a>`;
         });
     }
 

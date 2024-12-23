@@ -1,12 +1,13 @@
-const cfg = require("../input/_data/cfg.json");
+import cfg from "../input/_data/cfg.json" with { type: "json" };
 
-module.exports = function (title) {
-    let pageTitle = cfg.siteName;
+export default function (title) {
+    const { siteName, slogan } = cfg;
+    let pageTitle = siteName;
 
     if (title) {
         pageTitle = `${title} - ${pageTitle}`;
-    } else if (cfg.slogan) {
-        pageTitle += ` - ${cfg.slogan}`;
+    } else if (slogan) {
+        pageTitle += ` - ${slogan}`;
     }
 
     return pageTitle;
