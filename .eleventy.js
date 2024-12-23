@@ -1,4 +1,4 @@
-const htmlmin = require("html-minifier");
+const htmlnano = require("htmlnano");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("dateDisplay", require("./filters/dateDisplay.js"));
@@ -70,16 +70,12 @@ module.exports = function (eleventyConfig) {
       });
   });
 
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+  eleventyConfig.addTransform("htmlnano", async function (content, outputPath) {
     if (outputPath.endsWith(".html")) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-        collapseBooleanAttributes: true
-      });
-      return minified;
+      return await htmlnano.process(content)
+        .then(function (result) {
+          return result.html;
+      })
     }
     return content;
   });
