@@ -1,0 +1,32 @@
+{
+    "siteName": "Roland Toth Blog",
+    "domain": "https://blog.rolandtoth.hu",
+    "developerUrl": "https://rolandtoth.hu",
+    "themeColor": "#49616e",
+    "paths": {
+        "assets": "/assets/",
+        "images": "/assets/images/",
+        "scripts": "/assets/scripts/",
+        "styles": "/assets/styles/"
+    },
+    "links": {
+        "eleventy": "https://www.11ty.io/",
+        "githubSrc": "https://github.com/rolandtoth/Blog"
+    },
+    "style": "/assets/styles/style.css",
+    "scripts": [
+        "/assets/scripts/lazysizes.min.js",
+        "/assets/scripts/filterbox.js",
+        "/assets/scripts/main.js"
+    ],
+    "disqusShortName": "rolandtothblog",
+    "favicon": "/assets/images/favicon.ico",
+    "transparentPlaceholder": "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==",
+    "sharingbuttons": {
+        "facebook": true,
+        "twitter": true,
+        "tumblr": false,
+        "email": true,
+        "pinterest": false
+    }
+}
