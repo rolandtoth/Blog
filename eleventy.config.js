@@ -55,7 +55,7 @@ export default async function(eleventyConfig) {
 		outputPath: "/feed.xml",
 		collection: {
 			name: "posts", // iterate over `collections.posts`
-			limit: 10,     // 0 means no limit
+			limit: 0,      // 0 means no limit
 		},
 		metadata: {
 			language: "en",
