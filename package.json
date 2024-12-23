@@ -1,9 +1,10 @@
 {
   "name": "rolandtothblog",
-  "version": "2.0.1",
+  "version": "2.0.4",
   "description": "Roland Toth Blog",
   "author": "Roland Toth",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
     "build:cssdev": "node-sass --include-path src/scss/includes src/scss/style.scss assets/styles/style.css",
@@ -22,7 +23,8 @@
     "watch:js": "onchange \"src/js/*.js\" -- npm run build:js"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy": "3.0.1-alpha.1",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "autoprefixer": "^10.4.20",
