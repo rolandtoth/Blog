@@ -10,7 +10,7 @@
             </a>
         </li>
         <li class="prev{% if pagination.pageNumber === 0 %} disabled{% endif %}">
-            <a href="{{ pagination.previousPageLink | url | removeIndexHtml }}">
+            <a href="{{ pagination.previousPageHref | url | removeIndexHtml }}">
                 <span class="icon-wrap">
                     <i class="icono-caretLeft"></i>
                 </span>
@@ -23,7 +23,7 @@
             </a>
         </li>
         <li class="next{% if pagination.pageNumber === pagination.pageLinks.length - 1 %} disabled{% endif %}">
-            <a href="{{ pagination.nextPageLink | url | removeIndexHtml }}">
+            <a href="{{ pagination.nextPageHref | url | removeIndexHtml }}">
                 <span class="icon-wrap">
                     <i class="icono-caretRight"></i>
                 </span>
