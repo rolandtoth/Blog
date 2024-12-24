@@ -5,7 +5,6 @@
     "date": "2024-12-23",
     "img": "unicode-country-flags.png",
     "tags": [
-        "css",
         "icon-font"
     ],
     "type": "post",
