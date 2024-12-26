@@ -481,6 +481,7 @@ h3 {
 .article-top {
     @extend .top-wrap;
     position: relative;
+    text-wrap-style: balance;
 
     @media ($max-tablet) {
         background-image: none !important;
