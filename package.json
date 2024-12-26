@@ -6,7 +6,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "npx @11ty/eleventy --serve",
+    "dev": "npx eleventy --serve",
     "build:cssdev": "node-sass --include-path src/scss/includes src/scss/style.scss assets/styles/style.css",
     "copy:jsdev": "cpx src/js/main.js assets/scripts/",
     "prebuild:css": "node-sass --include-path src/scss/includes src/scss/style.scss src/scss/style.css",

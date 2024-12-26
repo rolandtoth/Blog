@@ -1,4 +1,7 @@
-import cfg from "../input/_data/cfg.json" with { type: "json" };
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+const cfg = require("../input/_data/cfg.json");
 
 export default function (title) {
     const { siteName, slogan } = cfg;
