@@ -1,7 +1,7 @@
 ---json
 {
     "title": "Unicode country flags",
-    "excerpt": "Easy way to use country flags, with a twist because of Windows",
+    "excerpt": "Easy way to use country flags in your projects, with a twist because of Windows.",
     "date": "2024-12-23",
     "img": "unicode-country-flags.png",
     "tags": [

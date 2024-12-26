@@ -20,8 +20,14 @@
                     </li>
                 </ul>
 
-                <div class="excerpt">
-                    {{ excerpt | md | safe }}
+                <div class="excerpt-wrap">
+                    {% if img %}
+                        <img src="{{ img }}" alt="" />
+                    {% endif %}
+
+                    <div class="excerpt">
+                        {{ excerpt | md | safe }}
+                    </div>
                 </div>
             </div>
         </div>

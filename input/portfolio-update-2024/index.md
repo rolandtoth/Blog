@@ -1,7 +1,7 @@
 ---json
 {
     "title": "Portfolio Update 2024",
-    "excerpt": "The time has come again to update my portfolio site, but now only for the technical stuff",
+    "excerpt": "The time has come again to update my portfolio site, but now only for the technical stuff.",
     "img": "portfolio-update-2024.png",
     "bgImg": "christmas-matrix.webp",
     "bgImgUrl": "https://unsplash.com/photos/white-stars-cutout-on-black-surface-with-red-string-h2O_jHvjfIM",

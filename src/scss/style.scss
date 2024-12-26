@@ -1,7 +1,7 @@
 // note: if the minified CSS has "}#id" then nunjucks include fails
 
 // variables
-$version: '?v=20241223';
+$version: '?v=20241226';
 $base: #2c3235;
 $paleblue: #49616e;
 $blueishgrey: rgba(144, 164, 174, 0.18);
@@ -489,7 +489,7 @@ h3 {
     }
 
     @media ($desktop) {
-        padding-bottom: 4rem;
+        padding-bottom: 5rem;
 
         &::before,
         &::after {
@@ -537,8 +537,6 @@ h3 {
 }
 
 .excerpt {
-    margin: 1rem 0;
-
     p:last-child {
         margin-bottom: 0;
     }
@@ -572,8 +570,33 @@ h3 {
 }
 
 h1,
-.excerpt {
-    max-width: 45rem;
+.excerpt-wrap {
+    max-width: 48rem;
+}
+
+.excerpt-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 0.5rem;
+
+    @media ($tablet) {
+        flex-direction: row;
+    }
+
+    img {
+        width: 20rem;
+        height: auto;
+        display: block;
+        margin-top: -0.5rem;
+    }
+
+    @media ($tablet) {
+        img {
+            width: 9.5rem;
+        }
+    }
 }
 
 main {
@@ -588,20 +611,6 @@ main {
     &.type-post {
         > .mid {
             padding: 0 !important;
-        }
-    }
-}
-
-.featured-image {
-    margin-bottom: 1.25rem;
-
-    a {
-        display: inline-block;
-    }
-
-    @media ($desktop) {
-        img {
-            max-width: 500px;
         }
     }
 }
@@ -652,6 +661,33 @@ article {
     h2 {
         margin-top: 0;
         padding-right: 4rem;
+    }
+
+    .article-excerpt-wrap {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+
+        @media ($tablet) {
+            flex-direction: row;
+        }
+
+        a {
+            width: 14rem;
+            flex-shrink: 0;
+            border: 1px solid $bordercolor;
+            display: block;
+            position: relative;
+            top: 0.25rem;
+            border-radius: 2px;
+        }
+
+        img {
+            display: block;
+            border: 0.5rem solid white;
+        }
     }
 
     .comment-count {

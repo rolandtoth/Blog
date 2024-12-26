@@ -15,7 +15,17 @@
         <a href="{{ url }}">{{ p.data.title }}</a>
     </h2>
 
-    {{ p.data.excerpt | md | safe }}
+    <div class="article-excerpt-wrap">
+        {% if p.data.img %}
+            <a href="{{ p.url }}">
+                <img src="{{ p.url }}/{{ p.data.img }}" alt="" />
+            </a>
+        {% endif %}
+
+        <div>
+            {{ p.data.excerpt | md | safe }}
+        </div>
+    </div>
 
     <p>
         <a href="{{ url }}" class="button readmore">Read more</a>

@@ -1,7 +1,7 @@
 ---json
 {
     "title": "ColumnSelect: Table Column Select Plugin for jQuery",
-    "excerpt": "Seems like I'm becoming a jQuery plugin developer but this is not the case. In fact when I find an interesting idea for a plugin that is not yet built I take it as a challenge - provided if it does not require a rocket scientist. That was the case with ColumnSelect as well: a new plugin that adds select boxes to choose which column to show.",
+    "excerpt": "Seems like I'm becoming a jQuery plugin developer but this is not the case. In fact when I find an interesting idea for a plugin that is not yet built I take it as a challenge.",
     "date": "2013-05-02",
     "img": "columnselect-jquery-table-column-select-plugin.png",
     "bgImg": "ren-ran-vulGK2GkhAs-unsplash.webp",
@@ -36,7 +36,7 @@ There are numerous plugins for manipulating table data but strangely I found non
 - customizable "more" string
 - keep or discard inline or external cell styles
 
-## What to use for 
+## What to use for
 
 The two main usage scenarios of ColumnSelect are comparing data and saving space by making tables narrower.
 
