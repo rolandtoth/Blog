@@ -136,17 +136,19 @@ main {
     flex-grow: 1;
     max-width: 100%;
     position: relative;
-    background: white;
+
+    &:not(.type-post) {
+        background: white;
+    }
 
     &.type-post {
         @media ($desktop) {
-            background: transparent;
             > .mid {
                 perspective-origin: top;
                 perspective: 3px;
                 height: 100vh;
+                overflow: overlay;
                 overflow-x: hidden;
-                overflow-y: overlay;
             }
         }
     }
@@ -532,7 +534,7 @@ h1,
     gap: 1rem;
 
     img {
-        max-width: 24rem;
+        width: 24rem;
         height: auto;
         display: block;
         border-radius: 3px;
@@ -601,7 +603,7 @@ article {
             flex-direction: row;
         }
 
-        a {
+        a:has(img) {
             width: 14rem;
             flex-shrink: 0;
             border: 1px solid $bordercolor;
@@ -1099,9 +1101,14 @@ blockquote {
 }
 
 pre {
+    text-wrap: pretty;
     @media ($max-tablet) {
         margin-left: -1.5rem;
         margin-right: -1.5rem;
+    }
+
+    @media ($desktop) {
+        border-radius: 3px;
     }
 
     position: relative;
@@ -1351,7 +1358,6 @@ code {
 #comments {
     position: relative;
     padding: 1.5rem 1.5rem 3rem;
-    margin-bottom: -1rem;
     backdrop-filter: brightness(0.586);
 
     h2,
@@ -1360,8 +1366,7 @@ code {
     }
 
     @media ($desktop) {
-        padding: 4rem 0 8rem;
-        margin-bottom: -3rem;
+        padding: 4rem 0 6rem;
     }
 }
 
