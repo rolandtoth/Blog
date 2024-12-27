@@ -2,7 +2,7 @@
  * https://codepen.io/rolandtoth/pen/LypvrV?editors=1100
  */
 export default function (url, title = "") {
-  var parts = url.split("/"),
+  const parts = url.split("/"),
     user = parts[3],
     id = parts[5],
     height = 400;

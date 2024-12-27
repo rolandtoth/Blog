@@ -20,6 +20,7 @@ import getSiblingPageFilter from "./filters/getSiblingPage.js";
 import stripTagsFilter from "./filters/stripTags.js";
 import stripMarkdownFilter from "./filters/stripMarkdown.js";
 import imageDimensionsFilter from "./filters/imageDimensions.js";
+import colorByStringFilter from "./filters/colorByString.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
@@ -43,6 +44,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addFilter("stripTags", stripTagsFilter);
   eleventyConfig.addFilter("stripMarkdown", stripMarkdownFilter);
   eleventyConfig.addFilter("imageDimensions", imageDimensionsFilter);
+  eleventyConfig.addFilter("colorByString", colorByStringFilter);
 
   eleventyConfig.addPassthroughCopy("assets/");
   eleventyConfig.addPassthroughCopy("_headers");

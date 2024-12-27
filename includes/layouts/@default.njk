@@ -30,6 +30,7 @@
         <link rel="canonical" href="{{ page.url | httpUrl }}">
     </head>
     <body>
+        <style>.main-content { background: {{ page.url | colorByString }}; }</style>
         <div class="main-content">
             <main class="page-{% if page.fileSlug !== '' %}{{ page.fileSlug }}{% else %}home{% endif %}{%if type %} type-{{ type }}{% endif %}">
                 <div class="mid left-offset">
