@@ -7,6 +7,17 @@
         <div class="article-top left-offset">
             <div class="max-content">
                 <h1>{{ title }}</h1>
+
+                <div class="excerpt-wrap">
+                    {% if img %}
+                        <img src="{{ img }}" alt="" />
+                    {% endif %}
+
+                    <div class="excerpt">
+                        {{ excerpt | md | safe }}
+                    </div>
+                </div>
+
                 <ul class="post-details text-sm m-none p-none">
                     <li>
                         <span>
@@ -19,16 +30,6 @@
                         </a>
                     </li>
                 </ul>
-
-                <div class="excerpt-wrap">
-                    {% if img %}
-                        <img src="{{ img }}" alt="" />
-                    {% endif %}
-
-                    <div class="excerpt">
-                        {{ excerpt | md | safe }}
-                    </div>
-                </div>
             </div>
         </div>
     </div>

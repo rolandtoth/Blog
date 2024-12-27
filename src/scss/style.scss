@@ -1,14 +1,14 @@
 // note: if the minified CSS has "}#id" then nunjucks include fails
 
 // variables
-$version: '?v=20241226';
-$base: #2c3235;
+$version: '?v=20241227';
+$base: #131C2B;
 $paleblue: #49616e;
-$blueishgrey: rgba(144, 164, 174, 0.18);
+$blueishgrey: #14344D;
 $bordercolor: #dadada;
 $hlcolor: #ffeb3b;
 $codeBgColor: #eaeaea;
-$sidebarWidth: 24rem;
+$sidebarWidth: 25rem;
 $images: '/assets/images';
 
 // breakpoints
@@ -94,13 +94,8 @@ a {
     &:hover {
         color: lighten($paleblue, 10%);
     }
-
-    // @media ($desktop) {
-    // transition: all 0.1s;
-    // }
 }
 
-// styles
 html {
     scroll-behavior: smooth;
 }
@@ -125,11 +120,11 @@ body {
 }
 
 .main-content {
-    background: white;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     flex-wrap: wrap;
+    background-image: url('/assets/images/noise.png');
 
     @media ($desktop) {
         flex-direction: row;
@@ -282,40 +277,29 @@ aside {
 
 .button {
     display: inline-block;
-    border: 1px solid lighten($base, 50%);
-    background: transparent;
-    line-height: 1.1 !important;
-    padding: 0.6rem 1.4rem;
-    border-radius: 2px;
+    padding: 0.78rem 1.4rem;
+    border: none;
+    background: $paleblue;
+    border-radius: 3px;
+    color: white;
+    line-height: 1 !important;
+    font-size: 1rem;
     user-select: none;
     text-decoration: none;
+    transition: all 0.1s;
 
     &:hover {
-        background: $paleblue;
-        border-color: $paleblue;
         color: white;
-    }
-}
-
-.button-solid {
-    @extend .button;
-    border: 1px solid $paleblue;
-    background: $paleblue;
-    color: white;
-
-    &:hover {
-        background: transparent;
-        border-color: $paleblue;
-        color: inherit;
+        filter: brightness(1.16);
     }
 }
 
 h1 {
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-family: 'BenchNine', sans-serif;
     font-size: 2.5rem;
-    line-height: 1.125;
+    line-height: 1;
     text-transform: uppercase;
     margin-bottom: 1rem;
     color: $paleblue;
@@ -323,7 +307,7 @@ h1 {
     @media ($desktop) {
         font-size: 5rem;
         word-spacing: 0.25rem;
-        margin-bottom: 2.4rem;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -465,7 +449,7 @@ h3 {
 .article-top {
     @extend .top-wrap;
     position: relative;
-    text-wrap-style: balance;
+    text-wrap: balance;
 
     @media ($max-tablet) {
         background-image: none !important;
@@ -538,7 +522,7 @@ h3 {
 
 h1,
 .excerpt-wrap {
-    max-width: 48rem;
+    max-width: 52rem;
 }
 
 .excerpt-wrap {
@@ -546,21 +530,20 @@ h1,
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    margin-top: 0.5rem;
-
-    @media ($tablet) {
-        flex-direction: row;
-    }
 
     img {
-        width: 20rem;
+        max-width: 24rem;
         height: auto;
         display: block;
+        border-radius: 3px;
+        background: white;
+        border: 8px solid white;
     }
 
     @media ($tablet) {
+        gap: 2rem;
         img {
-            width: 9.5rem;
+            max-width: 36rem;
         }
     }
 }
@@ -1213,17 +1196,14 @@ code {
 }
 
 .post-details {
+    opacity: 0.7;
+    font-size: 0.84rem;
+    margin-top: 2rem;
     @include listWithSeparator(
         $spacing: 0.33rem,
         $separator: '\2022',
         $color: rgba(white, 0.5)
     );
-    position: relative;
-    top: -0.5rem;
-
-    @media ($desktop) {
-        top: -1.5rem;
-    }
 }
 
 .post-controls {
