@@ -44,7 +44,7 @@ First I replaced SCSS variables with CSS variables, then started to look for ano
 
 ## Icons
 
-I've used Icono back then, which I could not find today on the internet (ok, I admin that I did not invest too much time in finding it).
+I've used Icono back then, which I could not find today on the internet (ok, I have to admit that I did not invest too much time in finding it).
 
 After some research I found this icons site, which was just what the doctor ordered:
 

@@ -32,6 +32,9 @@
     <body>
         <style>.main-content { background: {{ page.url | colorByString }}; }</style>
         <div class="main-content">
+            <aside>
+                {% include "aside.njk" %}
+            </aside>
             <main class="page-{% if page.fileSlug !== '' %}{{ page.fileSlug }}{% else %}home{% endif %}{%if type %} type-{{ type }}{% endif %}">
                 <div class="mid left-offset">
                     {% include "filterbox.njk" %}
@@ -65,9 +68,6 @@
                 {% endfor %}
 		        <script id="dsq-count-scr" src="//{{ cfg.disqusShortName }}.disqus.com/count.js" async></script>
             </main>
-            <aside>
-                {% include "aside.njk" %}
-            </aside>
         </div>
     </body>
 </html>
