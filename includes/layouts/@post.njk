@@ -25,6 +25,11 @@
                         </span>
                     </li>
                     <li>
+                        <span class="reading-time-count">
+                            {{ content | readingTime }} reading time
+                        </span>
+                    </li>
+                    <li>
                         <a href="#comments" id="scroll-to-comments" class="comment-count">
                             {{ page | disqusCommentCount(legacyURL) | safe }}
                         </a>

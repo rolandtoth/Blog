@@ -1219,12 +1219,17 @@ code {
 .post-details {
     opacity: 0.7;
     font-size: 0.84rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+
     @include listWithSeparator(
         $spacing: 0.33rem,
         $separator: '\2022',
         $color: rgba(white, 0.5)
     );
+
+    @media ($desktop) {
+        margin-top: 2rem;
+    }
 }
 
 .post-controls {

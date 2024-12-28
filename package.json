@@ -22,7 +22,7 @@
     "watch:css": "onchange \"src/scss/*.scss\" -- npm run build:css",
     "watch:js": "onchange \"src/js/*.js\" -- npm run build:js"
   },
-  "devDependencies": {
+  "dependencies": {
     "@11ty/eleventy": "3.0.1-alpha.1",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@babel/cli": "^7.4.3",
@@ -34,6 +34,7 @@
     "cssnano": "^7.0.6",
     "del": "^8.0.0",
     "eleventy-plugin-external-links": "^1.1.2",
+    "eleventy-plugin-reading-time": "^0.0.1",
     "glob": "^11.0.0",
     "htmlnano": "^2.1.1",
     "image-size": "^1.2.0",

@@ -1,5 +1,6 @@
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import externalLinksPlugin from "eleventy-plugin-external-links";
+import readingTimePlugin from "eleventy-plugin-reading-time";
 import htmlnano from "htmlnano";
 import dateDisplayFilter from "./filters/dateDisplay.js";
 import timestampFilter from "./filters/timestamp.js";
@@ -54,6 +55,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addPlugin(externalLinksPlugin);
+  eleventyConfig.addPlugin(readingTimePlugin);
 
   eleventyConfig.addPlugin(feedPlugin, {
 		type: "atom",
