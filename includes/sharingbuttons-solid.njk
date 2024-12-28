@@ -4,17 +4,17 @@
 {% set $excerpt = excerpt %}
 <div class="sharingbuttons">
     {% if cfg.sharingbuttons.facebook %}
-    <a class="sb-link sb-link-facebook" href="https://facebook.com/sharer/sharer.php?u={{$url}}" target="_blank" aria-label="" title="Facebook">
+    <a class="sb-link sb-link-facebook" href="https://facebook.com/sharer/sharer.php?u={{$url}}" aria-label="" title="Facebook">
         <span class="icono-facebook"></span>
     </a>
     {% endif %}
     {% if cfg.sharingbuttons.twitter %}
-    <a class="sb-link sb-link-twitter" href="https://twitter.com/intent/tweet/?text={{$text}}&amp;url={{$url}}" target="_blank" aria-label="" title="Twitter">
+    <a class="sb-link sb-link-twitter" href="https://twitter.com/intent/tweet/?text={{$text}}&amp;url={{$url}}" aria-label="" title="Twitter">
         <span class="icono-twitter"></span>
     </a>
     {% endif %}
     {% if cfg.sharingbuttons.tumblr %}
-    <a class="sb-link sb-link-tumblr" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title={{$text}}&amp;caption={{$excerpt}}&amp;tags={{$tags}}&amp;content={{$url}}&amp;canonicalUrl={{$url}}&amp;shareSource=tumblr_share_button" target="_blank" aria-label="" title="Tumblr">
+    <a class="sb-link sb-link-tumblr" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title={{$text}}&amp;caption={{$excerpt}}&amp;tags={{$tags}}&amp;content={{$url}}&amp;canonicalUrl={{$url}}&amp;shareSource=tumblr_share_button" aria-label="" title="Tumblr">
         <span class="icono-tumblr"></span>
     </a>
     {% endif %}
@@ -24,7 +24,7 @@
     </a>
     {% endif %}
     {% if cfg.sharingbuttons.pinterest %}
-    <a class="sb-link sb-link-pinterest" href="https://pinterest.com/pin/create/button/?url={{$url}}&amp;media={{$url}}&amp;description={{$text}}" target="_blank" aria-label="" title="Pinterest">
+    <a class="sb-link sb-link-pinterest" href="https://pinterest.com/pin/create/button/?url={{$url}}&amp;media={{$url}}&amp;description={{$text}}" aria-label="" title="Pinterest">
         <span class="icono-pinterest"></span>
     </a>
     {% endif %}

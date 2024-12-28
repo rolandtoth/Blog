@@ -33,6 +33,7 @@
     "cpx": "^1.5.0",
     "cssnano": "^7.0.6",
     "del": "^8.0.0",
+    "eleventy-plugin-external-links": "^1.1.2",
     "glob": "^11.0.0",
     "htmlnano": "^2.1.1",
     "image-size": "^1.2.0",

@@ -1,4 +1,5 @@
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import externalLinksPlugin from "eleventy-plugin-external-links";
 import htmlnano from "htmlnano";
 import dateDisplayFilter from "./filters/dateDisplay.js";
 import timestampFilter from "./filters/timestamp.js";
@@ -51,6 +52,8 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy(".htaccess");
 
   eleventyConfig.setDataDeepMerge(true);
+
+  eleventyConfig.addPlugin(externalLinksPlugin);
 
   eleventyConfig.addPlugin(feedPlugin, {
 		type: "atom",
