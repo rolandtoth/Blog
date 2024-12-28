@@ -285,7 +285,7 @@ aside {
     border-radius: 3px;
     color: white;
     line-height: 1 !important;
-    font-size: 1rem;
+    font-size: 0.92rem;
     user-select: none;
     text-decoration: none;
     transition: all 0.1s;
@@ -293,6 +293,10 @@ aside {
     &:hover {
         color: white;
         filter: brightness(1.16);
+    }
+
+    @media ($desktop) {
+        font-size: 1rem;
     }
 }
 
@@ -596,26 +600,36 @@ article {
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
+        gap: 1rem;
 
         @media ($tablet) {
             flex-direction: row;
+            gap: 1.25rem;
         }
 
         a:has(img) {
-            width: 14rem;
             flex-shrink: 0;
             border: 1px solid $bordercolor;
             display: block;
-            position: relative;
-            top: 0.25rem;
             border-radius: 2px;
         }
 
         img {
             display: block;
             border: 0.5rem solid white;
+            width: 24rem;
+
+            @media ($tablet) {
+                width: 14rem;
+            }
+
+            @media ($desktop) {
+                width: 16rem;
+            }
+        }
+
+        .readmore {
+            margin-top: 0.75rem;
         }
     }
 

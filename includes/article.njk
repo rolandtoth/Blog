@@ -23,11 +23,11 @@
         {% endif %}
 
         <div>
-            {{ p.data.excerpt | md | safe }}
+            <div>
+                {{ p.data.excerpt | md | safe }}
+            </div>
+
+            <a href="{{ url }}" class="button readmore">Read more</a>
         </div>
     </div>
-
-    <p>
-        <a href="{{ url }}" class="button readmore">Read more</a>
-    </p>
 </article>
