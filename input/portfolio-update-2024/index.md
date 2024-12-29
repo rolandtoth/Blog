@@ -52,6 +52,18 @@ After some research I found this icons site, which was just what the doctor orde
 
 I could search for icons and copy their data-URLs, and that was all there was to it. I could delete the whole icono SCSS directory - what a relief!
 
+## Design
+
+Previously there were background images linked from [Lorem Picsum](https://picsum.photos/) which were mostly great for the pages, but I found them to be too heavy and in some cases they reduced text readability. I decided to try replacing them with solid colors and actually I liked the result. Colors alone were not entirely making it, but with a slight noise pattern they became much better.
+
+Colors vary from page to page but not in a random way. Just like in case of avatars, the same page always gets the same color. I've searched for a nice 24-color dark pastel palette and used those colors here.
+
+I also found out that during the various design adjustments in the past, featured images were rarely displayed, even though there was one for almost each post. With the removal of background images I wanted them back, so now there's are thumbnails on the Recent Posts page, and also each post displays its featured image.
+
+## Other updates
+
+While browsing Eleventy's site and couldn't help myself to try out some plugins. The RSS Feed, Reading Time, External Links plugins were easy to integrate and added useful features to the site with minimal effort.
+
 ## The result
 
 The result is... the same as before, UI-wise. But under the hood it's much simpler and maintainable, not to mention that Netlify won't fail at building the static site because of unsupported Node runtime. Also `serve` mode became instant, the site refreshes within 1 second. Eleventy is still amazing!
